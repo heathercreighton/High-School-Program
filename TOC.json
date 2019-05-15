@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Introduction to Mac and the terminal", 
+        "lesson": "./terminal/mac-terminal.md"
+    },
+    {
+        "title": "A New Terminal", 
+        "lesson": "./terminal/a-new-terminal.md"
+    },
+    {
+        "title": "History of Version Control", 
+        "lesson": "./git-intro/vc-history.md"
+    },
+    {
+        "title": "Git Set Up", 
+        "lesson": "./git-intro/git-setup.md"
+    },
+    {
+        "title": "Gitting Started", 
+        "lesson": "./git-intro/gitting-started.md"
+    },
+    {
+        "title": "Gitting Started Labs", 
+        "lesson": "./git-intro/gitting-started-labs.md"
+    },
+    {
+        "title": "GitHub", 
+        "lesson": "./github-intro/intro-to-github.md"
+    },
+    {
+        "title": "GitHub Labs", 
+        "lesson": "./github-intro/github-intro-lab.md"
+    }
+]

@@ -1,0 +1,27 @@
+{
+  "reception": {
+    "room-number": 100,
+    "sq-ft": 50,
+    "price": 75
+  },
+  "examination": {
+    "room-number": 102,
+    "sq-ft": 125,
+    "price": 150
+  },
+  "waiting": {
+    "room-number": 101,
+    "sq-ft": 250,
+    "price": 75
+  },
+  "on-call": {
+    "room-number": 103,
+    "sq-ft": 125,
+    "price": 150
+  },
+  "office": {
+    "room-number": 104,
+    "sq-ft": 150,
+    "price": 100
+  }
+}

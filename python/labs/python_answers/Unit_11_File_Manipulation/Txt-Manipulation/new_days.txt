@@ -1,0 +1,8 @@
+Days of the Week
+Yay! It's Monday
+Yay! It's Tuesday
+Yay! It's Wednesday
+Yay! It's Thursday
+Yay! It's Friday
+Yay! It's Saturday
+Yay! It's Sunday
