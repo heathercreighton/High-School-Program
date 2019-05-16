@@ -1,27 +1,35 @@
 # OrangeMethod High School Program
 
-* [Introduction to Mac and the terminal](./terminal/mac-terminal.md)
-* [A New Terminal](./terminal/a-new-terminal.md)
-* [History of Version Control](./git-intro/vc-history.md)
-* [Git Set Up](./git-intro/git-setup.md)
-* [Gitting Started](./git-intro/gitting-started.md)
-* [Gitting Started Labs](./git-intro/gitting-started-labs.md)
-* [GitHub](./github-intro/intro-to-github.md)
-* [GitHub Labs](./github-intro/github-intro-lab.md)
-* [pycharm-setup](./python/pycharm-setup.md)
-* [math-operators](./python/math-operators.md)
-* [print-function](./python/print-function.md)
-* [exceptions](./python/exceptions.md)
-* [loops](./python/loops.md)
-* [data-structures](./python/data-structures.md)
-* [strings](./python/strings.md)
-* [formatting-and-input](./python/formatting-and-input.md)
-* [base-conversions](./python/base-conversions.md)
-* [comments](./python/comments.md)
-* [classes](./python/classes.md)
-* [functions](./python/functions.md)
-* [file-manipulation](./python/file-manipulation.md)
-* [math-functions](./python/math-functions.md)
-* [conditional-statements](./python/conditional-statements.md)
-* [variables](./python/variables.md)
-* [booleans](./python/booleans.md)
+## Terminal Intro
+
+1.   [Introduction to Mac and the terminal](./terminal/mac-terminal.md)
+1.   [A New Terminal](./terminal/a-new-terminal.md)
+
+## git
+
+1. [History of Version Control](./git-intro/vc-history.md)
+2. [Git Set Up](./git-intro/git-setup.md)
+3. [Gitting Started](./git-intro/gitting-started.md)
+   * [Gitting Started Labs](./git-intro/gitting-started-labs.md)
+
+## GitHub
+
+1. [GitHub](./github-intro/intro-to-github.md)
+2. [GitHub Labs](./github-intro/github-intro-lab.md)
+
+## Python
+
+1. [Pycharm Setup](./python/lessons/pycharm-setup.md)
+2. [Math Operators](./python/lessons/math-operators.md)
+3. [Variables](./python/lessons/variables.md)
+4. [Math Functions](./python/lessons/math-functions.md)
+5. [Print Function](./python/lessons/print-function.md)
+6. [Comments](./python/lessons/comments.md)
+7. [Booleans](./python/lessons/booleans.md)
+8. [Strings](./python/lessons/strings.md)
+9. [Functions](./python/lessons/functions.md)
+10. [Data Structures](./python/lessons/data-structures.md)
+11. [Loops](./python/lessons/loops.md)
+12. [Formatting and Input](./python/lessons/formatting-and-input.md)
+13. [Base Conversions](./python/lessons/base-conversions.md)
+14. [Conditional Statements](./python/lessons/conditional-statements.md)
