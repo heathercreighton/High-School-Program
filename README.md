@@ -1,6 +1,27 @@
-[
-	{
-		"title": "README",
-		"lesson": "README.md"
-	},
-	
+# OrangeMethod High School Program
+
+* [Introduction to Mac and the terminal](./terminal/mac-terminal.md")
+* [A New Terminal](./terminal/a-new-terminal.md")
+* [History of Version Control](./git-intro/vc-history.md")
+* [Git Set Up](./git-intro/git-setup.md")
+* [Gitting Started](./git-intro/gitting-started.md")
+* [Gitting Started Labs](./git-intro/gitting-started-labs.md")
+* [GitHub](./github-intro/intro-to-github.md")
+* [GitHub Labs](./github-intro/github-intro-lab.md")
+* [pycharm-setup](./python/pycharm-setup.md)
+* [math-operators](./python/math-operators.md)
+* [print-function](./python/print-function.md)
+* [exceptions](./python/exceptions.md)
+* [loops](./python/loops.md)
+* [data-structures](./python/data-structures.md)
+* [strings](./python/strings.md)
+* [formatting-and-input](./python/formatting-and-input.md)
+* [base-conversions](./python/base-conversions.md)
+* [comments](./python/comments.md)
+* [classes](./python/classes.md)
+* [functions](./python/functions.md)
+* [file-manipulation](./python/file-manipulation.md)
+* [math-functions](./python/math-functions.md)
+* [conditional-statements](./python/conditional-statements.md)
+* [variables](./python/variables.md)
+* [booleans](./python/booleans.md")
