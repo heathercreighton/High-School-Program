@@ -10,9 +10,9 @@
 * Create, copy, move, and delete directories.
 * Manage a file or directory’s ownership and permissions
 
-# Intro to a Mac
+## Intro to a Mac
 
-## Mac keyboard shortcuts
+### Mac keyboard shortcuts
 
 | Name | Shortcut |
 | --- | --- |
@@ -24,7 +24,7 @@
 | Open Spotlight Search | `command` \+ `spacebar` |
 | Force Quit | `command` \+ `option` \+ `escape` |
 
-## Mac Commands
+### Mac Commands
 
 When you need to open a program on a Mac, simply type `command` \+ `spacebar` and the Spotlight Search bar will appear. Type the name of the program and press `return` to open it.
 
@@ -38,9 +38,9 @@ To right click on the Mac’s mouse, let’s first open the System Preferences t
 
 You can enable the two-finger right-click in these settings.
 
-![Double Click](../images/double-click.png)
+![Double Click](./images/double-click.png)
     
-## What is The File System?
+## File System
 
 Your computer has a file system where all of your `files` are stored. These files are organized into `directories` (sometimes called `subdirectories` or `folders`).
 
@@ -48,7 +48,7 @@ This lesson is an introduction into the concepts and commands needed to manage t
 
 In this lesson we are focusing on UNIX based file systems which include the file systems you will encounter on MacOS, Linux, and other flavors of the UNIX operating system. While the Windows file system differs in some ways (particularly the file system management commands and the file and directory permissions), many of the concepts are similar.
 
-## Types of Files
+### Types of Files
 
 * text files
     * plain text
@@ -61,7 +61,7 @@ In this lesson we are focusing on UNIX based file systems which include the file
     * audio: mp3 
     * binary programs
 
-## Directories
+### Directories
 
 The file system is organized into a set of directories. Each of these directories can contain files or (sub) directories, forming a tree structure of parent, child, and grandchild directories, etc.
 
@@ -101,17 +101,17 @@ Example Directory Structure
         └── Pictures
 ```
 
-## Paths
+### Paths
 
 A path is a description of the location of a file or directory on our computer.
 
 Our terminal (shell) is always working out of a single path at a time. Commands that are run will take action in the current path (directory) unless we tell them to do otherwise.
 
-### Relative vs Absolute Paths
+#### Relative vs Absolute Paths
 
 All paths point to a single file or directory, but we can write paths to be either **relative** or **absolute**.
 
-#### Absolute Paths
+##### Absolute Paths
 
 An absolute path will always tell us exactly where the file or directory is. An example in the real world would be a mailing address:
 
@@ -143,7 +143,7 @@ Some absolute paths instead start with a `~`. This is a shortcut to the absolute
 
 (assuming that you are `joehacker`).
 
-#### Relative Paths
+##### Relative Paths
 
 Relative paths are interpreted starting from the directory we’re in (aka the current working directory). They are similar to giving directions from a starting point, for example:
 
@@ -176,7 +176,7 @@ We can use multiple `..` to go up multiple levels:
 
 `../../Documents/top\_secret/lol\_cats/favorites/so\_many\_kittenz.jpg` would go up two levels, from `~/orange-method/fswd` to `~` (my home directory), and then down into my favorite lolcat picture.
 
-## Navigating The File System
+#### Navigating The File System
 
 From the terminal you will need to do the following:
 
@@ -187,7 +187,7 @@ From the terminal you will need to do the following:
 * copy a directory or file
 * delete a directory or file
     
-### Common Unix Commands
+## Common Unix Commands
 
 | Command | Description | Examples |
 | --- | --- | --- |
@@ -206,7 +206,7 @@ From the terminal you will need to do the following:
 You can use `Tab Completion` as you type to get auto-completion of your file and directory names. For instance if you are in a directory that contains a subdirectory named `Pictures`, you can type `cd Pic` and then press kbd:\$&tab\$& and the shell will complete your typing for you (unless there are 2 or more directories that begin with `Pic`, then you need to type enough characters to remove any ambiguity). Use `Tab Completion` a **lot** to work faster!
 
 
-### Navigating to Your HOME Directory
+## Navigating to Your HOME Directory
 
 Your `HOME` directory is associated with your login account. You can go to your `HOME` directory using any of the following commands:
 
