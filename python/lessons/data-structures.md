@@ -604,7 +604,7 @@ Set has several **methods** that are very helpful. We are going to briefly cover
 
 The method `set1.intersection(set2)` will find the similar elements in both set1 and set2.
 
-![set intersection](img/set-intersection.jpg)
+![set intersection](../images/set-intersection.jpg)
 
 Example of finding the similar favorite programming languages of Jo and Al
 ```python
@@ -618,7 +618,7 @@ Output: `{'python'}`
 
 The method `set1.difference(set2)` will find the elements in set1 and set2 that are different.
 
-![set difference](img/set-difference.jpg)
+![set difference]( ../images/set-difference.jpg)
 
 Example of finding the different favorite programming languages of Jo and Al
 ```python
@@ -632,7 +632,7 @@ Output: `{'javascript', 'c++'}`
 
 The method `set1.union(set2)` will show the combination of elements in set1 and set2.
 
-![set union](img/set-union.jpg)
+![set union]( ../images/set-union.jpg)
 
 Example of showing the combination of favorite programming languages of two people
 ```python

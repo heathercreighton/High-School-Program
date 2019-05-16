@@ -31,5 +31,5 @@
 10. [Data Structures](./python/lessons/data-structures.md)
 11. [Loops](./python/lessons/loops.md)
 12. [Formatting and Input](./python/lessons/formatting-and-input.md)
-13. [Base Conversions](./python/lessons/base-conversions.md)
-14. [Conditional Statements](./python/lessons/conditional-statements.md)
+13. [Conditional Statements](./python/lessons/conditional-statements.md)
+14. [Classes](./python/lessons/classes.md)
