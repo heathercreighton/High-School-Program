@@ -9,7 +9,7 @@ In this section we will discuss what version control is and what specific proble
 * How it makes life better  
 * How it could make life worse
     
-## Activity: Version control is important
+## Activity: Why Version control?
 
 Imagine you are part of a team that is tasked to build a bridge.
 The team is divided into two groups; North Group and South Group.
@@ -47,9 +47,9 @@ This gives engineers the ability to collaborate without fear of corrupting the c
 
 Version control also gives visibility into who has been working on a specific feature or bug fix which allows the entire team to easily communicate and understand the changes that are being proposed.
 
-## Types of Version Control
+### Types of Version Control
 
-### Centralized
+#### Centralized
 
 Master copy on a server: Client-Server concept where Master Repository is only on a central server.
 
@@ -61,7 +61,7 @@ Master copy on a server: Client-Server concept where Master Repository is only o
 * ClearCase
 * AccuRev
     
-### Distributed
+#### Distributed
 
 User can clone the repository master to his or her local machine. Several copies of Master Repository in existence.
 
@@ -84,12 +84,3 @@ User can clone the repository master to his or her local machine. Several copies
     * A short 2-3 minute presentation of your graphic and findings
 
 
-## Time to git it!
-
-Git is the current industry standard for version control. It was originally developed in 2005 by the creator of the Linux operating system, Linus Torvalds.
-
-The Home Depot uses Git because of advantages offered over alternative VCS offerings. Some of the advantages include:
-
-* Superior performance, flexibility and security   
-* The broad adoption of Git across the industry makes it an attractive option, especially when it comes to using and contributing to open-source software. Many third-party software tools integrate really well with Git.
-* Git itself is an open source project. This means that we can use the Git software without paying a fee and we can lean on the support and contributions of the developer community, as well as contribute back to the source code. This level of scrutiny serves to raise the quality of the software for everyone.

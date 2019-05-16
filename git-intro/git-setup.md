@@ -1,5 +1,15 @@
 # Git Setup
 
+## Time to git it!
+
+Git is the current industry standard for version control. It was originally developed in 2005 by the creator of the Linux operating system, Linus Torvalds.
+
+The Home Depot uses Git because of advantages offered over alternative VCS offerings. Some of the advantages include:
+
+* Superior performance, flexibility and security   
+* The broad adoption of Git across the industry makes it an attractive option, especially when it comes to using and contributing to open-source software. Many third-party software tools integrate really well with Git.
+* Git itself is an open source project. This means that we can use the Git software without paying a fee and we can lean on the support and contributions of the developer community, as well as contribute back to the source code. This level of scrutiny serves to raise the quality of the software for everyone.
+
 ## Create a GitHub account
 
 Go to https://github.com.

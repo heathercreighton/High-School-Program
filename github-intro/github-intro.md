@@ -13,7 +13,7 @@
     
 ## Collaboration
 
-![octocat](../images/octocat.png)
+![octocat](./images/octocat.png)
 
 Until now, we have focused primarily on using git locally. Now it's time to talk about collaborating with others to effectively deliver quality software.
 
@@ -36,7 +36,7 @@ When using GitHub, we are simply saving our code on a server. You can really thi
 GitHub will host our code, giving everyone a central access point. Once the code is pushed to GitHub, all collaborators will have immediate access to the changes. Once they are ready, they can pull the code down to their local machines.
 
 GitHub acts as the source of truth for each project and each collaborator's computer acts as a satellite that is linked to the source.
- |![gh origin remote](../images/gh-origin-remote.png)
+ |![gh origin remote](./images/gh-origin-remote.png)
 
 Integrating this into your workflow is easily accomplished with a handful of new git commands…​
 
@@ -45,7 +45,7 @@ Integrating this into your workflow is easily accomplished with a handful of new
 - `git pull` \- Pull (and merge) changes made by other engineers
 - `git fetch` \- Pull (without merging) changes made by other engineers
 
-![github process](../images/github-process.png)
+![github process](./images/github-process.png)
 
 ## Navigating the Interface
 

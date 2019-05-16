@@ -145,7 +145,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 Now, open VS Code by typing `code .` and you'll see exactly where your merge conflict is happening:
 
-![merge conflict exercise](../images/merge-conflict-exercise.png)
+![merge conflict exercise](./images/merge-conflict-exercise.png)
 
 Now that we have our merge conflict, we can edit the code within VS Code to say exactly what it's supposed to. In the real world, this may be a matter of asking your fellow developer what they intended to do with that part of the code, and explaining your changes to the code as well, so that the final changes are correct for everybody.
 

@@ -4,7 +4,7 @@
 
 There are two different ways to get started in git. Depending on whether you
 will be working on something you create from scratch or if you will be starting with
-someone else’s work.
+someone else's work.
 
 * `git init` \- will initialize a new, empty repository.
      
@@ -12,7 +12,7 @@ someone else’s work.
         
 * `git clone` \- will copy a repository (provided you have permission) to your directory.
     
-![Local vs Remote](../images/localvsremote.png)
+![Local vs Remote](./images/localvsremote.png)
 
 For this class we will begin with `git init` which will allow us to first become good with our local work, and jump into the complexities later.
 
@@ -36,7 +36,7 @@ To get help on `git add` type:
 git help add
 ```
 
-* In groups, you’ll be assigned to a few of the following commands:
+* In groups, you'll be assigned to a few of the following commands:
   * git init
   * git add
   * git commit
@@ -59,8 +59,6 @@ git help add
 | --- | --- |
 | `git add file-name` | Will stage **only** the changes of the file you specify. |
 | `git add .` | Will stage **all** changes. |
-
-Learn all of the features of `git add` in [All the adds lab](gitting-started-labs.md#all_the_adds) 
 
 ## Making a Snapshot
 
@@ -87,9 +85,9 @@ Remember to go off of bandsaw
 
 The branches we create using the commands `git branch` and `git checkout -b` are actually pointers to a specific SHA1.
 
-In the image below, the Little Feature contains only the data from the master branches first commit (the first blue dot) and the Big Feature branch contains more information as it was created further down in the history of the project. Both branches point to their own SHA1 which contains this specific information. We’ll drill down into what SHA1 actually is later; for now we’ll stick to talking about branches.
+In the image below, the Little Feature contains only the data from the master branches first commit (the first blue dot) and the Big Feature branch contains more information as it was created further down in the history of the project. Both branches point to their own SHA1 which contains this specific information. We'll drill down into what SHA1 actually is later; for now we'll stick to talking about branches.
 
-![Branching image](../images/branch.png)
+![Branching image](./images/branch.png)
 
 ### Creating a new branch
 
@@ -101,9 +99,7 @@ When we run the command `git branch`, git **only** creates a branch of the name 
 
 `git checkout -b <branch-name>`
     
-When you run the command `git checkout -b`, the `-b` stands for **branch**. We’re actually creating a new branch **and** checking it out, or switching to it.
-
-![Branching image](gitting-started-labs.md#practicing_with_branches)
+When you run the command `git checkout -b`, the `-b` stands for **branch**. We're actually creating a new branch **and** checking it out, or switching to it.
 
 ### Merging
 
@@ -111,20 +107,16 @@ The reason to use the command `git merge` is simply to update one branch with ne
 
 We only use the command `git merge` locally. This means that we never merge **into** the remote origin/master branch repository on GitHub.
 
-To interpret the following illustration, imagine that we’re on our local machines making sure our local master branch is updated (merged) with the data we have in our local feature branch.
+To interpret the following illustration, imagine that we're on our local machines making sure our local master branch is updated (merged) with the data we have in our local feature branch.
 
-![Merging image](../images/merging.svg)
+![Merging image](./images/merging.svg)
 
 But when do we merge changes **from** the remote master branch into our local branch?
 
-Not only do we have to ensure our **local master** branch has the most updated version of our **local feature** branch, we also have to make sure our **local feature** branch has all of the most recent changes made to the **remote origin master repository** (on GitHub, for example) so that when we make our **pull request** there won’t be any merge conflicts.
+Not only do we have to ensure our **local master** branch has the most updated version of our **local feature** branch, we also have to make sure our **local feature** branch has all of the most recent changes made to the **remote origin master repository** (on GitHub, for example) so that when we make our **pull request** there won't be any merge conflicts.
 
 `git merge`
 
-When we’re working on our local feature branch and run `git merge origin master` we’re merging in any new changes made on the remote repository since we last updated. This has to happen periodically to avoid merge conflicts in the future. The only downside to this practice is that it creates default **merge commit messages**. These messages aren’t helpful in our project’s history and we’ll get to how we clean them up a little later.
+When we're working on our local feature branch and run `git merge origin master` we're merging in any new changes made on the remote repository since we last updated. This has to happen periodically to avoid merge conflicts in the future. The only downside to this practice is that it creates default **merge commit messages**. These messages aren't helpful in our project's history and we'll get to how we clean them up a little later.
 
 Even when merging diligently, merge conflicts still happen occasionally, so we will be able to practice how to resolve them in an exercise.
-
-### Activity: git merge conflicts
-
-[Resolving Merge Conflicts Lab](gitting-started-labs.md#resolving_merge_conflicts)
