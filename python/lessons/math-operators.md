@@ -5,6 +5,7 @@ type: "lesson"
 Arithmetic operators are used to perform mathematical operations like addition, subtraction, multiplication and division.
 
 Table 1. Arithmetic Operators
+
 | Name | Operator |
 | --- | --- |
 | Addition | `+` |
@@ -63,28 +64,3 @@ Using the same operators and numbers as the previous example, what does the foll
 ```python
 (((10 + 5) / 3) - 4) * 12
 ```
-
-Other operators
-
-There are other operators in Python, and we'll list them briefly here and go into them in more detail later on:
-
-
-**Relational Operators** 
-
-Relational operators compare values. It either returns `True` or `False` according to the condition. 
-
-**Logical operators** 
-
-Logical operators perform logical `and`, logical `or` and logical `not` operations. 
-
-**Assignment operators**
-
-Assignment operators are used to assign values to the variables.
-
-**Special operators** 
-
-There are some special types of operators like **identity operators**`is` and `is not`. The identity operators are used to check if two values are located on the same part of the memory. Two variables that are equal does not imply that they are identical. 
-
-**Membership operators** 
-
-`in` and `not in` are the membership operators; used to test whether a value or variable is in a sequence.
