@@ -3,6 +3,8 @@ title: "boolean-labs"
 type: "lab"
 ---
 
+# Boolean Labs
+
 Once you've come to a decision, type out the expression in `Python Console` and check to see if you were correct.
 ```python
 True and True

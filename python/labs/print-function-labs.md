@@ -2,6 +2,11 @@
 title: "print-function-labs"
 type: "lab"
 ---
+
+# Print Function Labs
+
+## One line at a time
+
 Using four separate print statements, produce the following output on one line.
 ```
 Elizabeth, Emily, Bob, Antonio

@@ -2,6 +2,9 @@
 title: "math-variables-labs"
 type: "lab"
 ---
+
+# Math Variable Labs
+
 **Can a swallow carry a coconut?**
 
 This Monty Python-inspired math problem

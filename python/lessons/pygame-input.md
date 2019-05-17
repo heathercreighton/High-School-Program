@@ -1,3 +1,8 @@
+---
+title: "pygame input"
+type: "lesson"
+---
+
 # Pygame Input
 
 ## Objects moving on their own

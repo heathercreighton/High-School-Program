@@ -1,3 +1,8 @@
+---
+title: "Pygame Intro"
+type: "lesson"
+---
+
 # Intro to pygame
 
 ## What is pygame?

@@ -2,6 +2,9 @@
 title: "strings-labs"
 type: "lab"
 ---
+
+# Strings Labs
+
 It is very common to check if a character is a letter or not. In Python, have a user enter a character and check to see if it is a letter or not (Either upper or lowercase).
 
 Example Output 1:

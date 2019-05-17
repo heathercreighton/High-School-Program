@@ -2,6 +2,9 @@
 title: "data-structures-labs"
 type: "lab"
 ---
+
+# Data Structure Labs
+
 Create a function called `shake_ball` that has no parameters. Inside the function, ask the user to ask a question about their future. Have your program **return** a **random** response of either: `Yes definitely`, `As I see it, yes`, `Ask again later`, `Cannot predict now`, `Don't count on it`, `Very doubtful`, and 4 other responses.
 
 Call (invoke) the function like shown below:

@@ -2,6 +2,9 @@
 title: "classes-labs"
 type: "lab"
 ---
+
+# Classes Labs
+
 Create a new file called `string_manipulation.py`.
 
 Inside your new file, create a class called `StringManipulation`. Inside this class create the following methods.

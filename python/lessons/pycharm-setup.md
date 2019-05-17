@@ -3,6 +3,8 @@ title: "pycharm-setup"
 type: "lesson"
 ---
 
+# PyCharm Setup
+
 ## Getting Started
 
 We installed Python3 onto every iMac for this class. For your personal computer, you'll want to visit the [Python website](https://www.python.org/downloads/) to download the newest version of Python.

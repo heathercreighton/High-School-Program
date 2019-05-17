@@ -2,6 +2,9 @@
 title: "math-operators"
 type: "lesson"
 ---
+
+# Math Operators
+
 Arithmetic operators are used to perform mathematical operations like addition, subtraction, multiplication and division.
 
 Table 1. Arithmetic Operators

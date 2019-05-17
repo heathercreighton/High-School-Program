@@ -2,6 +2,9 @@
 title: "strings"
 type: "lesson"
 ---
+
+# Strings
+
 Down to basics: You can create a **string literal** by wrapping characters within single `'`, double `"`, or triple `"""` quotes. We'll be creating some string literals before trying to manipulate them.
 
 Open up your Python Console. One way to get there is to Click on `Tools` \> `Python Console`.

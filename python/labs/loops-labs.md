@@ -2,6 +2,11 @@
 title: "loops-labs"
 type: "lab"
 ---
+
+# Loop Lab
+
+## Create String
+
 ```python
 letters = ['O', 'r', 'a', 'n', 'g', 'e', ' ', 'M', 'e', 't', 'h', 'o', 'd']
 ```

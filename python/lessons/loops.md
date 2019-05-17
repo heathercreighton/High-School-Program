@@ -2,6 +2,12 @@
 title: "loops"
 type: "lesson"
 ---
+
+# Loops
+
+From what we have learned so far, to print all of the values from a list called numbers we would have to do something like the following:
+
+```
 numbers = [10, 5, 2, 7]
 print(numbers[0])
 print(numbers[1])

@@ -2,6 +2,12 @@
 title: "conditional-statements-labs"
 type: "lab"
 ---
+
+# Conditional Statement Lab
+
+In pairs, write another `elif` section of the story with your own storyline. Run it in PyCharm and make sure there are no errors.
+
+```python
 print("You enter a dark room with two doors.  Do you go through door #1 or door #2?")
 
 door = input("> ")
@@ -36,7 +42,3 @@ elif door == "2":
 else:
     print("You stumble around and fall on a knife and die.  Good job!")
 ```
-
-**Conditional Statements Exercise**
-
-In pairs, write another `elif` section of the story with your own storyline. Run it in PyCharm and make sure there are no errors.

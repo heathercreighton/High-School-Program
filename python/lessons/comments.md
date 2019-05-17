@@ -2,6 +2,9 @@
 title: "comments"
 type: "lesson"
 ---
+
+# Comments
+
 ## Single-line Comments
 
 In order to make comments that describe our programs but are not run as code, we can use the `#` symbol before any line we'd like the program to ignore.

@@ -2,6 +2,9 @@
 title: "formatting-and-input"
 type: "lesson"
 ---
+
+# Formatting and Input
+
 We've introduced one built-in method for Python: `print()`. Another function important to strings is the `str()` method. We'll use the `str()` method when we need to convert a number to a string.
 
 We'd like to print a string that says "I am 24 years old". Instead of just declaring a variable set to an integer and concatenating that variable **with** strings in the `print()` function, we have to do it differently, as you can see from the error you get when you try this.

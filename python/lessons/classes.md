@@ -2,6 +2,9 @@
 title: "classes"
 type: "lesson"
 ---
+
+# Classes
+
 One of the most important concepts in object-oriented programming is the distinction between classes and objects, which are defined as follows:
 
 - **Class** \- A blueprint created by a programmer for an object. This defines a set of attributes that will characterize any object that is instantiated from this class.

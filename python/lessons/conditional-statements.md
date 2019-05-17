@@ -2,6 +2,9 @@
 title: "conditional-statements"
 type: "lesson"
 ---
+
+# Conditional Statements
+
 - If I have enough money in the bank, I will go to a fancy dinner tonight. If not, I will eat at home.
     
 - If I do the correct secret hand shake at the door, I can get in the secret club. If not, I will go home.

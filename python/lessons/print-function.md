@@ -2,6 +2,9 @@
 title: "print-function"
 type: "lesson"
 ---
+
+# Print Function
+
 Create a new Python file in your project called `print_practice`. Type the following on the first line of this file:
 ```python
 print("Hello world!")

@@ -2,6 +2,10 @@
 title: "unit-tests-labs"
 type: "lab"
 ---
+
+# Unit Tests Labs
+
+```python
 def age_calculator(current_year, birth_year):
   # Returns the age of a person
   age = current_year - birth_year

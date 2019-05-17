@@ -3,6 +3,8 @@ title: "booleans"
 type: "lesson"
 ---
 
+# Booleans
+
 - It is raining - True
     
 - 5 is greater than 8 - False

@@ -2,6 +2,9 @@
 title: "functions"
 type: "lesson"
 ---
+
+# Functions
+
 Functions are important because they allow us to divide code into useful blocks. We can create order and organization, make it more readable, and reuse it to prevent repetitiveness.
 
 * * *
