@@ -14,13 +14,13 @@ Python has a `math` library that comes with several functions that allow for add
 print(90 - 120) 
 print(abs(90 - 120))
 </code>
+<br>
 
 Output:
-
-`-30`
-
-`30`
-
+<code>
+-30
+30
+</code>
 
 </td> </tr>
 <tr><td> <code>pow()</code> </td> <td>Raises a number to a certain power</td> <td>
@@ -28,9 +28,11 @@ Output:
 <code>
 print(pow(2,3))
 </code>
+<br>
 Output:
-
-`8`
+<code>
+8
+</code>
 
 </td> </tr>
 <tr><td> <code>round()</code></td> <td>Rounds a number to a certain decimal point </td> <td>
@@ -38,9 +40,11 @@ Output:
 <code>
 print(round(17.34989436516001,4))
 </code>
+<br>
 Output:
-
-`17.3499`
+<code>
+17.3499
+</code>
 
 </td> </tr>
 </table>
@@ -58,8 +62,11 @@ Using the **random** module, we can generate psuedo-random numbers. To use the *
 <code>
 print(random.random())
 </code>
+<br>
 Possible Output:
-`0.173499`
+<code>
+0.173499
+</code>
 
 </td></tr>
 <tr><td> <code>randint</code></td><td>Generates a random whole number between two numbers (inclusive)
@@ -70,8 +77,11 @@ Choosing a random whole number between 1 and 100
 <code>
 print(random.randint(1, 100))
 </code>
+<br>
 Possible Output:
-`95`
+<code>
+95
+</code>
 </td></tr>
 <tr><td> <code>uniform</code></td><td>Generates a random floating point number between two numbers (inclusive)</td><td>
 
@@ -80,8 +90,11 @@ Choosing a random floating point number between 10 and 50
 <code>
 print(random.uniform(10, 50))
 </code>
+<br>
 Possible Output:
-`24.313911327373457`
+<code>
+24.313911327373457
+</code>
 
 </td></tr>
 <tr><td><code> choice </code></td><td> Generates a random value from an iterable</td><td>
@@ -92,8 +105,10 @@ Choosing a random value from a list of numbers
 <code>
 print(random.choice([90, 12, 34]))
 </code>
+<br>
 Possible Output:
-`12`
-
+<code>
+12
+</code>
 </td> </tr>
 </table>
