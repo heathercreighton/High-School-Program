@@ -89,100 +89,148 @@ This is done with the following format:
 
 `(red, green, blue)`
 
+<img src="../images/pygame/rgb.png" width=70%>
+
 * `red`/`green`/`blue` are all values between 0 and 255
 * (0, 0, 0) represents black
 * (255,255,255) represents white
 
 ## Input Exercise #1 - Text Color
 
-Open and execute `text_color.py`
+Open and execute [text_color](../programs/pygame-input/text_color.py)
 
 * What do you see?
 * How many times did you push?
 
-Input Exercise #1 - Text Color
+The following line is where the text is placed on the window:
 
+```python
+text = font.render(TEXT_OUTPUT, true, (0, 0, BLUE_COLOR))
+```
 
-Creates a variable that points to the pin of the button input 
-Input Exercise #1 - Text Color
+The second argument is for **antialias**: a boolean holding if true the characters will have smooth edges.
+The color value is `(0,0,[current_blue color])`
 
+---
 
-Points GPIO to the pin where the button is located
-States this is an input, not an output like before 
-Input Exercise #1 - Text Color
-This is where the code is placed on the window
-The antialias argument is a boolean: if true the characters will have smooth edges.
-The color value is (0,0,[current_blue color])
-Input Exercise #1 - Text Color
-Counterclockwise rotation, turning one degree every iteration
-Input Exercise #1 - Text Color
-Counterclockwise rotation, turning one degree every iteration
-Input Exercise #1 - Text Color
+The following lines create the counterclockwise rotation, turning one degree every:
+
+```python
+text = pygame.transform.rotate(text, text_rotate_degrees)
+text_rotate_degrees += 1
+```
+
+---
+
 Blit: Copying the pixels belonging to said object onto the destination object. 
-So to render the background object, you blit it onto the screen
-Input Exercise #2 - Text Color
-Open and execute “multi_text_color.py”
+
+```python
+screen.blit(text, [100, 50])
+```
+
+So to render the background object, you blit it onto the screen.
+
+## Input Exercise #2 - Text Color
+
+Open and execute [multi_text_color](../programs/pygame-input/multi_text_color.py)
+
 Let's add multiple buttons! You might need to add code in several different spots! 
+
 This will change, in addition to the blue value, the red and yellow values of the font!
+
 Let's fix it!
-Python Classes - Brief Introduction 
+
+
+## Python Classes - Brief Review
+
 A class is a way to take a grouping of functions and data and place them inside a container so you can access them with the . (dot) operator.
 
+```python
+class Person:
+    def __init__(self):        
+		self.first_name = "Sally"
+    	self.age = 10
+		
+	def have_birthday(self):
+		print("I was: " + self.age)
+		self.age = self.age + 1    
+		print ("I am now: " + self.age)
+```
 
-Python Classes - Brief Introduction 
-Default values: 
-When a Person is first created, their default name will be Sally and default age will be 10
+
+### Default values
+
+When a Person is first created, their default name will be Sally and default age will be 10.
+
+`self` is a "placeholder" for an object's name.
+
+```python
+def __init__(self):        
+	self.first_name = "Sally"
+	self.age = 10
+```
 
 
-Python Classes - Brief Introduction 
-Self is a placeholder for an object's name
-(We will explain objects on the next slide)
 
 
-Python Classes - Brief Introduction 
-We have now created a student object. This object's name is student.
+### Objects
+
+We have now created a student object. This object's name is `student`.
 This object now has all of the variables and functions that the Person class has.
 
+```python
+student = Person()
+print(student.first_name)
+student.have_birthday()
+```
 
-Python Classes - Brief Introduction 
-This will output the student's name, which is currently “Sally”
+`print(student.first_name)` will output the student's name, which is currently "Sally"
 
-
-Python Classes - Brief Introduction 
-This will output:
+`student.have_birthday()` will output:
+```
 I was 10
 I am now 11
+```
+
+## Input Exercise #3
+
+Open the file: [sprite_collect_blocks](../programs/pygame-input/sprite_collect_blocks.py)
+
+The constructor sets the default variable values of every block.
+The user must specify the color, width and height.
+
+```python
+def __init__(self, color, width, height):
+	""" Constructor. Pass in the color of the block,
+	and its x and y position. """
+
+	# Call the parent class (Sprite) constructor
+	pygame.sprite.Sprite.__init__(self)
+
+	# Create an image of the block, and fill it with a color.
+	# This could also be an image loaded from the disk.
+	self.image = pygame.Surface([width, height])
+	self.image.fill(color)
+
+	# Fetch the rectangle object that has the dimensions of the image.
+	# Update the position of this object by setting the values of rect.x and rect.y
+	self.rect = self.image.get_rect()
+```
+
+---
+
+The constructor:
+
+* Sets every `Block` object to be a subclass of the Sprite class, giving it more functions and variables.
+* Creates the block image, giving it the specified color
+* Sets the blocks x and y values
+* Creates 50 randomly located Block objects on the window. Adds new Block objects to the Sprite and Block list
+* Creates the player Block object. Adds the player to the Block list
+* Set up your circuits to move the block around with the push of a button
 
 
-Input Exercise #3
-Open the file: sprite_collect_blocks.py
-Input Exercise #3
-Sets the default variable values of every block.
-The user must  specify the color, width and height
+# Sources
 
-Input Exercise #3
-Sets every Block object to be a subclass of the Sprite class, giving it more functions and variables
-
-Input Exercise #3
-Create the block image, giving it the specified color
-
-Input Exercise #3
-Sets the blocks x and y values
-
-Input Exercise #3
-Creates 50 randomly located Block objects on the window
-Adds new Block objects to the Sprite and Block list
-
-Input Exercise #3
-Creates the player Block object. 
-Adds the player to the Block list
-
-Input Exercise #3
-Set up your circuits to move the block around with the push of a button
-Sources
-Pygame official documentation: http://www.pygame.org/wiki/
-TutorialsPoint definitions: www.tutorialspoint.com/python/
-Pygame tutorial: http://www.balloonbuilding.com/index.php?chapter=example_code
-GPU vs CPU: http://www.nvidia.com/object/what-is-gpu-computing.html
-
-
+* Pygame official documentation: http://www.pygame.org/wiki/
+* TutorialsPoint definitions: www.tutorialspoint.com/python/
+* Pygame tutorial: http://www.balloonbuilding.com/index.php?chapter=example_code

@@ -25,19 +25,6 @@ y_speed = 0
 x_coord = 10
 y_coord = 10
 
-BUTTON_ONE = 23
-BUTTON_TWO = 25
-BUTTON_THREE = 23
-BUTTON_FOUR = 25
-'''
-# Button rotate
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM) 
-GPIO.setup(BUTTON_ONE, GPIO.IN)
-GPIO.setup(BUTTON_TWO, GPIO.IN)
-GPIO.setup(BUTTON_THREE, GPIO.IN)
-GPIO.setup(BUTTON_FOUR, GPIO.IN)
- '''
 class Block(pygame.sprite.Sprite):
     """
     This class represents the ball.

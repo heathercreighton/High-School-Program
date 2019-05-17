@@ -19,6 +19,8 @@
 
 ## Python
 
+### Introduction
+
 1. [Pycharm Setup](./python/lessons/pycharm-setup.md)
 2. [Math Operators](./python/lessons/math-operators.md)
 3. [Variables](./python/lessons/variables.md)
@@ -33,3 +35,8 @@
 12. [Formatting and Input](./python/lessons/formatting-and-input.md)
 13. [Conditional Statements](./python/lessons/conditional-statements.md)
 14. [Classes](./python/lessons/classes.md)
+
+### PyGame
+
+1. [Pygame Intro](./python/lessons/pygame-intro.md)
+2. [Pygame Input](./python/lessons/pygame-input.md)
