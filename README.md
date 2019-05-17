@@ -1,7 +1,7 @@
 # OrangeMethod High School Program
 
-Curriculum can be found at [https://elizabeth-phillips.github.io/HighSchoolProgram/](https://elizabeth-phillips.github.io/HighSchoolProgram/)
-
+Curriculum can be found at [https://elizabeth-phillips.github.io/HighSchoolProgram/](https://elizabeth-phillips.github.io/HighSchoolProgram/index.html)
+<!-- 
 ## Terminal Intro
 
 1.   [Introduction to Mac and the terminal](./terminal/mac-terminal.md)
@@ -50,4 +50,4 @@ Curriculum can be found at [https://elizabeth-phillips.github.io/HighSchoolProgr
 ### PyGame
 
 1. [Pygame Intro](./python/lessons/pygame-intro.md)
-2. [Pygame Input](./python/lessons/pygame-input.md)
+2. [Pygame Input](./python/lessons/pygame-input.md) -->
