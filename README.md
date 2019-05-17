@@ -1,5 +1,7 @@
 # OrangeMethod High School Program
 
+Curriculum can be found at [https://elizabeth-phillips.github.io/HighSchoolProgram/](https://elizabeth-phillips.github.io/HighSchoolProgram/)
+
 ## Terminal Intro
 
 1.   [Introduction to Mac and the terminal](./terminal/mac-terminal.md)
