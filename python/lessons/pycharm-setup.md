@@ -62,7 +62,7 @@ For this section, make sure you're on the **bandsaw** wifi network.
     
     - Go to **Preferences**
         
-    - Select **Version Control | GitHub**
+    - Select **`Version Control | GitHub`**
         
     - Select **Password** authentication
         
@@ -124,27 +124,13 @@ For this section, make sure you're on the **bandsaw** wifi network.
     
 - Type the following into the text box
     
-
+```
+"""
 title: ${NAME}
 author: ${USER}
 date: ${DATE} ${TIME}
 """
-Create a config file to store API keys
-
-So that we're not sharing our API keys with the world of GitHub, follow these instructions to store your API keys in a config file in PyCharm.
-
-- Create a `config.py` file in your root PyCharm project folder
-    
-- Put `api_key_variable = "PASTE YOUR API KEY HERE"` inside `config.py`
-    
-- Create a `.gitignore` file in your root PyCharm project folder
-    
-- Put the text: `config.py` inside your `.gitignore` file. GitHub will ignore the `config.py` file and your API keys will stay hidden.
-    
-- `import config` into any python file you need to use your API key in and then set a variable referencing config, such as this: `api_key = config.api_key_variable`
-    
-- Simply use your `api_key` variable within that file where your program calls for your API key.
-    
+```
 
 ## Adding a GitHub repository to PyCharm
 
