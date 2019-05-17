@@ -98,9 +98,7 @@ Possible Output:
 
 </td></tr>
 <tr><td><code> choice </code></td><td> Generates a random value from an iterable</td><td>
-Choosing a random value from a list of numbers 
-
-`90, 12, 34`
+Choosing a random value from a list of numbers: 90, 12, 34
 
 <code>
 print(random.choice([90, 12, 34]))

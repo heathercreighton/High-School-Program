@@ -55,8 +55,6 @@ It is possible to create a template that will create a header whenever a new Pyt
 
 `PyCharm` \> `Preferences` \> `Editor` \> `File and Code Templates` \> `Python Script`.
 
-![header template](img/header_template.png)
-
 Type the following in the text box.
 ```python
 """

@@ -225,7 +225,7 @@ pygame.draw.lines(screen, black, False, [[0, 80], [50, 90], [200, 80], [220, 30]
 
 Create a new file, `smiley.py`
 
-<img src="../images/pygame/smiley.png" width=50%>
+<img src="../images/pygame/smiley.png" width=50%/>
 
 Create a smiley face with pygame
 Use shapes.py as an example to get started
@@ -235,7 +235,7 @@ Remember to change the caption name to Smiley Face
 
 Create a new file, `stick_figure.py`
 
-<img src="../images/pygame/stick-figure.png" width=50%>
+<img src="../images/pygame/stick-figure.png" width=50%/>
 
 Create a stick figure of yourself with pygame
 Use shapes.py as an example to get started
@@ -249,22 +249,22 @@ That makes for a pretty boring game!
 
 We can add moving parts with PyGame and refreshing our window.
 
-<img src="../images/pygame/rotating-text.png" width=50%>
+<img src="../images/pygame/rotating-text.png" width=50%/>
 
 
 ### Working with keyboard input
 
 The following code checks for if an "event" of a key press has occurred.
 
-<img src="../images/pygame/key-event.png" width=50%>
+<img src="../images/pygame/key-event.png" width=50%/>
 
 Once the code knows that a key has been pressed, it checks to see which key is pressed.
 
-<img src="../images/pygame/key-check.png" width=50%>
+<img src="../images/pygame/key-check.png" width=50%/>
 
 Once the key has been pressed, the x and y coordinates are changed accordingly
 
-<img src="../images/pygame/key-coord.png" width=50%>
+<img src="../images/pygame/key-coord.png" width=50%/>
 
 ---
 
@@ -272,7 +272,7 @@ Once the key has been pressed, the x and y coordinates are changed accordingly
 
 Compare your `stick_figure.py ` to the code below.
 
-<img src="../images/pygame/keyboard-input.png" width=80%>
+<img src="../images/pygame/keyboard-input.png" width=80%/>
 
 What changes do you see?
 
