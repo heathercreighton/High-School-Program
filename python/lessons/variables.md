@@ -3,6 +3,8 @@ title: "Variables"
 type: "lesson"
 ---
 
+# Variables
+
 **Assume a swallow weighs 60 grams, and one swallow is capable of carrying 1/3 of its own weight.**
 
 A **variable** provides us with a way to label and access information. Variables are used as labels to store values in memory. Memory is allocated the moment you declare the variable.

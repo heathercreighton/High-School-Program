@@ -3,10 +3,17 @@ title: "math-functions"
 type: "lesson"
 ---
 
-```python
+# Math Functions
+
+Python has a `math` library that comes with several functions that allow for additional mathematical operations. To use these functions, you must `import math` at the top of every file.
+
+<table>
+
+<tr><td> <code>abs()</code> </td> <td>Gets the absolute value of a float or int</td> <td>
+<code>
 print(90 - 120) 
 print(abs(90 - 120))
-```
+</code>
 
 Output:
 
@@ -14,12 +21,13 @@ Output:
 
 `30`
 
+
 </td> </tr>
 <tr><td> <code>pow()</code> </td> <td>Raises a number to a certain power</td> <td>
 
-```python
+<code>
 print(pow(2,3))
-```
+</code>
 Output:
 
 `8`
@@ -27,9 +35,9 @@ Output:
 </td> </tr>
 <tr><td> <code>round()</code></td> <td>Rounds a number to a certain decimal point </td> <td>
 
-```python
+<code>
 print(round(17.34989436516001,4))
-```
+</code>
 Output:
 
 `17.3499`
@@ -47,9 +55,9 @@ Using the **random** module, we can generate psuedo-random numbers. To use the *
 <tr><td width="15%">Function</td><td width="35%">Description</td><td>Example</td></tr>
 <tr><td> <code>random</code></td><td width="50%">Generates a random number floating point number between 0 and 1 </td><td>
 
-```python
+<code>
 print(random.random())
-```
+</code>
 Possible Output:
 `0.173499`
 
@@ -59,9 +67,9 @@ Possible Output:
 
 Choosing a random whole number between 1 and 100
 
-```python
+<code>
 print(random.randint(1, 100))
-```
+</code>
 Possible Output:
 `95`
 </td></tr>
@@ -69,9 +77,9 @@ Possible Output:
 
 Choosing a random floating point number between 10 and 50
 
-```python
+<code>
 print(random.uniform(10, 50))
-```
+</code>
 Possible Output:
 `24.313911327373457`
 
@@ -81,9 +89,9 @@ Choosing a random value from a list of numbers
 
 `90, 12, 34`
 
-```python
+<code>
 print(random.choice([90, 12, 34]))
-```
+</code>
 Possible Output:
 `12`
 
