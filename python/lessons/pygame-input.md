@@ -92,7 +92,7 @@ This is done with the following format:
 
 `(red, green, blue)`
 
-<img src="../images/pygame/rgb.png" width=70%>
+![](../images/pygame/rgb.png)
 
 * `red`/`green`/`blue` are all values between 0 and 255
 * (0, 0, 0) represents black
