@@ -16,7 +16,7 @@ Curriculum can be found at [https://elizabeth-phillips.github.io/HighSchoolProgr
 
 ## GitHub
 
-1. [GitHub](./github-intro/intro-to-github.md)
+1. [GitHub](./github-intro/github-intro.md)
 2. [GitHub Labs](./github-intro/github-intro-lab.md)
 
 ## Python
