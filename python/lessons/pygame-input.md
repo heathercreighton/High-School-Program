@@ -60,8 +60,6 @@ while not done:
 
 ### Constant Movement
 
-
-
 ```python
 while not done:
 	ball_pos += ball_chg
