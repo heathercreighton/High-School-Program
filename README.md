@@ -1,27 +1,27 @@
 # OrangeMethod High School Program
 
 Curriculum can be found at [https://elizabeth-phillips.github.io/HighSchoolProgram/](https://elizabeth-phillips.github.io/HighSchoolProgram/index.html)
-<!-- 
-## Terminal Intro
+
+## Schedule
+
+### Terminal Intro
 
 1.   [Introduction to Mac and the terminal](./terminal/mac-terminal.md)
-1.   [A New Terminal](./terminal/a-new-terminal.md)
+2.   [A New Terminal](./terminal/a-new-terminal.md)
 
-## git
+### git
 
 1. [History of Version Control](./git-intro/vc-history.md)
 2. [Git Set Up](./git-intro/git-setup.md)
 3. [Gitting Started](./git-intro/gitting-started.md)
    * [Gitting Started Labs](./git-intro/gitting-started-labs.md)
 
-## GitHub
+### GitHub
 
 1. [GitHub](./github-intro/github-intro.md)
 2. [GitHub Labs](./github-intro/github-intro-lab.md)
 
-## Python
-
-### Introduction
+### Python Introduction
 
 1. [Pycharm Setup](./python/lessons/pycharm-setup.md)
 2. [Math Operators](./python/lessons/math-operators.md)
@@ -50,4 +50,4 @@ Curriculum can be found at [https://elizabeth-phillips.github.io/HighSchoolProgr
 ### PyGame
 
 1. [Pygame Intro](./python/lessons/pygame-intro.md)
-2. [Pygame Input](./python/lessons/pygame-input.md) -->
+2. [Pygame Input](./python/lessons/pygame-input.md)
