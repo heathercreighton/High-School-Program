@@ -333,7 +333,8 @@ Output:
 ```
 ['barracuda', 'devil ray', 'eel']
 ```
-Applying your knowledge
+
+##### Applying your knowledge
 
 1. Create a `list` of strings called `my_friends`. Fill this list with the following names: "Rizzo", "French", "Danny", "Kenickie", "Marty", "Sandy", "Cha-Cha", "Patty", "Sonny", "Calhoun"
     

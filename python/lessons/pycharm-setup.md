@@ -50,11 +50,10 @@ Click `Apply`.
 
 ## Connecting Project to GitHub
 
-For this section, make sure you're on the **bandsaw** wifi network.
 
 [Connecting PyCharm and GitHub](https://www.jetbrains.com/help/pycharm/manage-projects-hosted-on-github.html)
 
-- Log in to your Home Depot GitHub account at: [GitHub at Home Depot](https://github.homedepot.com)
+- Log in or Create your GitHub account on: [GitHub](https://github.com)
     
 
 * * *
@@ -70,9 +69,9 @@ For this section, make sure you're on the **bandsaw** wifi network.
         
     - Click the dropdown on the right hand side and select `Login`
         
-    - Type `github.homedepot.com` into the `Host` field
+    - Type `github.com` into the `Host` field
         
-    - Type your LDAP into the `Login` field
+    - Type your username into the `Login` field
         
     - Type your password into the `Password` field
         

@@ -32,7 +32,7 @@ Other syntax required for Python to be able to read a function is the function n
     
 - The second word can be camelCase (also known as mixedCase), where the first letter of the second word is capitalized
     
-- The second word (if there is one) could be separated by an **underscore**`_` as an alternative to using camelCase
+- The second word (if there is one) could be separated by an **underscore** `_` as an alternative to using camelCase
     
 ---
 The key to naming your functions is similar to naming variables. You want to be **consistent** throughout your program. If you've started naming functions in camelCase, continue to do so for all functions. This helps with code clarity, readability and the ability for others to contribute in an organized way.
