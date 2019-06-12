@@ -2,7 +2,7 @@
 
 ## All the adds
 
-First, `cd` into your `~/orange-method-firstname` directory. This is where we need to initialize the GitHub repository which will hold this lesson.
+First, `cd` into your `~/firstname` directory. This is where we need to initialize the GitHub repository which will hold this lesson.
 
 Type `mkdir git-add-exercise` to make a new directory.
 
