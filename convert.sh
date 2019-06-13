@@ -8,12 +8,18 @@ NCL='\033[0m'           # No Color
 
 file_specification() {
     FILE_NAME="$(basename "${entry}")"
+    SEARCH = "README"
     DIR="$(dirname "${entry}")"
     NAME="${FILE_NAME%.*}"
     SIZE="$(du -sh "${entry}" | cut -f1)"
     ADDLINES="--- \nlayout: default\n--- \n"
 
-    showdown makehtml -i "$DIR/$NAME.md" -o "docs/$NAME.html"
+    if ["$NAME" = "$SEARCH"]; then
+        printf "FOUND README!"
+        showdown makehtml -i "$DIR/$NAME.md" -o "docs/index.html"
+    else
+        showdown makehtml -i "$DIR/$NAME.md" -o "docs/$NAME.html"
+    fi
 
     echo $ADDLINES | $(cat - "docs/$NAME.html" > tmp && mv tmp "docs/$NAME.html")
 
