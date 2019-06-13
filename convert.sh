@@ -30,6 +30,7 @@ walk() {
 
 # If the path is empty use the current, otherwise convert relative to absolute; Exec walk()
 [[ -z "${1}" ]] && ABS_PATH="${PWD}" || cd "${1}" && ABS_PATH="${PWD}"
+rm -rf "docs/"
 mkdir -p "${ABS_PATH}/docs"
 walk "${ABS_PATH}"      
 echo 
