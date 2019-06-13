@@ -295,7 +295,7 @@ Introduce the group in a sentence
 * Assign a variable whose value will be a concatenation of the above variables into a sentence that makes sense.
 * Using the above variables, write the sentence in two different ways that we have learned to concatenate strings, numbers and variables in a print() statement to avoid a TypeError (Hint: Use + and ,)
 
-Strings follow-along
+## Strings follow-along
 
 1. Create a string called `phrase` that is set to the value of `Don't count your chickens before they hatch`
     

@@ -7,7 +7,7 @@ type: "lesson"
 
 From what we have learned so far, to print all of the values from a list called numbers we would have to do something like the following:
 
-```
+```python
 numbers = [10, 5, 2, 7]
 print(numbers[0])
 print(numbers[1])
@@ -25,7 +25,7 @@ Indentation tells the Python interpreter what belongs together. In the loops cas
 ### Set Up
 
 In Python, for loops are constructed like so:
-```
+```python
 for [iterating variable] in [iterable]:
   [do something]
 ```
@@ -211,14 +211,15 @@ Output:
 
 Using `range`, create a `for` loop that prints off the numbers 1, 4, 9, 16.
 
-**8.** Create a `for` loop that goes through a list and counts the number of even and odd numbers. Use the following list as an example to work with: `numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]`
+7. Create a `for` loop that goes through a list and counts the number of even and odd numbers. Use the following list as an example to work with: `numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]`
 
 Output:
 ```
 Even numbers: 4
 Odd numbers: 5
 ```
-Change the following starter code to choose a random number between 1 and 6 one hundred times and display it on the histogram:
+
+8. Change the following starter code to choose a random number between 1 and 6 one hundred times and display it on the histogram:
 ```python
 import matplotlib.pyplot as plt
 import random
