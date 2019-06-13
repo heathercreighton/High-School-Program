@@ -11,9 +11,11 @@ file_specification() {
     DIR="$(dirname "${entry}")"
     NAME="${FILE_NAME%.*}"
     SIZE="$(du -sh "${entry}" | cut -f1)"
-    ADDLINES="--- \ntitle: \"$NAME\" \ntype: \"lesson\" \n--- \n"
+    ADDLINES="--- \nlayout: default\n--- \n"
 
     showdown makehtml -i "$DIR/$NAME.md" -o "docs/$NAME.html"
+
+    echo $ADDLINES | $(cat - "docs/$NAME.html" > tmp && mv tmp "docs/$NAME.html")
 
     printf "%*s${GRE}%s${NCL}\n"                    $((indent+4)) '' "${entry}"
     printf "%*s\tFile name:\t${YEL}%s${NCL}\n"      $((indent+4)) '' "$FILE_NAME"
