@@ -3,7 +3,7 @@
 <h2 id="typelesson">type: "lesson"</h2>
 <h1 id="loops">Loops</h1>
 <p>From what we have learned so far, to print all of the values from a list called numbers we would have to do something like the following:</p>
-<pre><code>numbers = [10, 5, 2, 7]
+<pre><code class="python language-python">numbers = [10, 5, 2, 7]
 print(numbers[0])
 print(numbers[1])
 print(numbers[2])
@@ -16,7 +16,7 @@ An iterable is an item that is capable of returning its members one at a time, s
 Indentation tells the Python interpreter what belongs together. In the loops case, it tells the Python Interpreter which line(s) to repeat.</p>
 <h3 id="setup">Set Up</h3>
 <p>In Python, for loops are constructed like so:</p>
-<pre><code>for [iterating variable] in [iterable]:
+<pre><code class="python language-python">for [iterating variable] in [iterable]:
   [do something]
 </code></pre>
 <p><strong>iterating variable</strong> : the temporary name of the current element. This can be called any valid variable. It's best practice not to name this the same name as another existing variable.</p>
@@ -149,12 +149,16 @@ for count, item in enumerate(grocery, 100):
 <li><p>Create a <code>for</code> loop that creates the following image:</p></li>
 </ol>
 <p>Using <code>range</code>, create a <code>for</code> loop that prints off the numbers 1, 4, 9, 16.</p>
-<p><strong>8.</strong> Create a <code>for</code> loop that goes through a list and counts the number of even and odd numbers. Use the following list as an example to work with: <code>numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]</code></p>
+<ol start="7">
+<li>Create a <code>for</code> loop that goes through a list and counts the number of even and odd numbers. Use the following list as an example to work with: <code>numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]</code></li>
+</ol>
 <p>Output:</p>
 <pre><code>Even numbers: 4
 Odd numbers: 5
 </code></pre>
-<p>Change the following starter code to choose a random number between 1 and 6 one hundred times and display it on the histogram:</p>
+<ol start="8">
+<li>Change the following starter code to choose a random number between 1 and 6 one hundred times and display it on the histogram:</li>
+</ol>
 <pre><code class="python language-python">import matplotlib.pyplot as plt
 import random
 
