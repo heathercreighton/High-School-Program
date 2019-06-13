@@ -1,0 +1,171 @@
+<hr />
+<p>title: "Pygame Intro"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="introtopygame">Intro to pygame</h1>
+<h2 id="whatispygame">What is pygame?</h2>
+<p>Pygame is a set of Python modules designed for writing games, allowing you to create games and multimedia programs in Python </p>
+<h2 id="whatcanpygamedo">What can pygame do?</h2>
+<p>Pygame: </p>
+<ul>
+<li>allows you to create games and multimedia programs in the python language </li>
+<li>is highly portable </li>
+<li>runs on nearly every platform and operating system</li>
+<li>is free</li>
+</ul>
+<h2 id="setuppygameinpycharm">Set up pygame in PyCharm</h2>
+<p>In PyCharm: <code>File</code> &gt; <code>Settings</code> &gt; <code>Project</code> &gt; <code>Project Interpreter</code>.</p>
+<p>Click on the plus sign <code>+</code>.</p>
+<p><img src="../images/pygame/pygame-pycharm.png" alt="Pygame Setup" /></p>
+<hr />
+<p>Type in pygame then click <code>Install Package</code></p>
+<p><img src="../images/pygame/pygame-search.png" alt="Pygame Setup" /></p>
+<hr />
+<h2 id="pygameapi">Pygame API</h2>
+<p>Simplest Pygame Program in Steps</p>
+<p><strong>Step 1</strong></p>
+<p>Importing pygame allows us to have access to all of pygame's libraries</p>
+<pre><code class="python language-python">import pygame
+</code></pre>
+<hr />
+<p><strong>Step 2</strong></p>
+<p>Initialize the Game Engine, starting all actions for PyGame.</p>
+<pre><code class="python language-python">pygame.init()
+</code></pre>
+<hr />
+<p><strong>Step 3</strong></p>
+<p>Set up the size of the window in pixels.</p>
+<pre><code class="python language-python">size = (400, 500)
+screen = pygame.display.set_mode(size)
+</code></pre>
+<hr />
+<p><strong>Step 3</strong></p>
+<p>Set up the Window's label</p>
+<pre><code class="python language-python">pygame.display.set_caption("First Pygame")
+</code></pre>
+<hr />
+<p><strong>Step 4</strong></p>
+<p>Create a variable to check to see if the user has click exit or not.</p>
+<pre><code class="python language-python">done = False
+clock = pygame.time.Clock()
+</code></pre>
+<hr />
+<p><strong>Step 5</strong></p>
+<p>Tell the window to remain open until the user exits.</p>
+<pre><code class="python language-python">while not done:
+
+    for event in pygame.event.get():  # User did something
+        if event.type == pygame.QUIT:  # If user clicked close
+            done = True  # Flag that we are done so we exit this loop
+</code></pre>
+<hr />
+<p><strong>Step 6</strong></p>
+<p>Update the screen to display any new drawings.</p>
+<pre><code class="python language-python">pygame.display.flip()
+</code></pre>
+<hr />
+<p><strong>Step 7</strong></p>
+<p>Prevent the screen from refreshing every seconds, using a lot of CPU. Limited to 60 refreshes per second will help.</p>
+<pre><code class="python language-python">clock.tick(60)
+</code></pre>
+<hr />
+<p><strong>Step 8</strong></p>
+<p><strong>IMPORTANT!</strong></p>
+<h2 id="telltheprogramtoclosewhentheuserhasclickedtoexit">Tell the program to close when the user has clicked to exit</h2>
+<pre><code class="python language-python">pygame.quit()
+</code></pre>
+<p><a href="../programs/pygame_intro.py">Full Code</a></p>
+<h2 id="letsdraw">Let's Draw!</h2>
+<p><code>pygame.draw</code></p>
+<p>Draw several simple shapes to a Surface. These functions will work for rendering to any format of Surface. Rendering to hardware Surfaces will be slower than regular software Surfaces.</p>
+<h3 id="pygamedrawshapes"><code>pygame.draw</code> shapes</h3>
+<p>| Shape | Description |
+| --- | --- |
+| <code>pygame.draw.rect</code> | Draw a rectangle shape |
+| <code>pygame.draw.polygon</code> | Draw a shape with any number of sides |
+| <code>pygame.draw.circle</code> | Draw a circle around a point |
+| <code>pygame.draw.ellipse</code> | Draw a oval shape inside of a rectangle |
+| <code>pygame.draw.arc</code> | Draw a partial section of an ellipse |
+| <code>pygame.draw.line</code> | Draw a straight line segment |
+| <code>pygame.draw.lines</code> | Draw multiple contiguous line segments |</p>
+<h4 id="pygamedrawrect"><code>pygame.draw.rect</code></h4>
+<pre><code class="python language-python">pygame.draw.rect(Surface, color, Rect, width=0)
+
+# Draw a rectangle outline
+pygame.draw.rect(screen, black, [75, 10, 50, 20], 2)
+
+# Draw a solid rectangle
+pygame.draw.rect(screen, black, [150, 10, 50, 20])
+</code></pre>
+<h4 id="pygamedrawpolygon"><code>pygame.draw.polygon</code></h4>
+<pre><code class="python language-python">pygame.draw.polygon(Surface, color, pointlist, width=0)
+
+# This draws a triangle using the polygon command
+pygame.draw.polygon(screen, black, [[100, 100], [0, 200], [200, 200]], 5)
+</code></pre>
+<h4 id="pygamedrawcircle"><code>pygame.draw.circle</code></h4>
+<pre><code class="python language-python">pygame.draw.circle(Surface, color, pos, radius, width=0)
+
+# Draw a circle
+pygame.draw.circle(screen, blue, [60, 250], 40)
+</code></pre>
+<h4 id="pygamedrawellipse"><code>pygame.draw.ellipse</code></h4>
+<pre><code class="python language-python">pygame.draw.ellipse(Surface, color, Rect, width=0)
+
+# Draw an ellipse outline, using a rectangle as the outside boundaries
+pygame.draw.ellipse(screen, red, [225, 10, 50, 20], 2)
+# Draw an solid ellipse, using a rectangle as the outside boundaries
+pygame.draw.ellipse(screen, red, [300, 10, 50, 20])
+</code></pre>
+<h4 id="pygamedrawarc"><code>pygame.draw.arc</code></h4>
+<pre><code class="python language-python">pygame.draw.arc(Surface, color, Rect, start_angle, stop_angle, width=1)
+
+# Draw an arc as part of an ellipse.
+# Use radians to determine what angle to draw.
+pygame.draw.arc(screen, black, [210, 75, 150, 125],  0, pi / 2, 2)
+pygame.draw.arc(screen, green, [210, 75, 150, 125],  pi / 2, pi, 2)
+</code></pre>
+<h4 id="pygamedrawline"><code>pygame.draw.line</code></h4>
+<pre><code class="python language-python">pygame.draw.line(Surface, color, start_pos, end_pos, width=1)
+
+# Draw on the screen a green line from (0,0) to (50, 30)# 5 pixels wide.
+pygame.draw.line(screen, green, [0, 0], [50, 30], 5)
+</code></pre>
+<h4 id="pygamedrawlines">`pygame.draw.lines```</h4>
+<pre><code class="python language-python">pygame.draw.lines(Surface, color, closed, pointlist, width=1)
+
+# Draw on the screen a green line from (0,80) to (50,90)
+# 5 pixels wide.
+pygame.draw.lines(screen, black, False, [[0, 80], [50, 90], [200, 80], [220, 30]], 5)
+</code></pre>
+<h3 id="pygameexercise1smileypy">Pygame Exercise #1 - <code>smiley.py</code></h3>
+<p>Create a new file, <code>smiley.py</code></p>
+<p><img src="../images/pygame/smiley.png" width="50%"/></p>
+<p>Create a smiley face with pygame
+Use shapes.py as an example to get started
+Remember to change the caption name to Smiley Face</p>
+<h3 id="pygameexercise2stick_figurepy">Pygame Exercise #2 – <code>stick_figure.py</code></h3>
+<p>Create a new file, <code>stick_figure.py</code></p>
+<p><img src="../images/pygame/stick-figure.png" width="50%"/></p>
+<p>Create a stick figure of yourself with pygame
+Use shapes.py as an example to get started
+Remember to change the caption name to Stick Figure</p>
+<h2 id="movingparts">Moving Parts</h2>
+<p>So far, we have had nothing move in our code. </p>
+<p>That makes for a pretty boring game!</p>
+<p>We can add moving parts with PyGame and refreshing our window.</p>
+<p><img src="../images/pygame/rotating-text.png" alt="" /></p>
+<h3 id="workingwithkeyboardinput">Working with keyboard input</h3>
+<p>The following code checks for if an "event" of a key press has occurred.</p>
+<p><img src="../images/pygame/key-event.png" alt="" /></p>
+<p>Once the code knows that a key has been pressed, it checks to see which key is pressed.</p>
+<p><img src="../images/pygame/key-check.png" alt="" /></p>
+<p>Once the key has been pressed, the x and y coordinates are changed accordingly</p>
+<p><img src="../images/pygame/key-coord.png" alt="" /></p>
+<hr />
+<h3 id="challengestick_figure_movepy">Challenge: stick<em>figure</em>move.py</h3>
+<p>Compare your <code>stick_figure.py</code> to the code below.</p>
+<p><img src="../images/pygame/keyboard-input.png" alt="" /></p>
+<p>What changes do you see?</p>
+<p>Open the python file <code>stick_figure_move.py</code></p>
+<p>Use your <code>stick_figure.py</code> to grab your drawing code and place it in the function <code>draw_stick_figure(screen, x, y)</code>. 
+Modify the code you just pasted to move your stick figure.</p>

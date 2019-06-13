@@ -1,0 +1,121 @@
+<hr />
+<p>title: "booleans"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="booleans">Booleans</h1>
+<ul>
+<li><p>It is raining - True</p></li>
+<li><p>5 is greater than 8 - False</p></li>
+<li><p>Orange Method is the best - True</p></li>
+</ul>
+<p>Booleans are used to make comparisons and to control the flow of a program. Named for George Boole, the word Boolean always begins with a capitalized B. The values <code>True</code> and <code>False</code> will also always be with a capital T and F respectively, as they are special values in Python.</p>
+<p>You can create variables and set them to either <code>True</code> or <code>False</code></p>
+<pre><code class="python language-python">is_tired = False
+is_available = True
+</code></pre>
+<p>You can also cast a boolean values to an <code>integer</code>. <code>0</code> represents <code>False</code> and <code>1</code> represents <code>True</code>.</p>
+<pre><code class="python language-python">print(int(True))
+print(int(False))
+</code></pre>
+<p>Output:</p>
+<pre><code>1
+0
+</code></pre>
+<h2 id="comparisonoperators">Comparison Operators</h2>
+<p>In programming, comparison operators are used to compare values and evaluate done to a single Boolean value of either True or False.</p>
+<p>The table below shows Boolean comparison operators.</p>
+<p>| Operator | What it means |
+| --- | --- |
+| <code>==</code> | Equal to |
+| <code>!=</code> | Not Equal to |
+| <code>&lt;</code> | Less than |
+| <code>&gt;</code> | Greater than |
+| <code>&lt;=</code> | Less than or equal to |
+| <code>&gt;=</code> | Greater than or equal to |</p>
+<p>To understand how these operators work, let's assign two integers to two variables in a Python program:</p>
+<pre><code class="python language-python">x = 5
+y = 8
+</code></pre>
+<p>We know that in this example, since <code>x</code> has the value of <code>5</code>, it is less than <code>y</code> which has the value <code>8</code>.</p>
+<p>Using those two variables, we will show the above operators being used.</p>
+<pre><code class="python language-python">x = 5
+y = 8
+
+print("x == y:", x == y)
+print("x != y:", x != y)
+print("x &lt; y:", x &lt; y)
+print("x &gt; y:", x &gt; y)
+print("x &lt;= y:", x &lt;= y)
+print("x &gt;= y:", x &gt;= y)
+</code></pre>
+<p>Output:</p>
+<pre><code>x == y: False
+x != y: True
+x &lt; y: True
+x &gt; y: False
+x &lt;= y: True
+x &gt;= y: False
+</code></pre>
+<p>Following mathematical logic, in each of the expressions above, Python has evaluated:</p>
+<ul>
+<li><p>Is 5 (x) equal to 8 (y)? <strong>False</strong></p></li>
+<li><p>Is 5 not equal to 8? <strong>True</strong></p></li>
+<li><p>Is 5 less than 8? <strong>True</strong></p></li>
+<li><p>Is 5 greater than 8? <strong>False</strong></p></li>
+<li><p>Is 5 less than or equal to 8? <strong>True</strong></p></li>
+<li><p>Is 5 not less than or equal to 8? <strong>False</strong></p></li>
+</ul>
+<p>All of these comparators can work with floating point values and strings as well. Strings are case-sensitive unless you use an additional string method.</p>
+<pre><code class="python language-python">name1 = "Sally"
+name2 = "sally"
+print("Sally == sally: ", name1 == name2)
+</code></pre>
+<p>Output: <code>Sally == sally: False</code></p>
+<p><strong>Note:</strong> There is a difference between the two operators <code>=</code> and <code>==</code>.</p>
+<ul>
+<li><p><code>x = y</code> sets (changes) the value of x to be equal to y</p></li>
+<li><p><code>x == y</code> asks if the value of x equals the value of y. No values are changed.</p></li>
+</ul>
+<h2 id="logicaloperators">Logical Operators</h2>
+<p>There are three logical operators that are used to compare values. These operators are <code>and</code>, <code>or</code>, and <code>not</code>.</p>
+<p>| Operator | What it means | What it looks like |
+| --- | --- | --- |
+| and | True if both are true | <code>x and y</code> |
+| or | True if at least one is true | <code>x or y</code> |
+| not | True only if false | <code>not x</code> |</p>
+<p><strong><code>and</code> example</strong></p>
+<p>To join the local basketball team, you must be at least 4 foot tall <strong>and</strong> at least 16 years old. Here are all the ways you would <strong>not</strong> be able to join the team:</p>
+<ul>
+<li><p>If you were at least 4 foot tall, but not at least 16 years old</p></li>
+<li><p>If you were less than 4 foot and at least 16 years old</p></li>
+<li><p>If you were less than 4 foot and less than 16 years old</p></li>
+</ul>
+<p>The only way you would be able to join the team would be if you were both taller than 4 foot <strong>and</strong> at least 16 years old.</p>
+<p><strong><code>or</code> example</strong></p>
+<p>Say they were not able to find enough people who fulfilled both requirements for the basketball team, so they made it to where you just have to meet one or more of the requirements. Now to join the local basketball team, you must be at least 4 foot tall <strong>or</strong> at least 16 years old. Here are now all of the ways you <strong>can</strong> join the team:</p>
+<ul>
+<li><p>If you were at least 4 foot tall, but not at least 16 years old</p></li>
+<li><p>If you were less than 4 foot and at least 16 years old</p></li>
+<li><p>If you were at least 4 foot tall, and at least 16 years old</p></li>
+</ul>
+<p>The only way you would be able to not join the team if you were neither taller than 4 foot or at least 16 years old.</p>
+<p>Example Uses of and, or and not</p>
+<pre><code class="python language-python">print((9 &gt; 7) and (2 &lt; 4))  # Both expressions are True
+print((8 == 8) or (6 != 6)) # One expression is True
+print(not(3 &lt; = 1))          # The expression is True
+</code></pre>
+<p>Output:</p>
+<pre><code>True
+True
+True
+</code></pre>
+<p>In the first case:</p>
+<p><code>print((9 &gt; 7) and (2 &lt; 4))</code></p>
+<p><strong>Both</strong> <code>9 &gt; 7</code> and <code>2 &lt; 4</code> needed to evaluate to True since the and operator was being used.</p>
+<p>In the second case:</p>
+<pre><code class="python language-python">print((8 == 8) or (6 != 6))
+</code></pre>
+<p>Since <code>8 == 8</code> evaluated to True, it did not make a difference that <code>6 != 6</code> evaluates to False because the or operator was used. If we had used the and operator, this would evaluate to False.</p>
+<p>In the third case:</p>
+<pre><code class="python language-python">print(not(3 &lt; = 1))
+</code></pre>
+<p>The <strong>not</strong> operator negates the False value that <code>3 &lt;= 1</code> returns.</p>

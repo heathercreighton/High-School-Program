@@ -1,0 +1,79 @@
+<hr />
+<p>title: "loops-labs"</p>
+<h2 id="typelab">type: "lab"</h2>
+<h1 id="looplab">Loop Lab</h1>
+<h2 id="createstring">Create String</h2>
+<pre><code class="python language-python">letters = ['O', 'r', 'a', 'n', 'g', 'e', ' ', 'M', 'e', 't', 'h', 'o', 'd']
+</code></pre>
+<p>Create a function that is called <code>create_string</code> that does not have any parameters. Using a <code>for</code> loop, convert the above list <code>letters</code> into a single string and return the string. Do not just print the letters out side by side</p>
+<p>Place the following at the bottom of your <code>main</code>:</p>
+<pre><code class="python language-python">print(create_string())
+</code></pre>
+<p>Example output:</p>
+<pre><code>Orange Method
+</code></pre>
+<h2 id="fillingtickets">Filling Tickets</h2>
+<p>Define a function <code>fill_ticket()</code> that will ask a user five times to insert a number. (Use a loop to do this). After every time they answer, their newest answer is placed at the end of a list. This list is then returned.</p>
+<p>Place the following at the bottom of your <code>main</code>:</p>
+<pre><code class="python language-python">guesses = fill_ticket()
+print(guesses)
+</code></pre>
+<p>Example Output:</p>
+<pre><code>Enter a number: 5
+Enter a number: 1
+Enter a number: 3
+Enter a number: 4
+Enter a number: 1
+[5, 1, 3, 4, 1]
+</code></pre>
+<h2 id="findingmatches">Finding Matches</h2>
+<p>The winning combination of this lottery is chosen by picking five numbers. Define a function <code>matches(ticket, winners)</code> that takes two lists and returns an integer that says how many numbers the two lists are in the <strong>exact same position</strong>.</p>
+<p>Copy and paste the code below at the bottom of your main function to test out your <code>matches(ticket, winners)</code> functions.</p>
+<pre><code class="python language-python">guesses = fill_ticket()
+
+winners = [1, 2, 3, 4, 5]
+print(matches(guesses, winners))
+</code></pre>
+<p>Output:</p>
+<pre><code>Enter a number: 5
+Enter a number: 1
+Enter a number: 3
+Enter a number: 4
+Enter a number: 1
+2
+</code></pre>
+<h2 id="caesarcipher">Caesar Cipher</h2>
+<p>In cryptography, a Caesar cipher is a very simple encryption technique in which each letter in plain text is replaced by a letter of some fixed number of positions further down the alphabet. For example, with a shift of 3, <code>A</code> would store it in variable <code>D</code>, <code>B</code> would become <code>E</code>, and so on. The method is named after Julius Caesar, who used it to communicate with his generals. He used a shift of 13.</p>
+<p><code>cipher_key = {'a': 'n', 'b': 'o', 'c': 'p', 'd': 'q', 'e': 'r', 'f': 's', 'g': 't', 'h': 'u', 'i': 'v', 'j': 'w', 'k': 'x', 'l': 'y', 'm': 'z', 'n': 'a', 'o': 'b', 'p': 'c', 'q': 'd', 'r': 'e', 's': 'f', 't': 'g', 'u': 'h', 'v': 'i', 'w': 'j', 'x': 'k', 'y': 'l', 'z': 'm'}</code></p>
+<p>Create a function called <code>caesar_cipher</code> that takes in a string and then returns the string changed with a shift of 13 letters. Note: your dictionary only works with lower case letters</p>
+<p>Place the following at the bottom of your <code>main</code>:</p>
+<p>print(caesar_cipher("pnrfne pvcure? v zhpu cersre pnrfne fnynq!"))
+To figure out the answer, you must complete the exercise!</p>
+<h1 id="whileloops">While Loops</h1>
+<h2 id="dicehistogramwhileloopsstyle">Dice Histogram - While Loops Style</h2>
+<p>Alter the previous histogram code to create a histogram with the results of rolls of a 6-sided dice. Stop "rolling the dice" once your random number is 4.</p>
+<h2 id="guessinggame">Guessing Game</h2>
+<p>Create a program that will ask the user to guess a <strong>random</strong> number between 1 - 20. Keep asking the user until they guess it correctly.</p>
+<h2 id="creditlimit">Credit Limit</h2>
+<p>Create a program that has the user first set a value for their bank account balance. Then ask the user to enter a new amount that they just spent and subtract this value from the total. Once they reach a zero balance, print out <code>"All out of money!"</code>. If they reach a negative balance, raise a <code>RuntimeError</code>.</p>
+<p>Example Output:</p>
+<pre><code>Enter Account Balance: 100
+&gt;&gt;&gt; Enter Amount Spent: 55
+Amount Left: 45
+&gt;&gt;&gt; Enter Amount Spent: 20
+Amount Left: 25
+&gt;&gt;&gt; Enter Amount Spent: 30
+Amount Left: -5
+All out of money!
+</code></pre>
+<h2 id="piglatin">Pig Latin</h2>
+<p>Create a function called <code>pig_latin</code> that receives a String called <code>pig</code> and return <code>pig</code> in pig latin.</p>
+<p>Here's how to translate the English word into the Pig Latin word:</p>
+<ul>
+<li><p>If there are no vowels in englishWord, then pigLatinWord is just <code>englishWord + "ay"</code>. (There are ten vowels: <code>'a'</code>, <code>'e'</code>, <code>'i'</code>, <code>'o'</code>, and <code>'u'</code>, and their uppercase counterparts. <code>y</code> is not considered to be a vowel for the purposes of this assignment, i.e. <code>my</code> becomes <code>myay</code>, <code>why</code> becomes <code>whyay</code>, etc.)</p></li>
+<li><p>Else, if englishWord begins with a vowel, then pigLatinWord is just <code>englishWord + "yay"</code></p></li>
+<li><p>Otherwise (if englishWord has a vowel in it and yet doesn't start with a vowel), then pigLatinWord is <code>end + start + "ay"</code>, where <code>end</code> and <code>start</code> are defined as follows:</p>
+<ul>
+<li><p>Let <code>start</code> be all of englishWord up to (but not including) its first vowel.</p></li>
+<li><p>Let <code>end</code> be all of englishWord from its first vowel on.</p></li></ul></li>
+</ul>

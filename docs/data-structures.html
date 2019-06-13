@@ -1,0 +1,545 @@
+<hr />
+<p>title: "data-structures"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="datastructures">Data Structures</h1>
+<h2 id="lists">Lists</h2>
+<p>A <strong>list</strong> is a data structure in Python that is a <strong>mutable</strong>, or changeable, ordered sequence of elements. Each element or value that is inside of a list is called an item. Just as strings are defined as characters between quotes, lists are defined by having values between square brackets <code>[ ]</code>.</p>
+<p>Lists are great to use when you want to work with many related values. They allow you to keep data together that belongs together, condense your code, and perform the same methods and operations on multiple values at once.</p>
+<p>Example: Creating a list of strings called dogs</p>
+<pre><code class="python language-python">dogs = ["Collie", "Labrador", "Sheltie", "Dalmatian"]
+</code></pre>
+<p>When you print out the list, the output looks exactly like the list we created:</p>
+<pre><code class="python language-python">print(dogs)
+</code></pre>
+<p>Output: <code>["Collie", "Labrador", "Sheltie", "Dalmatian"]</code></p>
+<h3 id="length">Length</h3>
+<p><code>len()</code>, just like in a string, allows you to find the number of elements that are in a list. Do the following to find the length of a list:</p>
+<pre><code class="python language-python">dogs = ["Collie", "Labrador", "Sheltie", "Dalmatian"]
+print(len(dogs))
+</code></pre>
+<p>Output: <code>4</code></p>
+<p>Keep in mind that <code>len</code>gth starts counting at 1</p>
+<h3 id="indexing">Indexing</h3>
+<p>As an ordered sequence of elements, each item in a list can be called individually, through <strong>indexing</strong>. Lists are a compound data type made up of smaller parts, and are very flexible because they can have values added, removed, and changed. When you need to store a lot of values or iterate over values, and you want to be able to readily modify those values, you'll likely want to work with list data types.</p>
+<p>Each item in a list corresponds to an index number, which is an integer value, starting with the index number 0. (Just like string's indexing)</p>
+<p>For the list dogs, the index breakdown looks like this:</p>
+<p>| Collie | Labrador | Sheltie | Dalmatian |
+| :---: | :---: | :---: | :---: |
+| 0 | 1 | 2 | 3 |</p>
+<p>The first item, the string <code>Collie</code> starts at index 0, and the list ends at index 4 with the string <code>Dalmatian</code>.</p>
+<p>Because each item in a Python list has a corresponding index number, we're able to access and manipulate lists in the same ways we can with other sequential data types.</p>
+<p>We can call a specific item of the list by referring to its index number:</p>
+<pre><code class="python language-python">print(dogs[1])
+</code></pre>
+<p>Output: <code>Labrador</code></p>
+<p>The index numbers for this list range from 0 - 3, as shown in the table above. So if we tried to access a value greater than this, we would get an Out Of Range error!</p>
+<pre><code class="python language-python">print(dogs[10])
+</code></pre>
+<p>Output: <code>IndexError: list index out of range</code></p>
+<p>It is very common to need the last item in a list. If a boss needs to fire the person with the lowest number of sales, they could find this in a sorted list that is in descending order of sales. To easily find the last item in a list, we can access from the list with a negative index number, by counting backwards from the end of the list, starting at -1. This is especially useful if we have a long list and we want to pinpoint an item towards the end of a list.</p>
+<p>For the same list <code>dogs</code>, the negative index breakdown looks like this:</p>
+<p>| Collie | Labrador | Sheltie | Dalmatian |
+| :---: | :---: | :---: | :---: |
+| -4 | -3 | -2 | -1 |</p>
+<p>So, if we would like to print out the item <code>Sheltie</code> by using its negative index number, we can do so like this:</p>
+<pre><code class="python language-python">print(dogs[-2])
+</code></pre>
+<p>Output: <code>Sheltie</code></p>
+<p>We can concatenate string items in a list with other strings using the <code>+</code> operator.</p>
+<pre><code class="python language-python">print("Charlie is a " + dogs[1])
+</code></pre>
+<p>Output: <code>Charlie is a Labrador</code></p>
+<h3 id="slicing">Slicing</h3>
+<p>We can also call out a few items from the list. Let's say we would like to just print the middle items of <code>dogs</code>, we can do so by creating a slice. With slices, we can call multiple values by creating a range of index numbers separated by a colon <code>[start_index: stop_index]</code></p>
+<pre><code class="python language-python">print(dogs[1: 3])
+</code></pre>
+<p>Output: <code>["Golden Retriever", "Sheltie"]</code></p>
+<p>When creating a slice, as in <code>[1: 3]</code>, the first index number is where the slice starts (inclusive), and the second index number is where the slice ends (exclusive), which is why in our example above the items at position 1 and 2 are the items that print out.</p>
+<hr />
+<p>If we want to include either end of the list, we can get rid of the numbers in the <code>list[x: y]</code> syntax. For example, if we want to print the first 2 items in the list <code>dogs</code> - which would be <code>Collie</code> and <code>Golden Retriever</code> - we can do so by typing:</p>
+<pre><code class="python language-python">print(dogs[: 2])
+</code></pre>
+<p>Output: <code>["Collie", "Golden Retriever"]</code>
+This list printed off the list items with indexes starting with 0 and going up to (but not including) 2.</p>
+<hr />
+<p>To include all the items at the end of a list, we would reverse the syntax:</p>
+<pre><code class="python language-python">print(dogs[2: ])
+</code></pre>
+<p>Output: <code>["Sheltie", "Dalmatian"]</code>
+This list printed off the list items with indexes starting with 2 and going to the end of the list.</p>
+<p>One last thing that we can use with slicing is the <strong>step</strong>. Step is how many items to move forward after the first item is retrieved from the list. Before this point, we have not used the step parameter, meaning we are using the default step value of one.</p>
+<hr />
+<p>This syntax for this construction is <code>list[x: y: z]</code>, with z referring to stride. Let's make a larger list, then slice it, and give the step a value of 2:</p>
+<pre><code class="python language-python">numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(numbers[1: 11: 2])
+</code></pre>
+<p>Output: <code>[1, 3, 5, 7, 9]</code></p>
+<p>The above example starts at index 1, goes up to (but not including) 11, going up by 2's (every other item).</p>
+<hr />
+<p>We can omit the first two parameters and use step alone with the syntax <code>list[: : 2]</code></p>
+<pre><code class="python language-python">print(numbers[: : 3])
+</code></pre>
+<p>Output: <code>[0, 3, 6, 9]</code></p>
+<hr />
+<p>We can print the list backwards with a negative step</p>
+<pre><code class="python language-python">print(numbers[: : -2])
+</code></pre>
+<p>Output: <code>[10, 8, 6, 4, 2, 0]</code></p>
+<h3 id="modifying">Modifying</h3>
+<p>We can use indexing to change items within the list, by settling an index number equal to a different value. This gives us greater control over lists as we are able to modify and update the items that they contain.</p>
+<p>If we want to change the string value of the item at index 1 from <code>Labrador</code> to <code>Golden Retriever</code>, we can do so like:</p>
+<pre><code class="python language-python">dogs[1] = "Golden Retriever"
+</code></pre>
+<p>Now if we print out <code>dogs</code>, we can see the updated values.</p>
+<pre><code class="python language-python">print(dogs)
+</code></pre>
+<p>Output: <code>["Collie", "Golden Retriever", "Sheltie", "Dalmatian"]</code></p>
+<h4 id="adding">Adding</h4>
+<p>Operators can be used to make modifications to lists. The <code>+</code> operator can be used to concatenate two or more lists together:</p>
+<pre><code class="python language-python">first_names = ["Noelle", "Tereza", "Raelin", "Linus"]
+last_names = ["Blossom", "Chrissy", "Grover", "Devin"]
+print(first_names + last_names)
+</code></pre>
+<p>Output: <code>["Noelle", "Tereza", "Raelin", "Linus", "Blossom", "Chrissy", "Grover", "Devin"]</code></p>
+<p>Because the <code>+</code> operator can concatenate, it can be used to add an item (or several) in list form to the end of another list.</p>
+<pre><code class="python language-python">first_names = first_names + ["Sally"]
+print(first_names)
+</code></pre>
+<p>Output: <code>["Noelle", "Tereza", "Raelin", "Linus", "Sally"]</code></p>
+<p><code>+</code> and * operators have a compound forms <code>+=</code> and <code>\*=</code>. So the above example can also be written as:</p>
+<pre><code class="python language-python">first_names += ["Sally"]
+print(first_names)
+</code></pre>
+<p>Output: <code>["Noelle", "Tereza", "Raelin", "Linus", "Sally"]</code></p>
+<hr />
+<p>If you do not place the brackets around the string you are adding, the following will happen:</p>
+<pre><code class="python language-python">first_names += "Sally"
+print(first_names)
+</code></pre>
+<p>Output: <code>['Noelle', 'Tereza', 'Raelin', 'Linus', 'S', 'a', 'l', 'l', 'y']</code></p>
+<p>This is because Python will take the string as a list of characters, therefore adding the characters one at a time.</p>
+<h4 id="removing">Removing</h4>
+<p>Items can be removed from lists by using the <code>del</code> statement. This will delete the value at the index number you specify within a list.</p>
+<p>From the <code>dogs</code> list, let's remove the item "Sheltie". This item is located at the index position of 2. To remove the item, we'll use the del statement then call the list variable and the index number of that item:</p>
+<pre><code class="python language-python">dogs = ["Collie", "Golden Retriever", "Sheltie", "Dalmatian"]
+del dogs[2]
+print(dogs)
+</code></pre>
+<p>Output: <code>["Collie", "Golden Retriever", "Dalmatian"]</code></p>
+<p>We can also specify a range with the <code>del</code> statement. Say we wanted to remove not only the item "Sheltie", but also "Dalmatian" as well. We can call a range in <code>dogs</code> with the del statement to accomplish this:</p>
+<pre><code class="python language-python">dogs = ["Collie", "Golden Retriever", "Sheltie", "Dalmatian"]
+del dogs[2: ]
+print(dogs)
+</code></pre>
+<p>Output: <code>["Collie", "Golden Retriever"]</code></p>
+<h3 id="listmethods">List Methods</h3>
+<p>List has several <strong>methods</strong> that are very helpful. We are going to briefly cover some of the list methods that are available.</p>
+<h5 id="listappend">list.append()</h5>
+<p>The method <code>list.append(x)</code> will add an item <code>(x)</code> to the end of a list.</p>
+<pre><code class="python language-python">fish = ["barracuda", "cod", "devil ray", "eel"]
+</code></pre>
+<p>This list is comprised of 4 string items, and their index numbers range from 'barracuda' at 0 to 'eel' at index 3.</p>
+<p>Adding flounder to the List</p>
+<pre><code class="python language-python">fish.append('flounder')
+print(fish)
+</code></pre>
+<p>Output: <code>['barracuda', 'cod', 'devil ray', 'eel', 'flounder']</code></p>
+<p>Now, we have a list of 5 string items that ends with the item we passed to the <code>.append()</code> method.</p>
+<p>It is also possible to add a list to the end of a list</p>
+<p>Adding a list inside a List</p>
+<pre><code class="python language-python">fish.append(['flounder', 'clown'])
+print(fish)
+</code></pre>
+<p>Output: <code>['barracuda', 'cod', 'devil ray', 'eel', ['flounder', 'clown']]</code></p>
+<p>Now, we have a list of 5 string items that ends with the list we passed to the <code>.append()</code> method.</p>
+<h5 id="listextend">list.extend()</h5>
+<p>The method <code>list.extend(x)</code> acts similarly to <code>list.append(x)</code>. This method adds element(s) (notice it can be plural!) to a list by adding the element(s) of the item you pass to it. The resulting list is one containing all of the elements of both lists.</p>
+<pre><code class="python language-python">fish = ["barracuda", "cod", "devil ray", "eel"]
+</code></pre>
+<p>This list is comprised of 4 string items, and their index numbers range from 'barracuda' at 0 to 'eel' at index 3.</p>
+<p>Adding flounder to the List</p>
+<pre><code class="python language-python">fish.extend('flounder')
+print(fish)
+</code></pre>
+<p>Output: <code>['barracuda', 'cod', 'devil ray', 'eel', 'flounder']</code></p>
+<p>Now, we have a list of 5 string items that ends with the item we passed to the <code>.extend()</code> method.</p>
+<p>It is also possible to add a list to the end of a list</p>
+<p>Appending a list to the end a List</p>
+<pre><code class="python language-python">fish.extend(['flounder', 'clown'])
+print(fish)
+</code></pre>
+<p>Output: <code>['barracuda', 'cod', 'devil ray', 'eel', 'flounder', 'clown']</code></p>
+<p>This is where the difference of <code>append()</code> and <code>extend()</code> is seen.</p>
+<h5 id="listinsert">list.insert()</h5>
+<p>The <code>list.insert(i,x)</code> method takes two arguments, with i being the index position you would like to add an item to, and x being the item itself.</p>
+<p>Our aquarium acquired another new fish, an anchovy. You may have noticed that so far the list fish is in alphabetical order. Because of this, we don't want to just add the string 'anchovy' to the end of fish with the list.append() method. Instead, we'll use <code>list.insert()</code> to add 'anchovy' to the beginning of this list at index position 0:</p>
+<pre><code class="python language-python">fish.insert(0, 'anchovy')
+print(fish)
+</code></pre>
+<p>Output: <code>['anchovy', 'barracuda', 'cod', 'devil ray', 'eel', 'flounder']</code></p>
+<p>In this case, we added the string item to the front of the list. Each of the successive items will now be at a new index number as they have all moved down. Therefore, 'barracuda' will be at index 1, 'cod' will be at index 2, and 'flounder' — the last item — will be at index 5.</p>
+<p>If, at this point, we are bringing a damselfish to the aquarium and we wanted to maintain alphabetical order based on the list above, we would put the item at index 3: <code>fish.insert(3,'damselfish')</code>.</p>
+<h5 id="listcount">list.count()</h5>
+<p><code>list.count()</code> method will return the number of times the value x occurs within a specified list. This is useful for when you want to search a large list for the frequency of an item in a list. Say that you have a list of employees salaries and you would like to know how many people have the same salary as you: <code>20000</code>. You could use could to help with this situation.</p>
+<pre><code class="python language-python">salaries = [20000, 45000, 90000, 70000, 20000, 90000]
+print(salaries.count(20000))
+</code></pre>
+<p>Output: <code>2</code></p>
+<p>Because the number 20000 occurs twice, the number 2 is returned.</p>
+<h5 id="listsort">list.sort()</h5>
+<p>We can use the <code>list.sort()</code> method to sort the items in a list.</p>
+<p>Just like <code>list.count()</code>, <code>list.sort()</code> can make it more apparent how many of a certain integer value we have, and it can also put an unsorted list of numbers into numeric order.</p>
+<p>Let's use the integer list, <code>fish_ages</code> to see the <code>.sort()</code> method in action:</p>
+<pre><code class="python language-python">fish_ages = [1,2,4,3,2,1,1,2]
+fish_ages.sort()
+print(fish_ages)
+</code></pre>
+<p>Output: <code>[1, 1, 1, 2, 2, 2, 3, 4]</code></p>
+<p>By using <code>.sort()</code> with <code>fish_ages</code>, the integer values are returned in order.
+In practice, since these ages correspond to specific fish, you would likely want to make a copy of the original list prior to sorting it.</p>
+<p>We can sort a list in reverse order by using the optional parameter <code>reverse</code>. The default value for the parameter is <code>False</code>.</p>
+<p>Sorting a list in reverse</p>
+<pre><code class="python language-python">fish_ages = [1,2,4,3,2,1,1,2]
+fish_ages.sort(reverse=True)
+print(fish_ages)
+</code></pre>
+<p>Output: <code>[4, 3, 2, 2, 2, 1, 1, 1]</code></p>
+<h5 id="listremove">list.remove()</h5>
+<p>We can use the <code>list.remove()</code> method to remove an item in a list.</p>
+<p>Removing Cod From list</p>
+<pre><code class="python language-python">fish = ["barracuda", "cod", "devil ray", "eel"]
+fish.remove("cod")
+print(fish)
+</code></pre>
+<p>Output:</p>
+<pre><code>['barracuda', 'devil ray', 'eel']
+</code></pre>
+<h5 id="applyingyourknowledge">Applying your knowledge</h5>
+<ol>
+<li><p>Create a <code>list</code> of strings called <code>my_friends</code>. Fill this list with the following names: "Rizzo", "French", "Danny", "Kenickie", "Marty", "Sandy", "Cha-Cha", "Patty", "Sonny", "Calhoun"</p></li>
+<li><p>Use your <code>my_friends</code> list for the following:</p>
+<ol>
+<li><p>print out the length of the list</p></li>
+<li><p>print out the 4th friend's name</p></li>
+<li><p>print out the 11th friend's name (What happens?)</p>
+<ol>
+<li>once you have run this once, comment out the above line</li></ol></li>
+<li><p>print out the last friend's name (Use negative indexing)</p></li>
+<li><p>print out the 5th - 8th friend's names</p></li>
+<li><p>print out the last 5 names (Do not place a number in <strong>both</strong> start and stop)</p></li>
+<li><p>print out the first 3 names (Do not place a number in <strong>both</strong> start and stop)</p></li>
+<li><p>print out every other name, starting at the first name</p></li>
+<li><p>print out every third name, starting at the last name going backwards to the front of the list.</p></li>
+<li><p>change the 8th friend's name to "Elizabeth". Print out the changed list.</p></li>
+<li><p>add a new friend, <code>Danny</code>, to the end of the list. Print out the changed list.</p></li>
+<li><p>remove the 7th friend's name (They ate the last cookie in the jar). Print out the changed list.</p></li>
+<li><p>insert a new friend, <code>Sandy</code>, in the 3rd spot of the list. Print out the changed list.</p></li>
+<li><p>print out the number of times the name <code>Sandy</code> appears in the list.</p></li>
+<li><p>sort the list to be in alphabetical order. Print out the sorted list.</p></li></ol></li>
+</ol>
+<h2 id="tuples">Tuples</h2>
+<p>A <strong>tuple</strong> is a data structure in Python that is an <strong>immutable</strong>, or unchangeable, ordered sequence of elements. Because it is immutable, the elements in the tuple cannot be changed. The immutability of a tuple helps send the message to others that the information inside of the tuple should not change.</p>
+<p>Each element or value that is inside of a tuple is called an item. Just as lists are defined as items between square brackets, tuples are defined by having values between parenthesis <code>( )</code> and separated by commas. Empty tuples look like: <code>grade_level = ()</code>, but even tuples with just one item must use commas as in <code>grade_level = (9, )</code></p>
+<p>A tuple in Python looks like:</p>
+<pre><code class="python language-python">emp_rank = ("Software Engineer", "Sr. Software Engineer", "Staff Software Engineer", "Software Engineer Principal")
+</code></pre>
+<p>If we were to print the above tuple, it would look like the following:</p>
+<pre><code class="python language-python">print(emp_rank)
+</code></pre>
+<p>Output: <code>("Software Engineer", "Sr. Software Engineer", "Staff Software Engineer", "Software Engineer Principal")</code></p>
+<h3 id="length-1">Length</h3>
+<p><code>len()</code>, just like in a string or a list, allows you to find the number of elements that are in a tuple. Do the following to find the length of a tuple:</p>
+<pre><code class="python language-python">emp_rank = ("Software Engineer", "Sr. Software Engineer", "Staff Software Engineer", "Software Engineer Principal")
+print(len(emp_rank))
+</code></pre>
+<p>Output: <code>4</code></p>
+<p>Keep in mind that length starts counting at 1</p>
+<h3 id="indexing-1">Indexing</h3>
+<p>Just like a string or list, tuple's elements can be accessed individually with indexing.</p>
+<p>For the <code>emp_rank</code> tuple, the index break down looks like:</p>
+<p>| Software Engineer | Sr. Software Engineer | Staff Software Engineer | Software Engineer Principal |
+| :---: | :---: | :---: | :---: |
+| 0 | 1 | 2 | 3 |</p>
+<p>The first item <code>Software Engineer</code> starts at index 0, and the list ends at index 3 with <code>Software Engineer Principal</code></p>
+<p>Accessing the first item in the tuple emp_rank</p>
+<pre><code class="python language-python">print(emp_rank[0])
+</code></pre>
+<p>Output: <code>Software Engineer</code></p>
+<p>Similar to strings and lists, be careful to not go out of bounds. In the <code>emp_rank</code> tuple, any number greater than 3 would give an <code>IndexError</code>. Negative numbers are valid inputs for indexes. The negative breakdown of <code>emp_rank</code> is:</p>
+<p>| Software Engineer | Sr. Software Engineer | Staff Software Engineer | Software Engineer Principal |
+| --- | --- | --- | --- |
+| -4 | -3 | -2 | -1 |</p>
+<p>We can concatenate string items in a tuple with other strings using the <code>+</code> operator:</p>
+<pre><code class="python language-python">print('The current employee has the position of ' + emp_rank[2])
+</code></pre>
+<p>Output: <code>The current employee has the position of Sr. Software Engineer</code></p>
+<h3 id="slicing-1">Slicing</h3>
+<p>Similar to lists and strings, you can access part of a tuple with slicing with a range of index numbers separated by a colon <code>[x: y]</code>.</p>
+<p>Printing the middle part of the emp_rank tuple</p>
+<pre><code class="python language-python">print(emp_rank[1: 3])
+</code></pre>
+<p>Output: <code>("Sr. Software Engineer", "Staff Software Engineer")</code></p>
+<p>Leaving out either the start or stop range when slicing means you either want to start at the beginning of the tuple or go to the end of a tuple.</p>
+<p>Printing from the beginning of the tuple up to, but not including, index 3</p>
+<pre><code class="python language-python">print(emp_rank[: 3])
+</code></pre>
+<p>Output: <code>("Software Engineer", "Sr. Software Engineer", "Staff Software Engineer")</code></p>
+<p>Printing from index 3 up to the end of the tuple</p>
+<pre><code class="python language-python">print(emp_rank[3: ])
+</code></pre>
+<p>Output: <code>("Sr. Software Engineer", "Staff Software Engineer", "Software Engineer Principal")</code></p>
+<p>One last thing that we can use with slicing is the <strong>step</strong>. Step is how many items to move forward after the first item is retrieved from the tuple. Before this point with tuples, we have not used the step parameter, meaning we are using the default step value of one.</p>
+<p>This syntax for this construction is <code>tuple[x: y: z]</code>, with z referring to stride. Let's make a larger tuple, then slice it, and give the step a value of 2:</p>
+<pre><code class="python language-python">numbers = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+print(numbers[1: 9: 2])
+</code></pre>
+<p>Output: <code>(1, 3, 5, 7)</code></p>
+<p>The above example starts at index 1, goes up to (but not including) 11, going up by 2's (every other item).</p>
+<p>We can omit the first two parameters and use step alone with the syntax <code>tuples[: : 2]</code></p>
+<pre><code class="python language-python">print(numbers[: : 3])
+</code></pre>
+<p>Output: <code>(0, 3, 6, 9)</code></p>
+<p>We can print the tuple backwards with a negative step</p>
+<pre><code class="python language-python">print(numbers[: : -2])
+</code></pre>
+<p>Output: <code>(10, 8, 6, 4, 2, 0)</code></p>
+<h3 id="concatenating">Concatenating</h3>
+<p>Operators can be used to concatenating We'll look at using the <code>+</code> and * operators and their compound forms <code>+=</code> and <code>*=</code></p>
+<p>The <code>+</code> operator can be used to concatenate two or more lists together:</p>
+<pre><code class="python language-python">first_names = ("Noelle", "Tereza", "Raelin", "Linus")
+last_names = ("Blossom", "Chrissy", "Grover", "Devin")
+print(first_names + last_names)
+</code></pre>
+<p>Output: <code>("Noelle", "Tereza", "Raelin", "Linus", "Blossom", "Chrissy", "Grover", "Devin")</code></p>
+<h3 id="tuplesvslists">Tuples vs. Lists</h3>
+<p>The main way that tuples are different from lists is the fact that they are immutable, unable to be changed. This means that items cannot be changed, added or removed from a tuple, whereas a list item can do all of those.</p>
+<p>Considering the <code>emp_rank</code> tuple:</p>
+<pre><code class="python language-python">emp_rank = ("Software Engineer", "Sr. Software Engineer", "Staff Software Engineer", "Software Engineer Principal")
+</code></pre>
+<p>Say we want to replace the item "Software Engineer" with a different item called "Newbie Software Engineer". If we try to change that output the same way we do a list, by typing:</p>
+<pre><code class="python language-python">emp_rank[0] = "Newbie Software Engineer"
+</code></pre>
+<p>We would receive the error: <code>TypeError: 'tuple object does not support item assignment'</code></p>
+<p>This is because tuples cannot be modified. If we create a tuple and decide what we really need is a list, we can convert it to a list. To convert a tuple to a list, we can do so with <code>list()</code>.</p>
+<pre><code class="python language-python">list(emp_rank)
+</code></pre>
+<p>This changed our tuple to a list:</p>
+<pre><code class="python language-python">print(emp_rank)
+</code></pre>
+<p>Output: <code>["Software Engineer", "Sr. Software Engineer", "Staff Software Engineer", "Software Engineer Principal"]</code></p>
+<h3 id="applyingyourknowledge-1">Applying your knowledge</h3>
+<ol>
+<li><p>Create a tuple called <code>vowels</code> that stores all of the vowels of the alphabet: a, e, i, o, u</p></li>
+<li><p>Using <code>vowels</code>, do the following:</p>
+<ol>
+<li><p>Print out the length of the <code>vowels</code></p></li>
+<li><p>Print out the 3rd vowel in <code>vowels</code></p></li>
+<li><p>Print out the 1st - 4th vowel (Use both the start and stop)</p></li>
+<li><p>Print out the 1st - 4th vowel (Do not use <strong>both</strong> the start and stop)</p></li>
+<li><p>Print out e and o using slicing</p></li>
+<li><p>Change the last vowel to <code>y</code>. What happens?</p>
+<ol>
+<li>After you are done with the above step, comment it out</li></ol></li></ol></li>
+</ol>
+<hr />
+<h2 id="sets">Sets</h2>
+<p>A <strong>set</strong> is a mutable data structure in Python that contains an unordered collection of elements. These elements are unique (no repeats) and unordered. Sets are used for removing duplicate entries and performing set operations such as intersection, union and difference.</p>
+<p>There are two built-in set types: set and frozenset. The set type is mutable and the frozenset type is immutable.</p>
+<p>Set Ups of a Set</p>
+<ul>
+<li><p><code>set()</code> for an empty set.</p></li>
+<li><p><code>set(values)</code></p></li>
+<li><p><code>{value1, valuen}</code></p></li>
+</ul>
+<p>Creating a <code>frozenset</code> is very similar and uses <code>frozenset()</code> instead of <code>set()</code>.</p>
+<p>Example of an Empty Set</p>
+<pre><code class="python language-python">myset1 = set()
+print(myset1)
+</code></pre>
+<p>Output: <code>set()</code></p>
+<p>When a set is given a string or any other iterable, it return a set composed of the iterable's elements.</p>
+<p>Example of a Set with a String</p>
+<pre><code class="python language-python">myset = set('aabbbbc')
+print(myset)
+</code></pre>
+<p>Output: <code>{'b', 'a', 'c'}</code></p>
+<p>Example of a Set with a List</p>
+<pre><code class="python language-python">positions = set(["Software Engineer", "Sr. Software Engineer", "Staff Software Engineer", "Software Engineer Principal", "Software Engineer"])
+print(positions)
+</code></pre>
+<p>Output: <code>{'Sr. Software Engineer', 'Software Engineer', 'Staff Software Engineer', 'Software Engineer Principal'}</code></p>
+<p>Example of <code>{ }</code> Syntax</p>
+<pre><code class="python language-python">languages={'python','java','c#','php'}
+print(languages)
+</code></pre>
+<p>Output: <code>{'c#', 'php', 'java', 'python'}</code></p>
+<h3 id="length-2">Length</h3>
+<p><code>len()</code>, just like in a string, tuple or a list, allows you to find the number of elements that are in a set. Do the following to find the length of a set:</p>
+<pre><code class="python language-python">positions = set(["Software Engineer", "Sr. Software Engineer", "Staff Software Engineer", "Software Engineer Principal", "Software Engineer"])
+print(len(positions))
+</code></pre>
+<p>Output: <code>4</code></p>
+<h3 id="setmethods">Set Methods</h3>
+<p>Set has several <strong>methods</strong> that are very helpful. We are going to briefly cover some of the set methods that are available.</p>
+<p><strong>Intersection</strong></p>
+<p>The method <code>set1.intersection(set2)</code> will find the similar elements in both set1 and set2.</p>
+<p><img src="../images/set-intersection.jpg" alt="set intersection" /></p>
+<p>Example of finding the similar favorite programming languages of Jo and Al</p>
+<pre><code class="python language-python">jos_favs = {'python', 'c++', 'javascript'}
+als_favs = {'c#', 'python'}
+print(jos_favs.intersection(als_favs))
+</code></pre>
+<p>Output: <code>{'python'}</code></p>
+<p><strong>Difference</strong></p>
+<p>The method <code>set1.difference(set2)</code> will find the elements in set1 and set2 that are different.</p>
+<p><img src="../images/set-difference.jpg" alt="set difference" /></p>
+<p>Example of finding the different favorite programming languages of Jo and Al</p>
+<pre><code class="python language-python">jos_favs = {'python', 'c++', 'javascript'}
+als_favs = {'c#', 'python'}
+print(jos_favs.difference(als_favs))
+</code></pre>
+<p>Output: <code>{'javascript', 'c++'}</code></p>
+<p><strong>Union</strong></p>
+<p>The method <code>set1.union(set2)</code> will show the combination of elements in set1 and set2.</p>
+<p><img src="../images/set-union.jpg" alt="set union" /></p>
+<p>Example of showing the combination of favorite programming languages of two people</p>
+<pre><code class="python language-python">jos_favs = {'python', 'c++', 'javascript'}
+als_favs = {'c#', 'python'}
+print(jos_favs.union(als_favs))
+</code></pre>
+<p>Output: <code>{'python', 'javascript', 'c#', 'c++'}</code></p>
+<h3 id="modifyingsets">Modifying Sets</h3>
+<p>Since sets are mutable, you can add, remove and modify elements after creation.</p>
+<p>The following methods do not work with <code>frozensets</code>.</p>
+<h4 id="adding-1">Adding</h4>
+<p>The method <code>set.add(x)</code> will modify the set to include <code>x</code>. If <code>x</code> is already in the set, there will not be a change.</p>
+<p>Example of add method</p>
+<pre><code class="python language-python">jos_favs = {'python', 'c++', 'javascript'}
+jos_favs.add('java')
+print(jos_favs)
+</code></pre>
+<p>Output: <code>{'python', 'java', 'javascript', 'c++'}</code></p>
+<h4 id="removing-1">Removing</h4>
+<p>The method <code>set.remove(x)</code> will modify the set to not include <code>x</code>. If x is not in the set, there will not be a change.</p>
+<p>Example of remove method</p>
+<pre><code class="python language-python">jos_favs = {'python', 'c++', 'javascript', 'java'}
+jos_favs.remove('java')
+print(jos_favs)
+</code></pre>
+<p>Output: <code>{'python', 'javascript', 'c++'}</code></p>
+<hr />
+<h3 id="applyingyourknowledge-2">Applying your knowledge</h3>
+<ol>
+<li><p>Create a set called <code>set1</code> with a string with a value of <code>aaabcccccdd</code> (Use the <code>set()</code> notation). Print out the values of the set after you create it</p></li>
+<li><p>Create a set called <code>set2</code> with a string with a value of <code>"b", "a", "t", "s", "c", "a", "t", "s"</code> (Use the <code>{value1}</code> notation). Print out the values of the set after you create it</p></li>
+<li><p>Print out the number of elements in set1</p></li>
+<li><p>Print out what <code>set1</code> and <code>set2</code> have in common</p></li>
+<li><p>Print out what values that <code>set1</code> has that <code>set2</code> does not have</p></li>
+<li><p>Print out the combination of <code>set1</code> and <code>set2</code></p></li>
+<li><p>Add the letter <code>e</code> to <code>set1</code>. Print out the new set</p></li>
+<li><p>Remove the letter <code>b</code> from <code>set2</code>. Print out the new set</p></li>
+</ol>
+<h2 id="dictionaries">Dictionaries</h2>
+<p>If you want to look up a meaning of a word, you use a dictionary. Whether it is online or a book, you look up the word and the definition is returned! In this example, you could think of the word as a key and the definition as the value that is returned. A Python dictionary is a collection of key-value pairs, just like in a "regular" dictionary!</p>
+<p><strong>Keys</strong> in a dictionary must be unique. The key and value pairs are listed between curly brackets. Dictionaries are useful whenever you have items that you wish to link together and want to store results for a quick look up.</p>
+<h3 id="dictionarysetup">Dictionary Set Up</h3>
+<pre><code class="python language-python">salaries = {'Pam': 12000, 'Jim': 10000, 'Dwight': 50000}
+</code></pre>
+<p>Dictionaries are surrounded by curly braces and each key and value pair are separated by a colon.</p>
+<p>The keys in the above dictionary are <code>Pam</code>, <code>Jim</code> and <code>Dwight</code>.</p>
+<p>The values are <code>12000</code>, <code>10000</code>, <code>50000</code>.</p>
+<h3 id="printingdictionaries">Printing Dictionaries</h3>
+<pre><code class="python language-python">print(salaries)
+</code></pre>
+<p>Output: <code>{'Pam': 12000, 'Jim': 10000, 'Dwight': 50000}</code></p>
+<h3 id="accessingelements">Accessing Elements</h3>
+<p>When accessing specific key value pairs, we call the values by referencing the related keys. If we wanted to see Jim's salary, we could do so by calling <code>salaries['Jim']</code>.</p>
+<pre><code class="python language-python">print(salaries['Jim'])
+</code></pre>
+<p>Output: <code>10000</code></p>
+<p>Dictionaries act like a database in that instead of calling an integer to get a particular index value as you would with a list, you assign a value to a key and can call that key to get its related value.</p>
+<p>By invoking the key <code>Jim</code>, we receive the value of that key, which is <code>10000</code>.</p>
+<h3 id="methodstoaccesselements">Methods to Access Elements</h3>
+<p>In addition to using keys to access values, we can also work with some built-in methods:</p>
+<ul>
+<li><p><code>dict.keys()</code> lists off just the keys</p></li>
+<li><p><code>dict.values()</code> lists off just the values</p></li>
+<li><p><code>dict.items()</code> lists key-value pairs in a list format <code>(key, value)</code> tuple pairs.</p></li>
+</ul>
+<p>For the example uses of the dictionary methods, we will use the following dictionary:</p>
+<pre><code class="python language-python">results_10k = {'Elizabeth': '56: 09', 'Emily': '56: 23', 'Alison': '57: 36'}
+</code></pre>
+<p>To return the keys, we would use the <code>dict.keys()</code> method. In our example, that would use the variable name and by <code>results_10k.keys()</code>. This method printed would look like the following:</p>
+<pre><code class="python language-python">print(results_10k.keys())
+</code></pre>
+<p>Output: <code>dict_keys(['Elizabeth', 'Emily', 'Alison'])</code></p>
+<p>We receive output that places the keys within an iterable view object of the <code>dict_keys</code> class. The keys are then printed within a list format.</p>
+<p>Similarly, we can use the <code>dict.values()</code> method to query the values in the <code>results_10k</code> dictionary, which would be constructed as <code>results_10k.values()</code>. Let's print those out:</p>
+<pre><code class="python language-python">results_10k = {'Elizabeth': '56: 09', 'Emily': '56: 23', 'Alison': '57: 36'}
+print(results_10k.values())
+</code></pre>
+<p>Output: <code>dict_values(['56: 09', '56: 23', '57: 36'])</code>
+Both the methods <code>keys()</code> and <code>values()</code> return unsorted lists of the keys and values present in the dictionary with the view object of dict<em>keys and dict</em>values respectively.</p>
+<p>If you are interested in all of the items in a dictionary, we can access them with the <code>items()</code> method:</p>
+<pre><code class="python language-python">print(results_10k.items())
+</code></pre>
+<p>Output: <code>dict_items(['Elizabeth': '56: 09', 'Emily': '56: 23', 'Alison': '57: 36'])</code>
+The returned format of this is a list made up of <code>(key, value)</code> tuple pairs with the dict_items view object.</p>
+<h3 id="modifyingdictionaries">Modifying Dictionaries</h3>
+<p>Dictionaries are mutable, meaning they can have items changed, removed, or added.</p>
+<h4 id="adding-2">Adding</h4>
+<p>Without using a method, you can add key-value pairs to dictionaries by using the following syntax:</p>
+<pre><code>dict[key] = value
+</code></pre>
+<p>We will look at how this works in practice by adding a key-value pair to our results_10k dictionary:</p>
+<pre><code class="python language-python">results_10k['Laurel'] = '59: 40'
+print(results_10k)
+</code></pre>
+<p>Output: <code>{'Elizabeth': '56: 09', 'Emily': '56: 23', 'Alison': '57: 36', 'Laurel': '59: 40'}</code>
+The above output shows that the new <code>'Laurel': '59: 40'</code> has been added to the dictionary. Because dictionaries may be unordered, this pair may occur anywhere in the dictionary output. If we use the <code>results_10k</code> dictionary later in our program file, it will include the additional key-value pair.</p>
+<h4 id="modifyingexistingitems">Modifying Existing Items</h4>
+<p>This same syntax is used if you want to update an already existing value for a key. Let's consider 'Alison', if we made a mistake in showing her time and needed to update it, we could simply type: <code>results_10k['Alison']</code>. Now if you were to print the <code>results_10k</code> dictionary, you would get the following result:</p>
+<pre><code class="python language-python">results_10k['Alison'] = '55: 36'
+print(results_10k)
+</code></pre>
+<p>Output: <code>{'Elizabeth': '56: 09', 'Emily': '56: 23', 'Alison': '55: 36', 'Laurel': '59: 40'}</code></p>
+<h4 id="deleting">Deleting</h4>
+<p>Just as you can add key-value pairs and change values within the dictionary data type, you can also delete items within a dictionary.</p>
+<p>To remove a key-value pair from a dictionary, we'll use the following syntax:</p>
+<pre><code>del dict[key]
+</code></pre>
+<p>Let's take the <code>results_10k</code> dictionary and say that Laurel does not want her results to be displayed any more. To remove her time, we would do the following:</p>
+<pre><code class="python language-python">results_10k = {'Elizabeth': '56: 09', 'Emily': '56: 23', 'Alison': '55: 36', 'Laurel': '59: 40'}
+del results_10k['Laurel']
+print(results_10k)
+</code></pre>
+<p>Output: <code>{'Elizabeth': '56: 09', 'Emily': '56: 23', 'Alison': '55: 36'}</code></p>
+<p>The line <code>del results_10k['Laurel']</code> removes the key-value pair <code>'Laurel': '59: 40'</code></p>
+<hr />
+<h3 id="applyingyourknowledge-3">Applying your knowledge</h3>
+<ol>
+<li><p>Create a dictionary called <code>cool_ranking</code>. Set the corresponding keys equal to their values: "Chandler" = 1, "Monica" = 10, "Ross" = 5, "Phoebe" = 2, "Joey" = 3, "Rachel" = 4.</p></li>
+<li><p>Use the <code>cool_ranking</code> for the following:</p>
+<ol>
+<li><p>print out the ranking of 'Monica'</p></li>
+<li><p>add the following key-value pair to the dictionary: 'Janice' = 6. Print out the new dictionary</p></li>
+<li><p>print out all of the keys of the dictionary</p></li>
+<li><p>print out all of the values of the dictionary</p></li>
+<li><p>print out all of the key, value pairs of the dictionary in a list format.</p></li>
+<li><p>change 'Monica' to have a ranking of 7. Print out the new dictionary.</p></li>
+<li><p>remove 'Janice' from the dictionary. Print out the new dictionary.</p></li></ol></li>
+</ol>
+<h2 id="nonetype">NoneType</h2>
+<p>Let's create a dictionary to explain the <code>NoneType</code>.</p>
+<pre><code class="python language-python">groceries =
+{
+    "ribeye steak":  4,
+    "russet potatoes":  "2 lbs",
+    "coleslaw":  None,
+    "corn on the cob":  "4 ears",
+    "pork ribs":  "3 lbs"
+}
+</code></pre>
+<p>We've never seen what <code>"coleslaw"</code> is set to. It says <code>None</code> and within the console, you can see the value <code>NoneType</code> for the key <code>"coleslaw"</code>.</p>
+<p>This means we've told Python to <strong>specifically</strong> interpret the value for <code>"coleslaw"</code> as null, or empty. Python has a <code>NoneType</code> object it slaps on keys which technically don't yet have a value. We have to make sure to <strong>tell</strong> it not to have value, by using the word <code>None</code>.</p>
+<p>Python will interpret the value of <code>coleslaw</code> as <code>None</code> until we intentionally set a value to <code>coleslaw</code></p>

@@ -1,0 +1,34 @@
+<h1 id="gitsetup">Git Setup</h1>
+<h2 id="timetogitit">Time to git it!</h2>
+<p>Git is the current industry standard for version control. It was originally developed in 2005 by the creator of the Linux operating system, Linus Torvalds.</p>
+<p>The Home Depot uses Git because of advantages offered over alternative VCS offerings. Some of the advantages include:</p>
+<ul>
+<li>Superior performance, flexibility and security   </li>
+<li>The broad adoption of Git across the industry makes it an attractive option, especially when it comes to using and contributing to open-source software. Many third-party software tools integrate really well with Git.</li>
+<li>Git itself is an open source project. This means that we can use the Git software without paying a fee and we can lean on the support and contributions of the developer community, as well as contribute back to the source code. This level of scrutiny serves to raise the quality of the software for everyone.</li>
+</ul>
+<h2 id="createagithubaccount">Create a GitHub account</h2>
+<p>Go to https://github.com.</p>
+<p>Click on sign up. Enter your email and create a username, and password.</p>
+<p>You now have a GitHub account!</p>
+<h2 id="configuringyourcredentialsingit">Configuring your credentials in git</h2>
+<p>Before we can work with git you first have to make sure you have git.</p>
+<p>In your terminal type <code>git --version</code></p>
+<p>If git is installed you should see something like this:</p>
+<pre><code>git version 2.x.x
+</code></pre>
+<p>If git isn't installed then copy and paste the following into your terminal.</p>
+<pre><code>git clone https://github.com/git/git
+</code></pre>
+<p><code>git clone</code> command will be discussed later, just trust us for now.</p>
+<p>The following commands will customize your configuration with your user name and your email so that your changes can be traced back to you (and then appropriate kudos or punishments can be administered)</p>
+<pre><code>git config --global --list
+
+git config --global --unset user.name
+
+git config --global --unset user.email
+
+git config --global user.name "John Doe"
+
+git config --global user.email johndoe@example.com
+</code></pre>

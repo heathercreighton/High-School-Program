@@ -1,0 +1,77 @@
+<h1 id="gittingstarted">Gitting Started</h1>
+<h2 id="initializingvscloning">Initializing vs Cloning</h2>
+<p>There are two different ways to get started in git. Depending on whether you
+will be working on something you create from scratch or if you will be starting with
+someone else's work.</p>
+<ul>
+<li><p><code>git init</code> - will initialize a new, empty repository.</p>
+<ul>
+<li>What specifically happens when you run <code>git init</code>? A <code>.git</code> folder is created that stores commits, local config, remote tracking and branching.</li></ul></li>
+<li><p><code>git clone</code> - will copy a repository (provided you have permission) to your directory.</p></li>
+</ul>
+<p><img src="./images/localvsremote.png" alt="Local vs Remote" /></p>
+<p>For this class we will begin with <code>git init</code> which will allow us to first become good with our local work, and jump into the complexities later.</p>
+<p>The following link will take you through a virtual tour of git, using the major commands covered in this workshop.
+Read through the instructions. You can ignore when it asks to set up a code school account, you already have it. Each command is preceded by a description of what it does.</p>
+<h2 id="githelp">git help</h2>
+<p>Another great resource is within git itself. Simply type</p>
+<pre><code>git help
+</code></pre>
+<p>A list of common commands will pop up in your terminal.</p>
+<p>For more detail on a particular command just follow git help with the actual command of interest.
+To get help on <code>git add</code> type:</p>
+<pre><code>git help add
+</code></pre>
+<ul>
+<li><p>In groups, you'll be assigned to a few of the following commands:</p></li>
+<li><p>git init</p></li>
+<li><p>git add</p></li>
+<li><p>git commit</p></li>
+<li><p>git clone</p></li>
+<li><p>git branch</p></li>
+<li><p>git checkout</p></li>
+<li><p>git pull</p></li>
+<li><p>git push</p></li>
+<li><p>git merge</p></li>
+<li><p>Take 20 minutes to understand and discuss with your group by using the command <code>git help</code> and other resources.</p></li>
+<li><p>Then, draw a picture or write a description for a presentation on your understand of the assigned commands.</p></li>
+</ul>
+<h2 id="staging">Staging</h2>
+<p><code>git add</code> - This moves your changed files into the staging area.</p>
+<p>| Git Add Commands | Description |
+| --- | --- |
+| <code>git add file-name</code> | Will stage <strong>only</strong> the changes of the file you specify. |
+| <code>git add .</code> | Will stage <strong>all</strong> changes. |</p>
+<h2 id="makingasnapshot">Making a Snapshot</h2>
+<p><code>git commit</code> - Makes a snapshot of the changes found in the staging area.</p>
+<h2 id="keepingupwithchanges">Keeping up with changes</h2>
+<p><code>git status</code> - A way to check the status of files that have been changed and whether they need to be committed.</p>
+<h2 id="labgitintro">Lab - git intro</h2>
+<p>We are going to use challenges from Katakoda.com.</p>
+<p>Create an account at <a href="https://www.katacoda.com/signup">Sign Up</a></p>
+<p>Once you have created an account, complete: </p>
+<ul>
+<li><strong><a href="https://www.katacoda.com/courses/git/1">Scenario 1 - Committing Files</a></strong> lab.</li>
+<li><strong><a href="https://www.katacoda.com/courses/git/2">Scenario 2 - Committing Changes</a></strong> lab.</li>
+</ul>
+<p>Remember to go off of bandsaw</p>
+<h2 id="creatingandcheckingoutabranch">Creating and Checking out a Branch</h2>
+<p>The branches we create using the commands <code>git branch</code> and <code>git checkout -b</code> are actually pointers to a specific SHA1.</p>
+<p>In the image below, the Little Feature contains only the data from the master branches first commit (the first blue dot) and the Big Feature branch contains more information as it was created further down in the history of the project. Both branches point to their own SHA1 which contains this specific information. We'll drill down into what SHA1 actually is later; for now we'll stick to talking about branches.</p>
+<p><img src="./images/branch.png" alt="Branching image" /></p>
+<h3 id="creatinganewbranch">Creating a new branch</h3>
+<p>Just like the golden rule on committing your code: Create branches early and often!</p>
+<p><code>git branch &lt;branch-name&gt;</code></p>
+<p>When we run the command <code>git branch</code>, git <strong>only</strong> creates a branch of the name you choose pointing to a SHA1.</p>
+<p><code>git checkout -b &lt;branch-name&gt;</code></p>
+<p>When you run the command <code>git checkout -b</code>, the <code>-b</code> stands for <strong>branch</strong>. We're actually creating a new branch <strong>and</strong> checking it out, or switching to it.</p>
+<h3 id="merging">Merging</h3>
+<p>The reason to use the command <code>git merge</code> is simply to update one branch with new information from another branch. </p>
+<p>We only use the command <code>git merge</code> locally. This means that we never merge <strong>into</strong> the remote origin/master branch repository on GitHub.</p>
+<p>To interpret the following illustration, imagine that we're on our local machines making sure our local master branch is updated (merged) with the data we have in our local feature branch.</p>
+<p><img src="./images/merging.svg" alt="Merging image" /></p>
+<p>But when do we merge changes <strong>from</strong> the remote master branch into our local branch?</p>
+<p>Not only do we have to ensure our <strong>local master</strong> branch has the most updated version of our <strong>local feature</strong> branch, we also have to make sure our <strong>local feature</strong> branch has all of the most recent changes made to the <strong>remote origin master repository</strong> (on GitHub, for example) so that when we make our <strong>pull request</strong> there won't be any merge conflicts.</p>
+<p><code>git merge</code></p>
+<p>When we're working on our local feature branch and run <code>git merge origin master</code> we're merging in any new changes made on the remote repository since we last updated. This has to happen periodically to avoid merge conflicts in the future. The only downside to this practice is that it creates default <strong>merge commit messages</strong>. These messages aren't helpful in our project's history and we'll get to how we clean them up a little later.</p>
+<p>Even when merging diligently, merge conflicts still happen occasionally, so we will be able to practice how to resolve them in an exercise.</p>

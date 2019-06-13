@@ -1,0 +1,33 @@
+<hr />
+<p>title: "classes-labs"</p>
+<h2 id="typelab">type: "lab"</h2>
+<h1 id="classeslabs">Classes Labs</h1>
+<p>Create a new file called <code>string_manipulation.py</code>.</p>
+<p>Inside your new file, create a class called <code>StringManipulation</code>. Inside this class create the following methods.</p>
+<p><strong>Constructor</strong></p>
+<p>Create a constructor that takes in a string called <code>altering_str</code>.</p>
+<p><strong>String Reversal</strong></p>
+<p>Create a function called <code>string_reversal</code> that takes in a String called <code>reverse</code> that has a default value of 'None'. If the value of <code>reverse</code> remains <code>None</code>, return <code>self.altering_str</code> reversed. If the value of <code>reverse</code> has changed, return the exact reversal of the characters in the new string.</p>
+<p><strong>Removing Case</strong></p>
+<p>Create a function called <code>removing_case</code> that takes in a String called <code>removed</code> that has a default value of 'None'. If the value of <code>removed</code> remains <code>None</code>, return <code>self.altering_str</code> without any punctuation, spaces and all letters are converted to lowercase. If the value of <code>removed</code> has changed, return <code>removed</code> without any punctuation, spaces and all letters are converted to lowercase.</p>
+<p><strong>Is Vowel</strong></p>
+<p>Create a function called <code>is_vowel</code> that takes in a String called <code>searching</code> that has a default value of 'None'. If the value of <code>searching</code> remains <code>None</code>, return if <code>self.altering_str</code> contains any vowels. If the value of <code>is_vowel</code> has changed, return if <code>is_vowel</code> contains any vowels.</p>
+<p><strong>Palindrome</strong></p>
+<p>Create a function called <code>is_palindrome</code> that takes in a String called <code>searching</code> that has a default value of 'None'. If the value of <code>searching</code> remains <code>None</code>, return if <code>self.altering_str</code> is a palindrome. If the value of <code>is_palindrome</code> has changed, return if <code>is_palindrome</code> is a palindrome.</p>
+<p><strong>Short Hand</strong></p>
+<p>Create a function called <code>short_hand</code> that takes in a String called <code>short</code> that has a default value of 'None'. If the value of <code>short</code> remains <code>None</code>, return if <code>self.altering_str</code> in shorthand. If the value of <code>short</code> has changed, return <code>short</code> in short hand. The simplified shorthand form of a String is defined as follows:</p>
+<ul>
+<li><p>replace these four words: "and" with "&amp;", "to" with "2", "you" with "U", and "for" with "4".</p></li>
+<li><p>remove all vowels ('a', 'e', 'i', 'o', 'u', whether lowercase or uppercase). <strong>Be careful on removing <code>U</code>!</strong></p></li>
+</ul>
+<p><strong>Pig Latin</strong></p>
+<p>Create a function called <code>pig_latin</code> that receives a String called <code>pig</code>, that has a default value of 'None'. If the value of <code>pig</code> remains <code>None</code>, return if <code>self.altering_str</code> in pig latin. If the value of <code>pig</code> has changed, return <code>pig</code> in pig latin.</p>
+<p>Here's how to translate the English word into the Pig Latin word:</p>
+<ul>
+<li><p>If there are no vowels in englishWord, then pigLatinWord is just <code>englishWord + "ay"</code>. (There are ten vowels: <code>'a'</code>, <code>'e'</code>, <code>'i'</code>, <code>'o'</code>, and <code>'u'</code>, and their uppercase counterparts. ‘y' is not considered to be a vowel for the purposes of this assignment, i.e. <code>my</code> becomes <code>myay</code>, <code>why</code> becomes <code>whyay</code>, etc.)</p></li>
+<li><p>Else, if englishWord begins with a vowel, then pigLatinWord is just <code>englishWord + "yay"</code></p></li>
+<li><p>Otherwise (if englishWord begins has a vowel in it and yet doesn't start with a vowel), then pigLatinWord is <code>end + start + "ay"</code>, where <code>end</code> and <code>start</code> are defined as follows:</p>
+<ul>
+<li><p>Let <code>start</code> be all of englishWord up to (but not including) its first vowel.</p></li>
+<li><p>Let <code>end</code> be all of englishWord from its first vowel on.</p></li></ul></li>
+</ul>

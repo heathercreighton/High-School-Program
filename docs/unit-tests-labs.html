@@ -1,0 +1,16 @@
+<hr />
+<p>title: "unit-tests-labs"</p>
+<h2 id="typelab">type: "lab"</h2>
+<h1 id="unittestslabs">Unit Tests Labs</h1>
+<pre><code class="python language-python">def age_calculator(current_year, birth_year):
+  # Returns the age of a person
+  age = current_year - birth_year
+  if age &lt; 0: # If age is not a positive number, do not return the age
+    print("Not a correct age!")
+  else:
+    return age
+
+if __name__ == '__main__':
+  print(age_calculator(2018, 1995))
+</code></pre>
+<p>Write a test validating that the function we wrote will always return a positive number for age.</p>

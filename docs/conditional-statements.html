@@ -1,0 +1,173 @@
+<hr />
+<p>title: "conditional-statements"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="conditionalstatements">Conditional Statements</h1>
+<ul>
+<li><p>If I have enough money in the bank, I will go to a fancy dinner tonight. If not, I will eat at home.</p></li>
+<li><p>If I do the correct secret hand shake at the door, I can get in the secret club. If not, I will go home.</p></li>
+<li><p>If it is not raining outside, I will go for a run. If it is, I will stay home.</p></li>
+</ul>
+<p>There are cases when working on a program we want certain parts of a program to execute, but only if a certain conditions are met. With conditional statements, we can have code that sometimes runs and at other times does not run, depending on the conditions of the program at that time. By using conditional statements, program can determine whether certain conditions are being met and then be told what to do next.</p>
+<h2 id="ifstatements">If Statements</h2>
+<p>An <code>if</code> statement helps with deciding whether a statement is true or false, and run code only in the case that the statement is true.</p>
+<p><strong>If Statement Set Up</strong></p>
+<pre><code>if condition is true:
+  [do something]
+</code></pre>
+<p>Notice that the <code>[do something]</code> section is <strong>indented</strong>. In conditional statements, the indentation tells the Python Interpreter which line(s) of code are executed if a statement is correct.</p>
+<p>Checking if someone guessed the correct number</p>
+<pre><code class="python language-python">secret_num = 10
+guess = int(input("Enter a secret number: "))
+if guess == secret_num:
+  print("Yay! You won!")
+</code></pre>
+<p>With this code, we have the variable <code>secret_num</code> and are giving it the integer value of 10. A second variable called <code>guess</code> is created and is set to the value of an integer that the user types in. The <code>if</code> statement is used to check if the variable <code>guess</code> equals <code>secret_num</code>. If the user did guess the correct number, the program would print out <code>Yay! You won!</code>. If the user did not guess the correct number, nothing would be printed.</p>
+<p>Example of the user guessing correctly</p>
+<pre><code>Enter a secret number: 10
+Yay! You won!
+</code></pre>
+<p>In the above example, the user typed in 10, which is equivalent to the secret number. Because the values were equivalent, the code executed the print statement.</p>
+<p>Example of the user guessing incorrectly</p>
+<pre><code>Enter a secret number: 255
+</code></pre>
+<p>One common action for a person to do is to check to see if you have nay money in your bank account. If you have a negative amount (any amount less than zero), you should receive a warning of some kind. This could be done with the following code:</p>
+<pre><code class="python language-python">balance = 100
+if balance &lt; 0:
+  print("Balance is negative. Put funds in your account or you will be charged a penalty.")
+</code></pre>
+<p>The above code would not have any output because the balance is 100, which is greater than zero!</p>
+<p>If the above code was changed to:</p>
+<pre><code class="python language-python">balance = -5
+if balance &lt; 0:
+  print("Balance is negative. Put funds in your account or you will be charged a penalty.")
+</code></pre>
+<p>The above code would output <code>Balance is negative. Put funds in your account or you will be charged a penalty.</code> because the balance is -5, which is less than zero!</p>
+<h2 id="elsestatements">Else Statements</h2>
+<p>An <code>if</code> statement by itself will only handle if the condition is True. It is very common that you would want to give a response if the condition is true <strong>or</strong> it is false. In the bank example, we might also want to give a response if the user has a balance in their account. This can be done with an <code>else</code> statement. An <code>else</code> statement is the "otherwise" statement, taking care of if the original <code>if</code> condition is false.</p>
+<p><strong><code>else</code> Statement Set Up</strong></p>
+<pre><code>if condition1:
+  [do 1st option]
+else:
+  [do 2nd option]
+</code></pre>
+<pre><code class="python language-python">balance = 25
+if balance &lt; 0:
+  print("Balance is negative. Put funds in your account or you will be charged a penalty.")
+else:
+  print("Balance is positive.")
+</code></pre>
+<p>The output is <code>Balance is positive</code> because the balance is still 25, which is above zero.</p>
+<p>If the above output was changed:</p>
+<pre><code class="python language-python">balance = -33
+if balance &lt; 0:
+  print("Balance is negative. Put funds in your account or you will be charged a penalty.")
+else:
+  print("Balance is positive.")
+</code></pre>
+<p>The output is <code>Balance is negative. Put funds in your account or you will be charged a penalty.</code> because the balance is -33, which is below zero.</p>
+<h2 id="elseifstatements">Else If Statements</h2>
+<p>So far, we have only checked to see if one condition is True or False. Usually a program has many different conditions to consider. To consider other conditions, you use an <strong>else if</strong> statement, which in Python is written as <code>elif</code>. The <code>elif</code> looks like the <code>if</code> statement and will evaluate another condition.</p>
+<p><strong>elif Set Up</strong></p>
+<pre><code>if condition1:
+  [do 1st option]
+elif condition2:
+  [do 2nd option]
+else:
+  [do 3rd option]
+</code></pre>
+<p>Back to the bank account example, we may want to consider three possible situations:</p>
+<ul>
+<li>If the Balance is negative. Put funds in your account or you will be charged a penalty.</li>
+<li>If the balance is equal to zero</li>
+<li>If the balance is positive</li>
+</ul>
+<p>In Python, this would be written as:</p>
+<pre><code class="python language-python">if balance &lt; 0:
+  print("Balance is negative. Put funds in your account or you will be charged a penalty.")
+elif balance == 0:
+  print("Balance is equal to zero, add funds soon.")
+else:
+  print("Balance is positive.")
+</code></pre>
+<p>There are three possible outputs can now occur:</p>
+<ul>
+<li><p>If the variable <code>balance</code> is equal to 0, we will receive the output from the <code>elif</code> statement (<code>Balance is equal to zero, add funds soon.</code>)</p></li>
+<li><p>If the variable <code>balance</code> is set to a positive number, we will receive the output from the <code>else</code> statement (<code>Balance is positive.</code>)</p></li>
+<li><p>If the variable <code>balance</code> is set to a negative number we will receive the output from the <code>if</code> statement (<code>Balance is negative. Put funds in your account or you will be charged a penalty</code>)</p></li>
+</ul>
+<p>You can have multiple <code>elif</code> statements in the same group, allowing for a program to choose between 2+ conditions. For example, with the Orange Method classes, based on your knowledge of particular topics you can take specific courses. It would be helpful to know based on certain requirements what classes you qualify for. Different qualifiers include knowledge in Git and Python. Each of these abilities can be rated on a 1 to 3 scale, 1 representing "No knowledge at all" and 3 representing "Expert". It would be helpful to be able to type in your abilities and see what courses are appropriate for you.</p>
+<pre><code class="python language-python">if git_skill == 1 and python_skill == 1:
+  print("Start off with Git Foundation")
+elif git_skill &gt;= 2 and python_skill == 1:
+  print("Start off with Python Foundation")
+elif git_skill == 2 and python_skill == 2:
+  print("Start off with either Python Pillars or Git Pillars")
+elif git_skill == 3 and python_skill == 2:
+  print("Start off with Python Capstone")
+else:
+  print("Git Capstone or Python Capstone")
+</code></pre>
+<p>There are five paths defined in the above example.</p>
+<ul>
+<li><p>If the user has the <code>git_skill</code> level of a 1 and a <code>python_skill</code> level of a 1, we will receive the output from the <code>if</code> statement. (<code>Start off with Git Foundation</code>)</p></li>
+<li><p>If the user has the <code>git_skill</code> level of a 2 or higher and a <code>python_skill</code> level of a 1, we will receive the output from the first <code>elif</code> statement. (<code>Start off with the Python Foundation</code>)</p></li>
+<li><p>If the user has the <code>git_skill</code> level of a 2 and a <code>python_skill</code> level of a 2, we will receive the output from the second <code>elif</code> statement. (<code>Start off with either Python Pillars or Git Pillars</code>)</p></li>
+<li><p>If the user has the <code>git_skill</code> level of a 3 and a <code>python_skill</code> level of a 2, we will receive the output from the third <code>elif</code> statement. (<code>Start off with the Python Capstone</code>)</p></li>
+<li><p>If the user has any other combination (like a <code>git_skill</code> level of 3 and <code>python_skill</code> level of 3), we will receive the output from the <code>else</code> statement. (<code>Git Capstone or Python Capstone</code>)</p></li>
+</ul>
+<h1 id="main">main</h1>
+<p>Although in Python you can call the function at the bottom of your program and it will run (as we have done in the examples above), many programming languages (like C++ and Java) require a <code>main</code> function in order to execute. Including a <code>main()</code> function, though not required, can structure our Python programs in a logical way that puts the most important components of the program into one function. It can also make our programs easier for non-Python programmers to read.</p>
+<p>We'll start with adding a <code>main()</code> function to the <code>hello()</code> example. We will include a <code>print</code> in the <code>main()</code> to let us know that we're in the <code>main()</code> function. Additionally, let's call the <code>hello()</code> function within the <code>main()</code> function.</p>
+<pre><code class="python language-python">def hello():
+    print("Hello, World!")
+
+def main():
+    print("This is the main function")
+    hello()
+
+main()
+</code></pre>
+<p>Output:</p>
+<pre><code>This is the main function.
+Hello, world!
+</code></pre>
+<p>Because we called the <code>hello()</code> function within <code>main()</code> and then only called <code>main()</code> to run, the <code>Hello, World!</code> text printed only once, after the string that told us we were in the main function.</p>
+<p>Next we're going to be working with multiple functions, so it is worth reviewing the variable scope of global and local variables. If you define a variable within a function block, you'll only be able to use that variable within that function. If you would like to use variables across functions it may be better to declare a global variable.</p>
+<p>In Python, <code>'main'</code> is the name of the scope where top-level code will execute. When a program is run from standard input, a script, or from an interactive prompt, its <code>name</code> is set equal to <code>'main'</code>.</p>
+<p>Because of this, these is a convention to use the following construction:</p>
+<pre><code class="python language-python">if __name__ == '__main__':
+  # Code to run when this is the main program here
+</code></pre>
+<p>This lets program files be used either:</p>
+<ul>
+<li><p>as the main program and run what follows the <code>if</code> statement</p></li>
+<li><p>as a module and not run what follows the <code>if</code> statement</p></li>
+</ul>
+<p>Let's expand on our program above. In this program we'll declare a global variable and modify our original <code>names()</code> function so that the instructions are in two discrete functions.</p>
+<p>The first function, <code>has _vowel()</code> will check to see if the name string contains a vowel.</p>
+<p>The second function <code>print _letters()</code> will print each letter of the <code>name</code> string.</p>
+<pre><code class="python language-python">#Declare global variable `name` for use in all functions
+name = input('Enter your name: ')
+
+# Define function to check if name contains a vowel
+def has_vowel():
+    if set('aeiou').intersection(name.lower()):
+        print('Your name contains a vowel.')
+    else:
+        print('Your name does not contain a vowel.')
+
+# Iterate over letters in name string
+def print_letters():
+    for letter in name:
+        print(letter)
+
+# Define main method that calls other functions
+def main():
+    has_vowel()
+    print_letters()
+
+# Execute main() function
+if __name__ == '__main__':
+    main()
+</code></pre>
+<p>The output from this file will only occur if the current file is the main file being run.</p>

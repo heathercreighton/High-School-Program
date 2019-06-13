@@ -1,0 +1,75 @@
+<hr />
+<p>title: "data-structures-labs"</p>
+<h2 id="typelab">type: "lab"</h2>
+<h1 id="datastructurelabs">Data Structure Labs</h1>
+<p>Create a function called <code>shake_ball</code> that has no parameters. Inside the function, ask the user to ask a question about their future. Have your program <strong>return</strong> a <strong>random</strong> response of either: <code>Yes definitely</code>, <code>As I see it, yes</code>, <code>Ask again later</code>, <code>Cannot predict now</code>, <code>Don't count on it</code>, <code>Very doubtful</code>, and 4 other responses.</p>
+<p>Call (invoke) the function like shown below:</p>
+<pre><code class="python language-python">print(shake_ball())
+</code></pre>
+<p>Example output:</p>
+<pre><code>Ask a question: Will I be a millionaire?
+Don't count on it
+</code></pre>
+<h2 id="tuplesexercise">Tuples Exercise</h2>
+<p><strong>Gymnast Scores</strong></p>
+<p>Create a function called <code>gymnast_scores</code> that does not have any parameters or return anything. A gymnast can earn a score between 1 and 5 from each judge; nothing lower, nothing higher. All scores are integer values; there are no decimal scores from a single judge. Store the possible scores a gymnast can earn from one judge in a tuple.</p>
+<ol>
+<li><p><strong>Print</strong> out the sentence, "The lowest possible score is _ _ _, and the highest possible score is _ _ _." Use the values from your tuple. (Do not hard code the values)</p></li>
+<li><p><strong>Print</strong> out "A judge can give a gymnast _ points.". Filling in the blank with a random value from the tuple. (Do not hard code the value)</p></li>
+</ol>
+<p>Call (invoke) the function like shown below:</p>
+<pre><code>gymnast_scores()
+</code></pre>
+<p>Example output:</p>
+<pre><code>The lowest possible score is 1, and the highest possible score is 5.
+A judge can give a gymnast 3 points.
+</code></pre>
+<h2 id="setsexercises">Sets Exercises</h2>
+<p><strong>Remove Duplicates</strong></p>
+<p>Create a function called <code>remove_duplicates</code> that takes in an iterable as a parameter and returns a set without any duplicates.</p>
+<p>Call (invoke) the function like the example shown below:</p>
+<pre><code class="python language-python">print(remove_duplicates('MISSISSIPPI'))
+</code></pre>
+<p>Example output:</p>
+<pre><code>{'M', 'P', 'S', 'I'}
+</code></pre>
+<p><strong>Finding Vowels</strong></p>
+<p>Create a function called <code>finding_vowels</code> that takes in a string and returns <code>True</code> if there are <strong>any</strong> vowels in the word and <code>False</code> if there are not any vowels.</p>
+<p>Call (invoke) the function like the example shown below:</p>
+<pre><code class="python language-python">print(finding_vowels('mississippi'))
+</code></pre>
+<p>Example output:</p>
+<pre><code>True
+</code></pre>
+<h2 id="dictionariesexercises">Dictionaries Exercises</h2>
+<p><strong>Polling friends</strong></p>
+<p>Create a function called <code>polling_friends</code> that does not take in any parameters. In the function, create a dictionary called <code>fav_animals</code> where each key is a person's name, and each value is that person's response to the question "What is your favorite animal?". You are going ask your two friends "Miranda" and "Gordo". (Use user input to get their favorite animal). Store two responses in your dictionary. Return the dictionary once you are done!</p>
+<p>Call (invoke) the function like shown below:</p>
+<pre><code class="python language-python">print(polling_friends())
+</code></pre>
+<p>Example Output:</p>
+<pre><code>Gordo, what is your favorite animal? llama
+&gt;&gt;&gt;Miranda, what is your favorite animal? sloth
+{'Gordo': 'llama', 'Miranda': 'sloth'}
+</code></pre>
+<p><strong>Birthday Month</strong></p>
+<p>Create a function called <code>birthday_month</code> that takes in two parameters, <code>current</code> (representing the current month) and <code>birthday</code> (representing the user's birthday month) and returns the difference of the two months.</p>
+<ul>
+<li><p>Create a dictionary where each key is a month, and each value is the corresponding number for each month.</p>
+<ul>
+<li><code>months = {'January': 1, 'February': 2, 'March': 3, 'April': 4, 'May': 5, 'June': 6, 'July': 7, 'August': 8, 'September': 9, 'October': 10, 'November': 11, 'December': 12}</code></li></ul></li>
+<li><p>Find the numerical value of <code>current</code> using the dictionary and store this is a variable called <code>curr_month_num</code></p></li>
+<li><p>Find the numerical value of <code>birthday</code> using the dictionary and store this is a variable called <code>birth_month_num</code></p></li>
+<li><p>Return the difference of the two months.</p></li>
+</ul>
+<p>Call (invoke) the function like the example shown below:</p>
+<pre><code class="python language-python">print(birthday_month('June', 'December'))
+</code></pre>
+<p>Example Output: <code>6</code></p>
+<ul>
+<li><strong>Birthday Month Bonus:</strong> calculate how many months in the <strong>future</strong> their birthday month is without loops or conditionals.<ul>
+<li>Examples:<ul>
+<li>If the current month is May and their birth month is August, you should return 3.</li>
+<li>If the current month is May and their birth month is February, you should return 9.</li>
+<li>If the current month is May and their birth month is May, you should return 0. (We are not concerned about days, just months)</li></ul></li></ul></li>
+</ul>

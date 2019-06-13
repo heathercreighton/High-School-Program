@@ -1,0 +1,85 @@
+<hr />
+<p>title: "pycharm-setup"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="pycharmsetup">PyCharm Setup</h1>
+<h2 id="gettingstarted">Getting Started</h2>
+<p>We installed Python3 onto every iMac for this class. For your personal computer, you'll want to visit the <a href="https://www.python.org/downloads/">Python website</a> to download the newest version of Python.</p>
+<p>PyCharm is an Integrated Development Environment used in computer programming, specifically for the Python language. Here at Home Depot, we have a dedicated license to use PyCharm Professional, Community and Edu versions. Just download the <a href="https://www.jetbrains.com/toolbox/">JetBrains Toolbox</a> on <strong>bandsaw</strong> wifi and you can have PyCharm and more on your own machine.</p>
+<h2 id="configuringpythoninterpreters">Configuring Python Interpreters</h2>
+<p>To access the interpreter settings:</p>
+<ul>
+<li><p>Go to PyCharm in the menu bar and click <code>PyCharm &gt; Preferences</code> and then click the link for <code>project interpreter</code></p></li>
+<li><p>Click the gear to the right of the Project Interpreter input. <strong>Click <code>Add</code></strong></p></li>
+<li><p>Click the radio button labeled <code>Existing environment</code></p></li>
+<li><p>Click the three dots to the right of the <code>Interpreter</code> input.</p></li>
+<li><p>Choose this file path on your Mac: <code>/usr/local/bin/python3</code></p></li>
+<li><p>Check off <strong>Make available to all projects</strong></p></li>
+<li><p>Click <code>OK</code></p></li>
+<li><p>On the current window, you should see the path you chose in the <code>Project Interpreter</code> dropdown. You may also see a list of packages, including <code>pip</code></p></li>
+<li><p>Click <code>Apply</code> and <code>OK</code></p></li>
+</ul>
+<h2 id="installingpackages">Installing Packages</h2>
+<p>Make sure you're in the <code>Project Interpreter</code> preferences panel.</p>
+<p>Click the <code>+</code> on the lower left hand corner of the packages list.</p>
+<p>Search for the packages you need to use for your project.</p>
+<p>Click <code>Install Package</code> in the lower left hand corner of the window.</p>
+<p>Click the red dot in the upper left hand corner of the window to close it, you should see your new package in the list on the following screen.</p>
+<p>Click <code>Apply</code>.</p>
+<h2 id="connectingprojecttogithub">Connecting Project to GitHub</h2>
+<p><a href="https://www.jetbrains.com/help/pycharm/manage-projects-hosted-on-github.html">Connecting PyCharm and GitHub</a></p>
+<ul>
+<li>Log in or Create your GitHub account on: <a href="https://github.com">GitHub</a></li>
+</ul>
+<hr />
+<ul>
+<li><p>Open PyCharm to create repository on GitHub</p>
+<ul>
+<li><p>Go to <strong>Preferences</strong></p></li>
+<li><p>Select <strong><code>Version Control | GitHub</code></strong></p></li>
+<li><p>Select <strong>Password</strong> authentication</p></li>
+<li><p>Click the dropdown on the right hand side and select <code>Login</code></p></li>
+<li><p>Type <code>github.com</code> into the <code>Host</code> field</p></li>
+<li><p>Type your username into the <code>Login</code> field</p></li>
+<li><p>Type your password into the <code>Password</code> field</p></li></ul></li>
+</ul>
+<hr />
+<ul>
+<li><p>Create a new project in PyCharm</p>
+<ul>
+<li><p>Open PyCharm and create a project called <code>PythonFoundations</code></p></li>
+<li><p>Click <code>VSC</code> > <code>Import Into Version Control</code> > <code>Share Project on GitHub</code></p></li>
+<li><p>Type in a description in the description box.</p></li>
+<li><p>Make sure that all boxes are checked</p></li>
+<li><p>Click <code>OK</code></p></li>
+<li><p>In the box that says <code>Remember, don't ask again</code></p></li>
+<li><p>Click <code>Yes</code></p></li></ul></li>
+</ul>
+<hr />
+<ul>
+<li><p>Every time you'd like to push new changes to this GitHub repository do the following:</p>
+<ul>
+<li><p>Go to <code>VCS</code> in the menu bar</p></li>
+<li><p>Click <code>Git</code> > <code>Commit File</code></p></li>
+<li><p>Check off all files you'd like to commit</p></li>
+<li><p>Click <code>Commit</code></p></li>
+<li><p>Click <code>Push</code></p></li></ul></li>
+</ul>
+<h2 id="creatingadefaulttemplateforpycharm">Creating a default template for PyCharm</h2>
+<ul>
+<li><p>Go to <code>File</code> > <code>Default Settings</code></p></li>
+<li><p>Click on <code>Editor</code> > <code>File and Code Templates</code></p></li>
+<li><p>Click on <code>Python Script</code></p></li>
+<li><p>Type the following into the text box</p></li>
+</ul>
+<pre><code>"""
+title: ${NAME}
+author: ${USER}
+date: ${DATE} ${TIME}
+"""
+</code></pre>
+<h2 id="addingagithubrepositorytopycharm">Adding a GitHub repository to PyCharm</h2>
+<ul>
+<li><p>Clone your existing GiHub repository by clicking the green <code>Clone or Download</code> button and copying the URL (The URL should start with <code>https</code> and end with <code>.git</code>)</p></li>
+<li><p>Open PyCharm and go to <code>VCS &gt; Check Out From Version Control &gt; Git</code></p></li>
+<li><p>Paste your GitHub repository URL in the space provided and click <code>clone</code></p></li>
+</ul>

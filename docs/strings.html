@@ -1,0 +1,219 @@
+<hr />
+<p>title: "strings"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="strings">Strings</h1>
+<p>Down to basics: You can create a <strong>string literal</strong> by wrapping characters within single <code>'</code>, double <code>"</code>, or triple <code>"""</code> quotes. We'll be creating some string literals before trying to manipulate them.</p>
+<p>Open up your Python Console. One way to get there is to Click on <code>Tools</code> > <code>Python Console</code>.</p>
+<p>In your Python Console, declare these variables with your first and last name and copy/paste the message to view the output:</p>
+<p>Single quote example:</p>
+<pre><code class="python language-python">group_name = 'Monty Python'
+</code></pre>
+<p>When using single-quotes for strings, be aware that they don't work in every situation. If I'm setting the sentence <code>'Monty Python's sketches are funny'</code> to a variable, we'll run into an error because of the apostrophe in <code>Python's</code>. In this case, we can use double-quote marks, but do you an alternative way to <code>print</code> this statement using single quotes?</p>
+<p>Double quote example:</p>
+<pre><code class="python language-python">statement = "Monty Python's sketches are funny"
+</code></pre>
+<p>Triple quote example:</p>
+<pre><code class="python language-python">message = """This is a string that will span across multiple lines.
+Using newline characters and no spaces for the next lines.
+The end of lines within this string also count as a newline when printed"""
+</code></pre>
+<h2 id="concatenation">Concatenation</h2>
+<p>Concatenation is the action of linking things together in a series.</p>
+<p>We can re-write our "Hello world" program by <strong>concatenating</strong> strings and variables!
+Let's set our variables in our program like so:</p>
+<pre><code class="python language-python">english_greeting = "Hello"
+say_hi_to = "world"
+exclamation = "!"
+</code></pre>
+<p>Now call the print function at the bottom like so:</p>
+<pre><code class="python language-python">english_greeting = "Hello"
+say_hi_to = "world"
+exclamation = "!"
+print(english_greeting + say_hi_to + exclamation)
+</code></pre>
+<p>Notice that when we put variables within print functions they do not have <code>"</code> quotation marks around them. They're treated differently than <strong>strings</strong> within the print function.</p>
+<p>You hopefully have a printed out statement that looks something like this: <code>Helloworld!</code></p>
+<p>How can we use the print statement to make it more human-readable?</p>
+<p>Change the <code>+</code> signs to the following syntax:</p>
+<pre><code class="python language-python">print(english_greeting, say_hi_to, exclamation)
+</code></pre>
+<p>But now we have <code>Hello world !</code> and we'd like the <code>!</code> to be directly after the word <code>world</code> without the space.</p>
+<p>We can change about our <code>print()</code> statement to achieve this with:</p>
+<pre><code class="python language-python">print(english_greeting, say_hi_to + exclamation)
+</code></pre>
+<p>Output: <code>Hello world!</code></p>
+<p>You can concatenate with the <code>+=</code> operator. This will concatenate the sequence with the right operand and assigns the results to that sequence.</p>
+<pre><code class="python language-python">name = "Helga"
+last_name = "Susan"
+name += last_name
+print(name)
+</code></pre>
+<p>Output: <code>HelgaSusan</code></p>
+<h2 id="multiplying">Multiplying</h2>
+<p>We've already gone over how to use multiplication in Python, but did you know that Python can be used to multiply things other than numbers? In fact, you can use Python to multiply strings, which is actually pretty cool when you think about it. You can take a string and double, triple, even quadruple it with only a little bit of Python.</p>
+<p>To multiply a string, this is the most straightforward way to go about doing it:</p>
+<pre><code class="python language-python">print("hello" * 4)
+</code></pre>
+<p>Output: <code>hellohellohellohello</code></p>
+<pre><code class="python language-python">print("alright" * 3)
+</code></pre>
+<p>Output: <code>alrightalrightalright</code></p>
+<h2 id="indexing">Indexing</h2>
+<p>The index is a value we attach to a specific character in a string depending on its order.</p>
+<p>If we had the following string: <code>greeting = "Hello World!"</code>, the index break down can be represented with the following:</p>
+<p>| <code>H</code> | <code>e</code> | <code>l</code> | <code>l</code> | <code>o</code> |  | <code>W</code> | <code>o</code> | <code>r</code> | <code>l</code> | <code>d</code> | <code>!</code> |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |</p>
+<p>The <strong>index</strong> of a character is the location of the character in the string, including spaces and punctuation. Indexes start counting with <code>0</code>.</p>
+<p>For example, type and run the following:</p>
+<pre><code class="python language-python">favorite_things = """Some of my favorite things are bird watching, jogging,
+listening to podcasts, and coding in Python."""
+</code></pre>
+<p>Each of the individual characters has its own predetermined index as a result of the order it is in. Index <code>0</code>, also written as <code>[0]</code> is <strong>always</strong> the first character in a string. In this case, index <code>[0]</code> is the capital letter <code>S</code></p>
+<p>In a program, if we wanted to <strong>only</strong><code>print()</code> the letter "S" we'd write it this way:</p>
+<pre><code class="python language-python">print(favorite_things[0])
+</code></pre>
+<p>Output: <code>S</code></p>
+<p>First, call upon the variable we stored the string value in, and then specify the index of the character we're looking to print.</p>
+<p>Type the above <code>print()</code> function into your Python Console and press <code>return</code></p>
+<h2 id="slicing">Slicing</h2>
+<p>We can use the index of a string to actually slice parts of that string out. The output of our <code>print()</code> statement can be manipulated depending on the indexes we specify.</p>
+<p>To grab the first 10 characters of a string, use the following syntax:</p>
+<p>string<em>name[start</em>index:stop<em>index]
+This will start at the index that is specified before the colon and go up to (but not including) the stop</em>index.</p>
+<p>Using our <code>favorite_things</code> variable, let's grab the first 10 characters from our string. Type this into our Python Console:</p>
+<pre><code class="python language-python">print(favorite_things[5:10])
+</code></pre>
+<p>Output: <code>of my</code></p>
+<p>This slice shows the characters at indexes: <code>5, 6, 7, 8, 9</code>.</p>
+<p>If we start at the beginning of a string (0 index), we do not have to place a value in front of the colon. This syntax would look like:</p>
+<pre><code>string_name[:stop_index]
+</code></pre>
+<p>Using this syntax with our <code>favorite_things</code> variable:</p>
+<pre><code class="python language-python">print(favorite_things[:10])
+</code></pre>
+<p>To go to the end of the string, you could also just not place a value after the colon, like the following:</p>
+<pre><code class="python language-python">string_name[start_index:]
+</code></pre>
+<p>Using this syntax with our <code>favorite_things</code> variable:</p>
+<pre><code class="python language-python">print(favorite_things[31:])
+</code></pre>
+<p>Output: <code>bird watching, jogging, listening to podcasts, and coding in Python.</code></p>
+<p>Skipping characters is also possible by adding a <code>step</code> to the slice. This is done with the following syntax:</p>
+<pre><code>string_name[start_index:stop_index:step]
+</code></pre>
+<p>Using this syntax with our <code>favorite_things</code> variable, to only output every 2nd character of the whole string:</p>
+<pre><code class="python language-python">print(favorite_things[::2])
+</code></pre>
+<p>Output: <code>Sm fm aoietig r idwthn,jgig itnn opdat,adcdn nPto.</code></p>
+<h2 id="theinkeyword">The <code>in</code> Keyword</h2>
+<p>A helpful way of being able to check whether a string contains a specific item is the <code>in</code> keyword. This keyword returns a <strong>boolean</strong>.</p>
+<pre><code class="python language-python">my_name = "Emily"
+print("E" in my_name)
+</code></pre>
+<p>Output: <code>True</code></p>
+<h2 id="stringmethods">String Methods</h2>
+<h3 id="findingthelength">Finding the Length</h3>
+<p>If we take the image above and apply the built-in python function <code>len()</code> it will give us the length of the string.</p>
+<p>Type the following into PyCharm:</p>
+<pre><code class="python language-python">greeting = "HELLO WORLD!"
+print(len(greeting))
+</code></pre>
+<p>Changing the Case</p>
+<p>The functions <code>upper()</code> and <code>lower()</code> will return a string with all of the letters contained in the original string converted to either uppercase or lowercase.</p>
+<p>Since strings are <strong>immutable</strong> data types, the returned string will be a <strong>new</strong> string and will have to be assigned to a new variable. Immutable means that once you have created the string, you cannot change any characters in the string to another value.</p>
+<p>We can take the variable <code>greeting</code> that we set in the previous section, and make "HELLO WORLD" all lowercase:</p>
+<pre><code class="python language-python">greeting = "HELLO WORLD"
+print(greeting.lower())
+</code></pre>
+<p>In order to make the string <code>greeting</code> uppercase again, we can do as follows:</p>
+<pre><code class="python language-python">print(greeting.upper())
+</code></pre>
+<p>A use case for manipulating strings in this way is if your users are entering their usernames in both upper and lowercase, we can still determine whether their name is in our database by checking it against an all uppercase version.</p>
+<h3 id="joinmethod"><code>join()</code> method</h3>
+<p>This method will concatenate two strings in a way that passes one string through another. Here's an example:</p>
+<pre><code class="python language-python">greeting = "HELLO WORLD"
+</code></pre>
+<p>We can add spaces to emphasize our greeting:</p>
+<pre><code class="python language-python">new_greeting = " ".join(greeting)
+print(new_greeting)
+</code></pre>
+<p>Output: <code>H E L L O W O R L D</code></p>
+<p>We can illustrate this another way but inserting dots between each character:</p>
+<pre><code class="python language-python">greeting = "HELLO WORLD"
+new_greeting = ".".join(greeting)
+print(new_greeting)
+</code></pre>
+<p>Output: <code>H.E.L.L.O. .W.O.R.L.D</code></p>
+<p>This method is useful to combine a list of separate strings into a new single string. We're telling join to insert a comma to join the separate strings into one single string.</p>
+<pre><code class="python language-python">greetings = ["hello", "hola", "salve"]
+string_greeting = ",".join(greetings)
+print(string_greeting)
+</code></pre>
+<p>Output: <code>"hello,hola,salve"</code></p>
+<p>If we put a space (<code>" ".join(greetings)</code>) instead of a comma (<code>",".join(greetings)</code>), the output would be a single string with spaces separating each word (<code>hello hola salve</code>).</p>
+<h3 id="splitmethod"><code>split()</code> Method</h3>
+<p>Split will do the opposite of what we just did with the join method. We'll start with a string of things separated with spaces and <strong>split</strong> it into a list of strings.</p>
+<pre><code class="python language-python">greetings = "hello hola salve"
+string_greeting = greetings.split()
+print(string_greeting)
+</code></pre>
+<p>Output: <code>['hello', 'hola', 'salve']</code></p>
+<p>We can also remove a specific character from a string by using the split method, which also splits the string at the location of the designated character, like so:</p>
+<pre><code class="python language-python">print(greetings.split("l"))
+</code></pre>
+<p>Output: <code>['he', '', 'o ho', 'a sa', 've']</code></p>
+<h3 id="replacemethod"><code>replace</code> Method</h3>
+<p>The <code>replace()</code> method can take an original string and return an updated string with some specific replacement.</p>
+<p>Since Latin is a dead language, we want to replace <code>"salve"</code> with the Italian greeting <code>"ciao"</code>:</p>
+<pre><code class="python language-python">greetings = "hello, hola, salve"
+new_greeting = greetings.replace("salve", "ciao")
+print(new_greeting)
+</code></pre>
+<p>Output: <code>"hello, hola, ciao"</code></p>
+<h3 id="reversingstrings">Reversing Strings</h3>
+<p>You may want to reverse a string to check to see if a word is a palindrome - spelled the same way backward and forward.</p>
+<p>One way of doing so would be to use <strong>slicing</strong>. We went over slicing previously, and if you recall the way to get the <strong>last</strong> character in a string, is to call upon <code>string\$&amp;-1]</code> since -1 represents the last character in the index of the string.</p>
+<p>The syntax to tell Python to not only print out the last character, but also the rest of the characters in the string <strong>backwards</strong> is to use double colon: <code>::</code> before the <code>-1</code> as follows:</p>
+<pre><code class="python language-python">greeting = "Hello"[::-1]
+print(greeting)
+</code></pre>
+<p>A way to reverse a string without using lists is <code>join()</code> and <code>reversed()</code> together.</p>
+<pre><code class="python language-python">string = "HELLO"
+reversed_string = ''.join(reversed(string))
+print(reversed_string)
+</code></pre>
+<p>In this case we're taking a string, setting it to variable <code>string</code> and <code>join()</code> is merging all of the characters resulting from the reversed iteration into a <strong>new</strong> string.</p>
+<p>It can also be written like so:</p>
+<pre><code class="python language-python">reversed_string = ''.join(reversed("HELLO"))
+print(reversed_string)
+</code></pre>
+<p>Regardless of whether or not you set the original string to a variable, since a new string is formed from the <code>join()</code> method, it has to be set to a variable in order to save the reversed string to memory in order to be printed out.</p>
+<h2 id="applyingyourknowledge">Applying your knowledge</h2>
+<p>Describe the sketch comedy group</p>
+<ul>
+<li>Create a variable with their name (Monty Python)</li>
+<li>Create a short description in the form of a string assigned to a variable (Monty Python was a British comedy group)</li>
+<li>Create a variable assigned to a number that represents the year they were formed (1969)</li>
+</ul>
+<p>Introduce the group in a sentence</p>
+<ul>
+<li>Assign a variable whose value will be a concatenation of the above variables into a sentence that makes sense.</li>
+<li>Using the above variables, write the sentence in two different ways that we have learned to concatenate strings, numbers and variables in a print() statement to avoid a TypeError (Hint: Use + and ,)</li>
+</ul>
+<p>Strings follow-along</p>
+<ol>
+<li><p>Create a string called <code>phrase</code> that is set to the value of <code>Don't count your chickens before they hatch</code></p></li>
+<li><p>Create a second string called <code>slogan</code> that is set to the value of <code>For Everything Else, There's MasterCard</code></p></li>
+<li><p>Create a third string called <code>combined</code> that is equal to <code>phrase</code>, a period(<code>.</code>), and <code>slogan</code> concatenated. Print out the new value of <code>combined</code></p></li>
+<li><p>Print out phrase three times in a row. Do this with the multiplying strings method.</p></li>
+<li><p>Print out the 7th character in <code>slogan</code></p></li>
+<li><p>Print out the last character in <code>combined</code></p></li>
+<li><p>Print out every other letter in <code>phrase</code></p></li>
+<li><p>Print out the 17th - 24th indexes (inclusive) of <code>phrase</code></p></li>
+<li><p>Print out every other letter in <code>combined</code></p></li>
+<li><p>Print out if it is <code>True</code> or <code>False</code> that the letter <code>m</code> is in <code>slogan</code>. (Do not hard code. Use the <code>in</code> operator)</p></li>
+<li><p>Print out the value of <code>combined</code>, but in all caps</p></li>
+<li><p>Print out <code>combined</code> split up by spaces</p></li>
+<li><p>Print out <code>slogan</code> backwards</p></li>
+</ol>

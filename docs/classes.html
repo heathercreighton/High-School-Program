@@ -1,0 +1,253 @@
+<hr />
+<p>title: "classes"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="classes">Classes</h1>
+<p>One of the most important concepts in object-oriented programming is the distinction between classes and objects, which are defined as follows:</p>
+<ul>
+<li><p><strong>Class</strong> - A blueprint created by a programmer for an object. This defines a set of attributes that will characterize any object that is instantiated from this class.</p></li>
+<li><p><strong>Object</strong> - An instance of a class. This is an <strong>actual</strong> occurrence of the class.</p></li>
+</ul>
+<h2 id="creatingclasses">Creating Classes</h2>
+<p>Classes are like a blueprint or a prototype that you can define to use to create objects. We define classes by using the <code>class</code> keyword, similar to how we define functions by using the <code>def</code> keyword.</p>
+<p><strong>Class Set Up</strong></p>
+<pre><code class="python language-python">class ClassName:
+  """
+  Optional class documentation string
+  """
+</code></pre>
+<p>The class has a documentation string, which can be accessed via <code>print(ClassName.__doc__)</code> </p>
+<p><strong>Player Class</strong></p>
+<pre><code class="python language-python">class Player:
+    """
+    Creates a game Player template.
+    """
+
+    def gain_point(self, points):
+        """Prints that the user has gained a certain number of points."""
+        print(f"Yay! You have gained {points} point(s)!")
+
+    def lose_point(self, points):
+        """Prints that the user has lost a certain number of points."""
+        print(f"Oh no! You have lost {points} point(s)!")
+</code></pre>
+<p>Because these functions are indented under the class <code>Player</code>, ther are called methods. <strong>Methods</strong> are a special kind of function that are defined within a class.</p>
+<p>The argument that both of these functions has is the word <code>self</code>, which is a reference to objects that are made based on this class. To reference instances (or objects) of the class, <code>self</code> will always be the first parameter, but it does not have to be the only one.</p>
+<p>Defining this class did not create any <code>Player</code> objects, only the pattern for a <code>Player</code> object that we can define later. That is, if you run the program at this stage, nothing will be returned.</p>
+<p>Creating the <code>Player</code> class above provided us with a blueprint for an object.</p>
+<h2 id="objects">Objects</h2>
+<p>An object is an instance of a class. We can take the <code>Player</code> class defined above, and use it to create an object or instance of it.</p>
+<p>We will make a <code>Player</code> object called <code>ralph</code>:</p>
+<pre><code class="python language-python">ralph = Player()
+ralph.gain_point(10)
+ralph.lose_point(5)
+</code></pre>
+<p>The <code>Player</code> object <code>ralph</code> is using the two methods <code>gain_point</code> and <code>lose_point</code>. We called these using the dot operator (<code>.</code>), which is used to reference an attribute of the object. In this case, the attribute is a method and it's called with parentheses, like how you would also call with a function.</p>
+<p>Because the keyword <code>self</code> was a parameter of the methods as defined in the <code>Player</code> class, the <code>ralph</code> object gets passed to the methods. The <code>self</code> parameter makes sure that the methods have a way of referring to object attributes.</p>
+<p>When we call the methods, the object <code>ralph</code> is being automatically passed with the dot operator.</p>
+<p><strong>Player Class</strong></p>
+<pre><code class="python language-python">class Player:
+    """
+    Creates a game Player template.
+    """
+    def gain_point(self, points):
+        """Prints that the user has gained a certain number of points."""
+        self.points += points
+        print(f"Yay! You have gained {points} point(s)! That means you now have {self.points} points!")
+
+    def lose_point(self, points):
+        """Prints that the user has lost a certain number of points."""
+        self.points -= points
+        print(f"Oh no! You have lost {points} point(s)! That means you now have {self.points} points!")
+
+def main():
+  ralph = Player()
+  ralph.gain_point(10)
+  ralph.lose_point(5)
+
+if __name__ == "__main__":
+  main()
+</code></pre>
+<p>Output:</p>
+<pre><code>Yay! You have gained a 10 points!
+Oh no! You have lost 5 points!
+</code></pre>
+<h4 id="constructormethods">Constructor Methods</h4>
+<p><code>init</code> is a special method in Python classes, it is the constructor method for a class. The constructor method is used to initialize data. It is run as soon as an object of a class is instantiated. The first parameter is always <code>self</code>. <code>self</code> is a special variable which points to the current object.</p>
+<p><strong>Constructor in the Player class</strong></p>
+<pre><code class="python language-python">class Player:
+  def __init__(self):
+    print("This is the constructor method")
+</code></pre>
+<p>If you added the above init method to the <code>Player</code> class in the program above, the program would output the following without your modifying anything within the <code>ralph</code> instantiation:</p>
+<p>Output:</p>
+<pre><code>This is the constructor method.
+Yay! You have gained a 10 points!
+Oh no! You have lost 5 points!
+</code></pre>
+<p>This is because the constructor method is automatically initialized. You should use this method to carry out any initializing you would like to do with your class objects.</p>
+<p>Instead of using the constructor method above, let's create one that uses a <code>points</code> variable that we can use to assign points to objects. We'll pass two parameters: <code>user _name</code> and <code>points</code> as a parameter with a default value of <code>0</code>. We will set <code>self.user _name</code> equal to <code>user _name</code> and <code>self.points</code> equal to <code>points</code>.</p>
+<pre><code class="python language-python">class Player:
+  def __init__(self, user_name, points=0):
+    self.user_name = user_name
+    self.points = points
+</code></pre>
+<p>Next, we can modify the strings in our functions to reference points, as below:</p>
+<pre><code class="python language-python">class Player:
+    """
+    Creates a game Player template.
+    """
+    def __init__(self, user_name, points=0):
+        self.user_name = user_name
+        self.points = points
+
+    def gain_point(self, points):
+        """Prints that the user has gained a certain number of points."""
+        self.points += points
+        print(f"Yay {self.user_name}! You have gained {points} point(s)! That means you now have {self.points} points!")
+
+    def lose_point(self, points):
+        """Prints that the user has lost a certain number of points."""
+        self.points -= points
+        print(f"Oh no, {self.user_name}! You have lost {points} point(s)! That means you now have {self.points} points!")
+</code></pre>
+<p>Finally, we can set the user name to <code>"R@!ph123"</code> and the number of points a <code>Player</code> object <code>ralph</code> has to <code>10</code> by passing it as a parameter of the <code>Player</code> class.</p>
+<pre><code class="python language-python">class Player:
+    """
+    Creates a game Player template.
+    """
+    def __init__(self, user_name, points=0):
+        self.user_name = user_name
+        self.points = points
+
+    def gain_point(self, points):
+        """Prints that the user has gained a certain number of points."""
+        self.points += points
+        print(f"Yay {self.user_name}! You have gained {points} point(s)! That means you now have {self.points} points!")
+
+    def lose_point(self, points):
+        """Prints that the user has lost a certain number of points."""
+        self.points -= points
+        print(f"Oh no, {self.user_name}! You have lost {points} point(s)! That means you now have {self.points} points!")
+
+def main():
+  ralph = Player("R@!ph123", 100)
+  ralph.gain_point(10)
+  ralph.lose_point(5)
+
+if __name__ == "__main__":
+  main()
+</code></pre>
+<p>Output:</p>
+<pre><code>Yay R@!ph123! You have gained a 10 points! That means you now have 110 points!
+Oh no, R@!ph123! You have lost 5 points! That means you now have 105 points!
+</code></pre>
+<h2 id="workingwithmorethanoneobject">Working with More Than One Object</h2>
+<p>Classes are useful because they allow us to create many similar objects based on the same blueprint.</p>
+<p>To get a sense for how this works, let's add another <code>Player</code> object to our program:</p>
+<pre><code class="python language-python">class Player:
+    """
+    Creates a game Player template.
+    """
+    def __init__(self, user_name, points=0):
+        self.user_name = user_name
+        self.points = points
+
+    def gain_point(self, points):
+        """Prints that the user has gained a certain number of points."""
+        self.points += points
+        print(f"Yay {self.user_name}! You have gained {points} point(s)! That means you now have {self.points} points!")
+
+    def lose_point(self, points):
+        """Prints that the user has lost a certain number of points."""
+        self.points -= points
+        print(f"Oh no, {self.user_name}! You have lost {points} point(s)! That means you now have {self.points} points!")
+
+def main():
+  ralph = Player("R@!ph123", 100)
+  ralph.gain_point(10)
+  sally = Player("iS@llee", 1245)
+  sally.lose_point(5)
+
+if __name__ == "__main__":
+  main()
+</code></pre>
+<p>Output:</p>
+<pre><code>Yay R@!ph123! You have gained a 10 points! That means you now have 110 points!
+Oh no, iS@llee! You have lost 1 points! That means you now have 1244 points!
+</code></pre>
+<h4 id="methodtypes">Method Types</h4>
+<p>Example</p>
+<pre><code class="python language-python">class Employee:
+    """
+    Creates the info for an Employee
+    """
+    emp_count = 0
+
+    def __init__(self, name, ldap):
+        self.name = name
+        self.ldap = ldap
+        Employee.emp_count += 1
+
+    def display_employee(self):
+        print (f"Name: {self.name}, LDAP: {self.ldap}")
+
+    @classmethod
+    def get_count(cls):
+        return Employee.emp_count
+
+    @staticmethod
+    def take_home_salary(salary):
+        return salary * 0.7
+</code></pre>
+<p><strong>Instance Methods</strong></p>
+<pre><code class="python language-python">def display_employee(self):
+    print (f"Name: {self.name}, LDAP: {self.ldap}")
+</code></pre>
+<p>Takes one parameter, <code>self</code>, which points to an instance of the class when the method is called.</p>
+<ul>
+<li><p>Can freely access attributes and other methods on the same object.</p></li>
+<li><p>Able to modify an object's class's state.</p></li>
+<li><p>Can access the class itself through the <code>self.class</code> attribute.</p></li>
+</ul>
+<p><strong>Class Methods</strong></p>
+<pre><code class="python language-python">@classmethod
+def get_count(cls):
+    return Employee.emp_count
+</code></pre>
+<p>Marked with a <code>@classmethod</code> decorator to flag it as a class method.</p>
+<ul>
+<li><p>Take a <code>cls</code> parameter that points to the class—and not the object instance—when the method is called.</p></li>
+<li><p>It can't modify object instance state. (That would require access to self.)</p></li>
+<li><p>It can still modify class state.</p></li>
+</ul>
+<p><strong>Static Methods</strong></p>
+<pre><code class="python language-python">@staticmethod
+def take_home_salary(salary):
+    return salary * 0.7
+</code></pre>
+<p>Marked with a <code>@staticmethod</code> decorator to flag it as a static method.</p>
+<ul>
+<li><p>Takes neither a <code>self</code> nor a <code>cls</code> parameter (but free to accept other parameters).</p></li>
+<li><p>It can neither modify object state nor class state.</p></li>
+<li><p>Static methods are restricted in what data they can access.</p></li>
+</ul>
+<h3 id="usingtypesofmethods">Using Types of Methods</h3>
+<pre><code class="python language-python">if __name__ == "__main__":
+    print("=================================")
+    e1 = Employee("Hellen", 25000)
+    e1.display_employee()
+    print(f"Number of Employees: {Employee.get_count()}")
+    print(f"Potential Salary: {Employee.take_home_salary(100)}")
+
+    print("=================================")
+    e2 = Employee("Jackson", 58000)
+    e2.display_employee()
+    print(f"Number of Employees: {Employee.get_count()}")
+    print(f"Potential Salary: {Employee.take_home_salary(350)}")
+</code></pre>
+<p><strong>Key Points</strong></p>
+<ul>
+<li><p>Instance methods need a class instance and can access the instance through self.</p></li>
+<li><p>Class methods don't need a class instance. They can't access the instance (self) but they have access to the class itself via <code>cls</code>.</p></li>
+<li><p>Static methods don't have access to <code>cls</code> or <code>self</code>. They work like regular functions but belong to the class's namespace.</p></li>
+</ul>

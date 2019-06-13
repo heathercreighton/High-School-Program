@@ -1,0 +1,76 @@
+<hr />
+<p>title: "formatting-and-input"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="formattingandinput">Formatting and Input</h1>
+<p>We've introduced one built-in method for Python: <code>print()</code>. Another function important to strings is the <code>str()</code> method. We'll use the <code>str()</code> method when we need to convert a number to a string.</p>
+<p>We'd like to print a string that says "I am 24 years old". Instead of just declaring a variable set to an integer and concatenating that variable <strong>with</strong> strings in the <code>print()</code> function, we have to do it differently, as you can see from the error you get when you try this.</p>
+<p>Type the following into your PyDev Console to view the error:</p>
+<pre><code class="python language-python">age = 49
+print("Monty Python is " + age + " years old.")
+</code></pre>
+<p>The error literally says <code>TypeError: must be str, not int</code>. It's <strong>telling</strong> us that it wants a string! Not an int! How awesome is that!</p>
+<p>We have three alternatives to fix this error.</p>
+<p>First option is to <strong>cast</strong> the variable. To <strong>cast</strong> is to change the variable from one data type to another. When working with <code>print</code> and the <code>+</code> operator, we need to <strong>cast</strong> all variables to a string, like the following:</p>
+<pre><code class="python language-python">print("Monty Python is " + str(age) + " years old.")
+</code></pre>
+<p>Second option is to use commas to combine the strings and variables of any type, like the following:</p>
+<pre><code class="python language-python">print("Monty Python is", age, "years old.")
+A third option is to use **formatting operators**
+</code></pre>
+<h2 id="python3formatting">Python3 Formatting</h2>
+<p>In Python3 we'd write this string like so:</p>
+<pre><code class="python language-python">age = 24
+print("I am {0} years old".format(age))
+</code></pre>
+<p>In this example, we're passing the variable <code>age</code> to the <code>format()</code> method and the <code>format()</code> method is looking for curly braces <code>{}</code> within our string to insert the variable's value (as a string), which we set to the integer <code>24</code></p>
+<p>If you run this in your PyDev console, the output should look like this:</p>
+<pre><code>I am 24 years old.
+</code></pre>
+<p>But what if we want to insert several different variables? Python3 has a solution for that as well:</p>
+<pre><code class="python language-python">my_age = 24
+moms_age = 60
+dads_age = 59
+sisters_age = 35
+</code></pre>
+<p>If we set these variables first, we can use a print statement to refer to each one in any order we choose:</p>
+<pre><code class="python language-python">print("""My mom is {1} years old, and my dad is 1 year younger at {2} years old.
+My sister is 11 years older than me, which makes her {3} years old
+and I am only {0} years old.""".format(my_age, moms_age, dads_age, sisters_age))
+</code></pre>
+<p>Type the above <code>print()</code> statement into your PyDev console and press <code>return</code></p>
+<p>Your output should look like this:</p>
+<pre><code>My mom is 60 years old, and my dad is 1 year younger at 59 years old.
+My sister is 11 years older than me, which makes her 35 years old
+and I am only 24 years old.
+</code></pre>
+<p>Notice that we used three <code>"""</code> quotation marks around our string. This is because it's a block of text that would have been too long to fit on the screen. The triple quotations help us make line breaks without errors.</p>
+<p>You may be wondering what the numbers within the <code>{}</code> represent, care to take a guess?</p>
+<p>Hint: It relates to the order of the variables as they're written within the <code>format()</code> method.</p>
+<p>Now we're getting into what's called <strong>indexing</strong>. The index always starts at <code>0</code> and counts up, by <code>1</code> until the end of the list. Therefore in this example, <code>my_age</code> is index <code>0</code>, <code>moms_age</code> is index <code>1</code> and so forth. The numbers within the <code>{}</code> correspond to the index of each variable. It's okay if this is confusing now, we'll go into much more detail in the following section.</p>
+<p><strong>Using Variables in Print Formatting</strong></p>
+<p>We can also use print formatting with the variable names. Using the example from before using variables by placing an <code>f</code> at the front of the quotes inside of the quotes.</p>
+<pre><code class="python language-python">my_age = 24
+moms_age = 60
+dads_age = 59
+sisters_age = 35
+
+print(f"""My mom is {moms_age} years old, and my dad is 1 year younger at {dads_age} years old.
+My sister is 11 years older than me, which makes her {sisters_age} years old
+and I am only {dads_age} years old.""")
+</code></pre>
+<h2 id="userinput">User Input</h2>
+<p>So far, all values that we have printed out and stored in variables have been typed right there in the code. Every time we would run the a program, it would give us the exact same output. This is not representative of many programs out there, as most programs take in some kind of input that will alter what the output is. In most cases, the input will come from the keyboard. For this very purpose, Python provides the function <code>input()</code>. <code>input()</code> takes in one <strong>argument</strong> (value in between the parenthesis), which is the prompt for the user.</p>
+<p>Input Example:</p>
+<pre><code class="python language-python">name = input("Enter your name: ")
+print("Nice to meet you " + name + "!")
+</code></pre>
+<p>If you were to run the above code you would get the following:</p>
+<pre><code>Enter your name: Dorothy
+Nice to meet you Dorothy!
+</code></pre>
+<ul>
+<li><code>Enter your name:</code> is the prompt from the input function. This allows the user to know what you are wanting from them.</li>
+<li><code>Dorothy</code> is what the user typed in. This value is then stored in the <code>name</code> variable.</li>
+<li><code>Nice to meet you</code> and <code>!</code> are the values in the print statement that will be the same every time you run the program.</li>
+<li>The second <code>Dorothy</code> is using the value that was given by the user and stored in the <code>name</code> variable.</li>
+</ul>

@@ -1,0 +1,88 @@
+<h1 id="gittingstartedlabs">gitting Started Labs</h1>
+<h2 id="alltheadds">All the adds</h2>
+<p>First, <code>cd</code> into your <code>~/firstname</code> directory. This is where we need to initialize the GitHub repository which will hold this lesson.</p>
+<p>Type <code>mkdir git-add-exercise</code> to make a new directory.</p>
+<p><code>cd git-add-exercise</code> into that directory, and type <code>git init</code>.</p>
+<p>Now, this repository is initialized with git and you can add files and start using <strong>any</strong> git command.</p>
+<p>To quickly write to a new file for this exercise, we're going to be using the command <code>echo</code>. This isn't a git command, it's a command you can use anywhere within Terminal to write to files.</p>
+<pre><code>echo Content within file &gt; add-exercise.txt
+echo File to be deleted eventually &gt; delete-me.txt
+</code></pre>
+<p>Now, if you type <code>git status</code> you'll see that both of those files have been created, and if you open VS Code (<code>code .</code>) from your repository, you'll see the sentences we wrote within each file.</p>
+<h3 id="gitaddfilename">git add file-name</h3>
+<p><code>git add add-exercise.txt delete-me.txt</code>: This command will add only the <code>add-exercise.txt</code> and <code>delete-me.txt</code>. If there were any other files with changes, those files would be ignored by this command.</p>
+<p>Let's commit those additions: <code>git commit -m "Initial commit"</code></p>
+<p>The next three commands will <strong>first</strong> add more content to the existing <code>add-exercise.txt</code>, <strong>then</strong> we will create a <code>third-file.txt</code> with some text and <strong>lastly</strong> we're using <code>rm</code> to <strong>remove</strong><code>delete-me.txt</code>.</p>
+<pre><code>echo More text! &gt;&gt; add-exercise.txt
+
+echo Adding a third file &gt; third-file.txt
+
+rm delete-me.txt
+</code></pre>
+<p>Once you <code>git status</code>, you'll see that git knows that <code>add-exercise.txt</code> and <code>delete-me.txt</code> have been changed but not staged.</p>
+<p><code>add-exercise.txt</code> was modified, since we changed the text within the file with the <code>echo</code> command but have not added these specific changes yet. The <code>delete-me.txt</code> is <strong>deleted</strong>, but since we have not ran <code>git add</code> and <code>git commit</code> on these changes, they're both hanging in limbo.</p>
+<p>The <code>third-file.txt</code> is under untracked files because we've created it, but we haven't done <code>git add</code> yet.</p>
+<h3 id="gitadd">git add .</h3>
+<p>Type <code>git add .</code> and then <code>git status</code>.</p>
+<p>You'll see that not only are the modified <code>add-exercise.txt</code> and deleted <code>delete-me.txt</code> included, but the brand-new <code>third-file.txt</code> is also included in changes ready to be committed!</p>
+<p>Type <code>git reset</code> to go back to our previous status.</p>
+<h3 id="practicingwithbranches">Practicing with branches</h3>
+<p>We’re going to go back to our <code>git add</code> exercise repository.</p>
+<p>Run the following:</p>
+<pre><code>cd git-workshop
+cd git-add-exercise
+git branch
+</code></pre>
+<p>This will show you, most likely, that you are on the <code>master</code> branch of this repository. It is green with an asterisk <code>\*</code> because it’s the branch you’re currently on.</p>
+<p>Run the following:</p>
+<pre><code>git branch add-exercise-branch
+git branch
+</code></pre>
+<p>Now you should see both the <code>master</code> branch in green, and an additional <code>add-exercise-branch</code></p>
+<ul>
+<li><p>Stay in the same repository and try this:</p>
+<ul>
+<li><p>Use the correct command to switch over to the <code>add-exercise-branch</code></p></li>
+<li><p>Now, use the command to view which branch you’re currently on. If your <code>add-exercise-branch</code> is green, success!</p></li>
+<li><p>Next, run the command which both creates and switches to an entirely new branch. You can name it whatever you choose.</p></li>
+<li><p>Run the command to check which branch you’re on. If the branch you just created is green, success!</p></li></ul></li>
+</ul>
+<h2 id="resolvingmergeconflicts">Resolving Merge Conflicts</h2>
+<p>Let's Have Fun With Merge Conflicts and Create (and Resolve) a Merge Conflict on Purpose! 😱</p>
+<p>Based on the <a href="https://en.wikipedia.org/wiki/Merge_(version_control)#Three-way_merge">Three Way Merge</a> algorithm, a merge conflict occurs when git does a line-by-line comparison and finds differences between two of the same file, compared with the <code>master</code>. This means you'll have an error in your Terminal letting you know there is a conflict. We try to avoid merge conflicts by making sure that each developer is on his or her own branch and working on separate features, but occasionally more than one developer has to touch the same code to fix or create different features.</p>
+<p><strong>Be sure to config your text editor to VS Code like so: <code>git config --global core.editor "code --wait"</code></strong></p>
+<p>We are going to create and initialize a new git repository for this exercise. Then, we will create a test text file and put some content in it.</p>
+<pre><code>mkdir merge-conflicts-exercise
+cd merge-conflicts-exercise
+git init
+echo Text within file from the master branch &gt; merge-exercise.txt
+git add merge-exercise.txt
+git commit -m "first commit on master branch"
+</code></pre>
+<p>At this point we have created a directory, hopped into it, and initialized it as a git repository. Then, we used <code>echo</code> to put some text into a new text file called <code>merge-exercise.txt</code>. We added and committed that text within the file. Git currently knows that we have one line of text in that file, but we're about to confuse it…​But how?</p>
+<p>By making another branch!</p>
+<pre><code>git checkout -b issue500-merge-conflict
+echo Adding more text within my file from issue500-merge-conflict &gt;&gt; merge-exercise.txt
+git add merge-exercise.txt
+git commit -m "first commit on issue500-merge-conflict"
+</code></pre>
+<p>Now we have a separate branch called <code>issue500-merge-conflict</code>. When we first created the branch, it was exactly the same as the <code>master</code> branch. Then we used <code>echo</code> to put different text into the same file. This is exactly what causes merge conflicts.</p>
+<p>We now have to go back to the <code>master</code> branch and we're going to edit it one more time:</p>
+<pre><code>git checkout master
+echo Putting more text into my file from the master branch &gt;&gt; merge-exercise.txt
+git add merge-exercise.txt
+git commit -m "second commit on master branch"
+</code></pre>
+<p>And here we will try to merge the two together, with all of their separate changes, which happened on the same line of the <code>merge-exercise.txt</code> file.</p>
+<p>Remain on the master branch and execute the following in Terminal:</p>
+<pre><code>git merge issue500-merge-conflict
+</code></pre>
+<p>You should get an error stating:</p>
+<pre><code>Auto-merging merge-exercise.txt
+CONFLICT (content): Merge conflict in merge-exercise.txt
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+<p>Now, open VS Code by typing <code>code .</code> and you'll see exactly where your merge conflict is happening:</p>
+<p><img src="./images/merge-conflict-exercise.png" alt="merge conflict exercise" /></p>
+<p>Now that we have our merge conflict, we can edit the code within VS Code to say exactly what it's supposed to. In the real world, this may be a matter of asking your fellow developer what they intended to do with that part of the code, and explaining your changes to the code as well, so that the final changes are correct for everybody.</p>
+<p>In this case, we are going to use the changes from the master branch. Click the <code>Accept Current Change</code> link above the corresponding code. Then, save in VS Code and within Terminal run <code>git add .</code> and then <code>git commit -m "commit message"</code></p>

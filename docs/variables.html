@@ -1,0 +1,36 @@
+<hr />
+<p>title: "Variables"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="variables">Variables</h1>
+<p><strong>Assume a swallow weighs 60 grams, and one swallow is capable of carrying 1/3 of its own weight.</strong></p>
+<p>A <strong>variable</strong> provides us with a way to label and access information. Variables are used as labels to store values in memory. Memory is allocated the moment you declare the variable.</p>
+<p><strong>Declaring</strong> a variable has a specific syntax:</p>
+<pre><code class="python language-python">swallow_limit = 60 / 3
+</code></pre>
+<p>Once we create our variable, we can reference it and get the value we stored. This means we can write more organized code!</p>
+<p>The variable above is called <code>swallow_limit</code> and the single <code>=</code> sign is telling the program to store the value on the right side of the equation to memory. The value we're telling it to store is the <code>float</code> equation <code>60 / 3</code>, which is <code>20.0</code>.</p>
+<h2 id="namingconventions">Naming Conventions</h2>
+<p>Variable names cannot have spaces or start with digits/special characters. Variables <strong>can</strong> start with an underscore <code>_</code>, a lowercase letter as in our example <code>swallow_limit</code> or with a capital letter such as <code>Swallow_limit</code>. According to the pep8 style guide, you should have all lowercase letters.</p>
+<p>| Variable Name | Valid? | pep8 approved? | Comments |
+| --- | --- | --- | --- |
+| <code>myName</code> | yes | no | This is the camelCase convention (capitalize the first letter of every word that comes after the first word). This goes against the pep8 style guide though. |
+| <code>1name</code> | no | no | This variable starts with a number which is not allowed. |
+| <code>int</code> | yes | no | This Python built-in function is technically allowed as a variable name, but is frowned upon. Its attempted usage may yield unexpected behavior, as the statement <code>int(x)</code> changes an object <code>x</code> to be type <code>int</code>. |
+| <code>else</code> | no | no | This is an element of the basic syntax in Python (a <strong>keyword</strong>). Using a keyword as a variable name is a syntax error. Other common keywords are <code>for</code>, <code>if</code>, <code>not</code>, <code>return</code>, and <code>def</code>. |
+| <code>my_name</code> | yes | yes | This variable name follows the rules of Python and pep8! |</p>
+<p>Variables are <strong>case sensitive</strong> so if you decide to capitalize the first letter of your variable, be careful not to try to refer to it using the opposite case. It simply won't work.</p>
+<p>Not only do variables make your code more organize, it makes it more readable by assigning meaning to values.</p>
+<p>If we take our previous example, and we know that <code>swallow_limit = 60 / 3</code>, then we can re-write our previous equation with variables:</p>
+<pre><code class="python language-python">swallow_limit = 60 / 3
+swallows_per_cherry = 8 / swallow_limit
+</code></pre>
+<p>Type the above code into Python Console. Then type <code>swallows_per_cherry</code> and press <code>return</code></p>
+<p>You should get the output of <code>0.4</code>, which is the same figure we got from doing the equation in the previous section.</p>
+<h2 id="castingvariables">Casting variables</h2>
+<p>If you wanted to know how many full grams that a swallow can hold, you would need to <strong>cast</strong> the variable. To <strong>cast</strong> is to change a variable from one type to another. In this case, we want to change our floating point number to an integer. To do this, we would do the following syntax:</p>
+<pre><code>type_you_want(variable_you_want_to_change)
+</code></pre>
+<p>To change the <code>swallow_limit</code> variable to an <code>int</code> you would do the following:</p>
+<pre><code class="python language-python">swallow_limit = int(swallow_limit)
+</code></pre>
+<p>This would "chop off" the decimal, and give <code>swallow_limit</code> the new value of <code>20</code> rather than <code>20.0</code>.</p>

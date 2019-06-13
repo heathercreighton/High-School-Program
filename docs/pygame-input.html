@@ -1,0 +1,151 @@
+<hr />
+<p>title: "pygame input"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="pygameinput">Pygame Input</h1>
+<h2 id="objectsmovingontheirown">Objects moving on their own</h2>
+<p>So we can move things with keyboard input, how do you have things moving on their own??</p>
+<hr />
+<p><strong>Looking back to <code>move_stick_figure.py</code></strong></p>
+<p>The stick figure needs something to do, so let's add a bouncing ball!</p>
+<p>First, make the circle for the ball!</p>
+<pre><code class="python language-python">pygame.draw.ellipse(screen, ORANGE, [20, 200, 40, 40])
+</code></pre>
+<p>This ball now will start at (<code>20</code>, <code>200</code>) with a width and height of <code>40</code>.</p>
+<hr />
+<h3 id="dynamicvariables">Dynamic Variables</h3>
+<p>To make the ball move, we need to change the y-value by some variable.</p>
+<p>Before the function, <code>draw_stick_figure</code>, create a the new variable:</p>
+<pre><code class="python language-python">ball_pos = 0
+def draw_stick_figure(screen, x, y):
+    pygame.draw.ellipse(screen, ORANGE, [20, 200 + ball_pos, 40, 40])
+</code></pre>
+<h3 id="changingvariables">Changing Variables</h3>
+<p>That code won't do anything until we get <code>ball_pos</code> to change. We will do this inside the event while loop:</p>
+<pre><code class="python language-python">while not done:
+    ball_pos += 1
+</code></pre>
+<p>Run your code! Now your ball should be going to the ground!</p>
+<p>BUT it does not stop!</p>
+<p>We can fix that with an if statement!</p>
+<h3 id="creatingboundaries">Creating Boundaries</h3>
+<p>If statement checks to see if the y-value of <code>ball_pos</code> is getting past the desired y-value.</p>
+<pre><code class="python language-python">while not done:
+    ball_pos += 1
+    if ball_pos &gt; 250:
+        ball_change -= 1
+</code></pre>
+<h3 id="constantmovement">Constant Movement</h3>
+<pre><code class="python language-python">while not done:
+    ball_pos += ball_chg
+    if ball_pos &gt; 250:
+        ball_chg -= 1
+</code></pre>
+<p>Where did this <code>ball_chg</code> come from?? This is a new variable that needs to be created. This allows us to change the direction and speed of the ball once it has reached a desired location.</p>
+<p>Make sure to create the variable <code>ball_chg = 1</code> at the top of the code!</p>
+<hr />
+<p>Now the ball bounces once and never comes back! Create another if-statement that will check to see if the y-value of the ball is getting too small. If so, then set the direction of <code>ball_chg</code> to a positive value!</p>
+<h4 id="challenge">Challenge!</h4>
+<p>Get the ball to constantly bounce up and down from the stick figure's hand!</p>
+<h2 id="rgbvalue">RGB Value</h2>
+<p>TVs and computer screens display colors by combining Red, Green, Blue light.</p>
+<p>This is done with the following format:</p>
+<p><code>(red, green, blue)</code></p>
+<p><img src="../images/pygame/rgb.png" alt="" /></p>
+<ul>
+<li><code>red</code>/<code>green</code>/<code>blue</code> are all values between 0 and 255</li>
+<li>(0, 0, 0) represents black</li>
+<li>(255,255,255) represents white</li>
+</ul>
+<h2 id="inputexercise1textcolor">Input Exercise #1 - Text Color</h2>
+<p>Open and execute <a href="../programs/pygame-input/text_color.py">text_color</a></p>
+<ul>
+<li>What do you see?</li>
+<li>How many times did you push?</li>
+</ul>
+<p>The following line is where the text is placed on the window:</p>
+<pre><code class="python language-python">text = font.render(TEXT_OUTPUT, true, (0, 0, BLUE_COLOR))
+</code></pre>
+<p>The second argument is for <strong>antialias</strong>: a boolean holding if true the characters will have smooth edges.
+The color value is <code>(0,0,[current_blue color])</code></p>
+<hr />
+<p>The following lines create the counterclockwise rotation, turning one degree every:</p>
+<pre><code class="python language-python">text = pygame.transform.rotate(text, text_rotate_degrees)
+text_rotate_degrees += 1
+</code></pre>
+<hr />
+<p>Blit: Copying the pixels belonging to said object onto the destination object. </p>
+<pre><code class="python language-python">screen.blit(text, [100, 50])
+</code></pre>
+<p>So to render the background object, you blit it onto the screen.</p>
+<h2 id="inputexercise2textcolor">Input Exercise #2 - Text Color</h2>
+<p>Open and execute <a href="../programs/pygame-input/multi_text_color.py">multi<em>text</em>color</a></p>
+<p>Let's add multiple buttons! You might need to add code in several different spots! </p>
+<p>This will change, in addition to the blue value, the red and yellow values of the font!</p>
+<p>Let's fix it!</p>
+<h2 id="pythonclassesbriefreview">Python Classes - Brief Review</h2>
+<p>A class is a way to take a grouping of functions and data and place them inside a container so you can access them with the . (dot) operator.</p>
+<pre><code class="python language-python">class Person:
+    def __init__(self):        
+        self.first_name = "Sally"
+        self.age = 10
+
+    def have_birthday(self):
+        print("I was: " + self.age)
+        self.age = self.age + 1    
+        print ("I am now: " + self.age)
+</code></pre>
+<h3 id="defaultvalues">Default values</h3>
+<p>When a Person is first created, their default name will be Sally and default age will be 10.</p>
+<p><code>self</code> is a "placeholder" for an object's name.</p>
+<pre><code class="python language-python">def __init__(self):        
+    self.first_name = "Sally"
+    self.age = 10
+</code></pre>
+<h3 id="objects">Objects</h3>
+<p>We have now created a student object. This object's name is <code>student</code>.
+This object now has all of the variables and functions that the Person class has.</p>
+<pre><code class="python language-python">student = Person()
+print(student.first_name)
+student.have_birthday()
+</code></pre>
+<p><code>print(student.first_name)</code> will output the student's name, which is currently "Sally"</p>
+<p><code>student.have_birthday()</code> will output:</p>
+<pre><code>I was 10
+I am now 11
+</code></pre>
+<h2 id="inputexercise3">Input Exercise #3</h2>
+<p>Open the file: <a href="../programs/pygame-input/sprite_collect_blocks.py">sprite<em>collect</em>blocks</a></p>
+<p>The constructor sets the default variable values of every block.
+The user must specify the color, width and height.</p>
+<pre><code class="python language-python">def __init__(self, color, width, height):
+    """ Constructor. Pass in the color of the block,
+    and its x and y position. """
+
+    # Call the parent class (Sprite) constructor
+    pygame.sprite.Sprite.__init__(self)
+
+    # Create an image of the block, and fill it with a color.
+    # This could also be an image loaded from the disk.
+    self.image = pygame.Surface([width, height])
+    self.image.fill(color)
+
+    # Fetch the rectangle object that has the dimensions of the image.
+    # Update the position of this object by setting the values of rect.x and rect.y
+    self.rect = self.image.get_rect()
+</code></pre>
+<hr />
+<p>The constructor:</p>
+<ul>
+<li>Sets every <code>Block</code> object to be a subclass of the Sprite class, giving it more functions and variables.</li>
+<li>Creates the block image, giving it the specified color</li>
+<li>Sets the blocks x and y values</li>
+<li>Creates 50 randomly located Block objects on the window. Adds new Block objects to the Sprite and Block list</li>
+<li>Creates the player Block object. Adds the player to the Block list</li>
+<li>Set up your circuits to move the block around with the push of a button</li>
+</ul>
+<h1 id="sources">Sources</h1>
+<ul>
+<li>Pygame official documentation: http://www.pygame.org/wiki/</li>
+<li>TutorialsPoint definitions: www.tutorialspoint.com/python/</li>
+<li>Pygame tutorial: http://www.balloonbuilding.com/index.php?chapter=example_code</li>
+</ul>

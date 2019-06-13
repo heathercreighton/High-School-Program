@@ -1,0 +1,159 @@
+<hr />
+<p>title: "functions"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="functions">Functions</h1>
+<p>Functions are important because they allow us to divide code into useful blocks. We can create order and organization, make it more readable, and reuse it to prevent repetitiveness.</p>
+<hr />
+<p>Function syntax in Python begins with the keyword <code>def</code> followed by the function name, parenthesis, and a colon. On the second line, we need to indent appropriately or else Python will not run the function and it will error.</p>
+<p>Copy and paste the following function into PyCharm and run it:</p>
+<pre><code class="python language-python">def subtract_total():
+    total = 10000
+    my_share = 20000
+    print(my_share - total)
+</code></pre>
+<p>Hopefully nothing happened. But why isn't it running at all when it's within proper function syntax?</p>
+<p><strong>Scope</strong>: The <code>print()</code> is inside the scope of the <code>subtract_total()</code> function. Python doesn't see any code when this is executing, because it's "hidden" within the bounds of the function. Now we need to write the program so that Python can see within the function, and ultimately execute the <code>while</code> loop.</p>
+<p><strong>Function block syntax</strong></p>
+<p>In order to define a function for Python, we have to use the <code>def</code> keyword. As you can see, <code>def</code> will turn a different color in your IDE once you write the name of the function after this keyword. This is one indication that you've begun defining a function for Python to read.</p>
+<p>Other syntax required for Python to be able to read a function is the function name. Function naming rules are as follows (from the <a href="https://www.python.org/dev/peps/pep-0008/">pep8 style guide</a>):</p>
+<ul>
+<li><p>The first letter of the name of a function should be <strong>lower case</strong></p></li>
+<li><p>The second word can be camelCase (also known as mixedCase), where the first letter of the second word is capitalized</p></li>
+<li><p>The second word (if there is one) could be separated by an <strong>underscore</strong> <code>_</code> as an alternative to using camelCase</p></li>
+</ul>
+<hr />
+<p>The key to naming your functions is similar to naming variables. You want to be <strong>consistent</strong> throughout your program. If you've started naming functions in camelCase, continue to do so for all functions. This helps with code clarity, readability and the ability for others to contribute in an organized way.</p>
+<hr />
+<p>Once you name the function properly after the <code>def</code> keyword, it is essential to put a colon <code>:</code> before writing the rest of your function.</p>
+<pre><code class="python language-python">def subtract_total():
+</code></pre>
+<p>The rest is <strong>all</strong> about indentation! Python is very opinionated about indentation and it will not read a program without proper indentation. Once you've defined your function, make sure the very next line is indented, like in the <code>subtract_total()</code> example.</p>
+<p>If you're unsure about indentation at first, that's okay. PyCharm will tell you if you've missed an indentation.</p>
+<h3 id="callingfunctions">Calling functions</h3>
+<p>In order to get a function to execute, we have to explicitly call it. Using the example above, we simply have to put the function name on the last line <strong>outside</strong> of the <strong>scope</strong> of the function.</p>
+<pre><code class="python language-python">def subtract_total():
+    total = 10000
+    my_share = 20000
+    print(my_share - total)
+subtract_total()
+</code></pre>
+<p>Pay close attention to the lack of indentation of <code>def</code> and of the last line <code>subtract_total()</code> - they're on the same indentation level because they're both in the same scope. Python runs line-by-line, first skipping over the <code>def</code> function, and then hitting the last line where we're explicitly instructing Python to run the <code>subtract_total()</code> function. Then, it goes back and checks to see if there are any functions, defined by <code>def</code>, called <code>subtract_total()</code>. It finally finds our function and executes the mathematical operation!</p>
+<h2 id="parameters">Parameters</h2>
+<p>A <strong>parameter</strong> is placed within the parenthesis of a function. Parameters are declared when the function is defined as placeholders for actual objects that will be passed when the function will be called. In Python you do not declare the type of a parameter.&nbsp;</p>
+<p>Code along: Write a function called <code>hello()</code>, and put the parameter <code>name</code> within the parenthesis.</p>
+<pre><code class="python language-python">def hello(name):
+</code></pre>
+<p>We want this function to print out <code>Hello your-name!</code>, so we need to concatenate the string "Hello" with <strong>your</strong> name (also a string). So we'll take the parameter <code>name</code> and use it as a variable within the <code>print()</code> function.</p>
+<pre><code class="python language-python">def hello(name):
+    print("Hello " + name)
+hello()
+</code></pre>
+<p>If we run this, Python will throw a Type Error saying that <code>hello()</code> takes exactly 1 argument. When we called the function on the last line, we didn't give <code>hello()</code> any arguments!</p>
+<p>Let's make <code>name</code> our own name. To do this, we need to pass a unique <strong>argument</strong> when we actually call the function.</p>
+<pre><code class="python language-python">def hello(name):
+    print("Hello " + name)
+hello("Emily")
+</code></pre>
+<p>Output:
+<code>Hello Emily</code></p>
+<p>The <code>name</code> within the parenthesis when we define a function is called a <strong>parameter</strong>. When we pass data into the parenthesis while <strong>calling</strong> a function, it's called an <strong>argument</strong>.</p>
+<p>For example, the function defined below utilizes a conditional statement to check if the input for the <code>name</code> variable contains a vowel, then uses a <code>for</code> loop to iterate over the letters in the <code>word</code> string.</p>
+<pre><code class="python language-python">def has_vowel(word):
+    # Check whether name has a vowel
+    if set('aeiou').intersection(word.lower()):
+        print(word, 'contains a vowel.')
+    else:
+        print(word, 'does not contain a vowel.')
+
+has_vowel("supercalifragilisticexpialidocious")
+has_vowel("why")
+has_vowel("hey")
+</code></pre>
+<p>Output:</p>
+<pre><code>supercalifragilisticexpialidocious contains a vowel
+why does not contain a vowel
+hey contains a vowel
+</code></pre>
+<p>With parameters, we are able to use the same function with several different inputs.</p>
+<h3 id="keywordarguments">Keyword Arguments</h3>
+<p>In addition to calling parameters in order, you can use keyword arguments in a function call, in which the caller identifies the arguments by the parameter name.</p>
+<p>When you use keyword arguments, you can use parameters out of order because the Python interpreter will use the keywords provided to match the values to the parameters.</p>
+<p>Let's create a function that will show us profile information for a user. We'll pass parameters to it in the form of username (intended as a string), and followers (intended as an integer).</p>
+<pre><code class="python language-python">def profile_info(username, followers):
+    print("Username: " + username)
+    print("Followers: " + str(followers))
+</code></pre>
+<p>Within the function definition statement, username and followers are contained in the parentheses of the profile_info() function. The block of the function prints out information about the user as strings, making use of the two parameters.</p>
+<p>Now, we can call the function and assign parameters to it:</p>
+<pre><code class="python language-python">def profile_info(username, followers):
+    print("Username: " + username)
+    print("Followers: " + str(followers))
+
+# Call function with parameters assigned as above
+profile_info("sammyshark", 945)
+
+# Call function with keyword arguments
+profile_info(username="AlexAnglerfish", followers=342)
+</code></pre>
+<p>Output:</p>
+<pre><code>Username: sammyshark
+Followers: 945
+Username: AlexAnglerfish
+Followers: 342
+The output shows us the usernames and numbers of followers for both users.
+</code></pre>
+<p>This also permits us to modify the order of the parameters, as in this example of the same program with a different call:</p>
+<pre><code class="python language-python">def profile_info(username, followers):
+    print("Username: " + username)
+    print("Followers: " + str(followers))
+
+# Change order of parameters
+profile_info(followers=820, username="cameron-catfish")
+</code></pre>
+<p>Output:</p>
+<pre><code>Username: cameron-catfish
+Followers: 820
+</code></pre>
+<h2 id="defaultargumentvalues">Default Argument Values</h2>
+<p>We can also provide default values for one or both of the parameters. Let's create a default value for the followers parameter with a value of <code>1</code>:</p>
+<pre><code class="python language-python">def profile_info(username, followers=1):
+    print("Username: " + username)
+    print("Followers: " + str(followers))
+</code></pre>
+<p>Now, we can run the function with only the username function assigned, and the number of followers will automatically default to 1. We can also still change the number of followers if we would like.</p>
+<pre><code class="python language-python">def profile_info(username, followers=1):
+    print("Username: " + username)
+    print("Followers: " + str(followers))
+
+profile_info(username="JOctopus")
+profile_info(username="sammyshark", followers=945)
+</code></pre>
+<p>Output:</p>
+<pre><code>Username: JOctopus
+Followers: 1
+Username: sammyshark
+Followers: 945
+</code></pre>
+<p>Providing default parameters with values can let us skip defining values for each argument that already has a default.</p>
+<h2 id="return"><code>return</code></h2>
+<p>So far, we have printed everything to the console as a string. When creating functions, it is very common to want to do something with the result of a function. The <code>return</code> statement causes your function to exit and hand back a value to its caller. The point of functions in general is to take in inputs and return a value to its caller.</p>
+<p>For example, here's a function utilizing both <code>print()</code> and <code>return</code>:</p>
+<p>The following function, <code>square</code>, squares the parameter <code>x</code> and returns the variable <code>y</code>. We print out the value of <code>result</code>, which is created by calling the <code>square()</code> function with <code>3</code> passed as an argument.</p>
+<pre><code class="python language-python">def square(x):
+    y = x ** 2
+    return y
+
+result = square(3)
+print(result)
+</code></pre>
+<p>Output: <code>9</code></p>
+<p>The output from square could be used by another line of code, like the following:</p>
+<pre><code class="python language-python">def square(x):
+    y = x ** 2
+    return y
+
+result = square(3) * 2
+print(result)
+</code></pre>
+<p>Output: <code>18</code></p>
+<p>In the above code, we were able to use the value that <code>square(3)</code> returned and multiply it by two.</p>

@@ -1,0 +1,40 @@
+<hr />
+<p>title: "print-function"</p>
+<h2 id="typelesson">type: "lesson"</h2>
+<h1 id="printfunction">Print Function</h1>
+<p>Create a new Python file in your project called <code>print_practice</code>. Type the following on the first line of this file:</p>
+<pre><code class="python language-python">print("Hello world!")
+</code></pre>
+<p>Right-click anywhere in the text portion of PyCharm and press <code>run</code> to run this program.</p>
+<p>Let's discuss what we're putting within the parenthesis of the print function. It is a data-type called a <strong>string</strong>. The important thing to note right now about strings, is that they require <code>"</code> quotation marks around them so that the function knows we're handing it a string.</p>
+<h2 id="printsetup"><code>print()</code> Set Up</h2>
+<p><code>print</code>'s displaying whatever you put within the parenthesis in your console (the bottom of PyCharm) once the program is run.</p>
+<p>In previous versions of Python the print function was actually a "print statement" and was written like so:</p>
+<pre><code class="python language-python">print("Hello world!")
+</code></pre>
+<p>In Python3, it is now a print <strong>function</strong> and the syntax has changed to be written with parenthesis at all times, as you would to call any function:</p>
+<p>print()
+Keep these important words in mind: <strong>Data-Type</strong>, <strong>String</strong> and <strong>Function</strong>. We'll be talking much more about all of these as we dig deeper into our "Hello world!" program.</p>
+<h3 id="newlineandtabbedcharacters">New Line and Tabbed Characters</h3>
+<p>We can format our output of <code>print()</code> functions by including a few characters within our string.</p>
+<p>To create a new line in the output, type <code>\n</code> such as:</p>
+<p>print("Hello,\nwelcome to Orange Method!")
+If we want to tab over to create more space between items within our string, we can use <code>\t</code> like so:</p>
+<pre><code class="python language-python">print("Testing, testing\t1\t2\t3...")
+</code></pre>
+<p>We can combine the two to make cool, interesting and useless patterns in our output.</p>
+<p>Copy and paste the following into the Python Console:</p>
+<pre><code class="python language-python">print("Testing, testing\n\t1\n\t\t2\n\t\t\t3...")
+</code></pre>
+<h2 id="multilineprinting">Multi-line Printing</h2>
+<p>You may use the <code>end=" "</code> keyword in Python3 to be able to print out content on one line while using several different <code>print()</code> function statements.</p>
+<p>For example, if you just print out:</p>
+<pre><code class="python language-python">print("Hello,")
+print("my name is")
+print("George")
+</code></pre>
+<p>The above will print out on three separate lines. In order to get it to print on one line as a sentence, do the following with the <code>end=" "</code> keyword:</p>
+<pre><code class="python language-python">print("Hello,", end=" ")
+print("my name is", end=" ")
+print("George")
+</code></pre>
