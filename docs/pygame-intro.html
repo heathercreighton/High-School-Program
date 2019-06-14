@@ -160,15 +160,49 @@ Remember to change the caption name to Stick Figure</p>
 <p><img src="../images/pygame/rotating-text.png" alt="" /></p>
 <h3 id="workingwithkeyboardinput">Working with keyboard input</h3>
 <p>The following code checks for if an "event" of a key press has occurred.</p>
-<p><img src="../images/pygame/key-event.png" alt="" /></p>
+<pre><code class="python language-python">elif even.type == pygame.KEYDOWN:</code></pre>
 <p>Once the code knows that a key has been pressed, it checks to see which key is pressed.</p>
-<p><img src="../images/pygame/key-check.png" alt="" /></p>
+<pre><code class="python language-python">if event.key == pygame.K_LEFT:
+        x_speed = -3
+    elif event.key == pygame.K_RIGHT:
+        x_speed = 3
+    elif event.key == pygame.K_UP:
+        y_speed = -3
+    elif event.key == pygame.K_DOWN:
+        y_speed = 3
+</code></pre>
 <p>Once the key has been pressed, the x and y coordinates are changed accordingly</p>
-<p><img src="../images/pygame/key-coord.png" alt="" /></p>
+<pre><code class="python language-python">x_coord = x_coord + x_speed
+y_coord = y_coord + y_speed
+</code></pre>
 <hr />
 <h3 id="challengestick_figure_movepy">Challenge: stick<em>figure</em>move.py</h3>
 <p>Compare your <code>stick_figure.py</code> to the code below.</p>
-<p><img src="../images/pygame/keyboard-input.png" alt="" /></p>
+<pre><code class="python language-python">def draw_stick_figure(screen, x, y):
+    # Draw a head
+    pygame.draw.ellipse(screen, BLACK, [150 + x, 50 + y, 100, 100], 2)
+    
+    # Draw an arc as part of an ellipse.
+    pygame.draw.arc(screen, BLACK, [170 + x, 70 + y, 60, 60], PI, 2 * PI, 4)
+    
+    # Draw a filled in ellipse, creating the eyes
+    pygame.draw.ellipse(screen, BLACK, [180 + x, 70 + y, 10, 20])
+    pygame.draw.ellipse(screen, BLACK, [210 + x, 70 + y, 10, 20])
+    
+    # Draw the body
+    pygame.draw.line(screen, BLACK, [200 + x, 150 + y], [200 + x, 300 + y], 2)
+    
+    # Draw the arms 
+    pygame.draw.line(screen, BLACK, [200 + x, 180 + y], [250 + x, 220 + y], 2)
+    pygame.draw.line(screen, BLACK, [250 + x, 220 + y], [280 + x, 200 + y], 2)
+    
+    pygame.draw.line(screen, BLACK, [200 + x, 180 + y], [150 + x, 220 + y], 2)
+    pygame.draw.line(screen, BLACK, [150 + x, 220 + y], [120 + x, 200 + y], 2)
+    
+    # Draw the legs 
+    pygame.draw.line(screen, BLACK, [200 + x, 300 + y], [115 + x, 350 + y], 2)
+    pygame.draw.line(screen, BLACK, [200 + x, 300 + y], [280 + x, 350 + y], 2)
+</code></pre>
 <p>What changes do you see?</p>
 <p>Open the python file <code>stick_figure_move.py</code></p>
 <p>Use your <code>stick_figure.py</code> to grab your drawing code and place it in the function <code>draw_stick_figure(screen, x, y)</code>. 
