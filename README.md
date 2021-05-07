@@ -1,6 +1,6 @@
 # OrangeMethod High School Program
 
-Curriculum can be found at TODO:  Put link
+Curriculum can be found at [here](https://erinwoodrum.github.io/High-School-Program/)
 
 ## Schedule
 
