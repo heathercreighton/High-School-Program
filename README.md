@@ -1,13 +1,25 @@
 # OrangeMethod High School Program
 
-Curriculum can be found at [here](https://erinwoodrum.github.io/High-School-Program/)
+Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program/)
 
 ## Schedule
 
+### Introductions
+1.  Who we are
+2.  Who you are, where you live, why you're here and what you expect to get out of this course?
+3.  What technologies do we use here at HD? 
+4.  We're going to teach you Python b/c of its simple to understand syntax makes it a great first language. 
+5.  Introduce the game you'll create by the end of the week. TODO: LINK final simplified game here. 
+
+### repl.it
+1. Show repl.it - Stands for read-eval-print loop
+2. Create your first program:  Print "Hello World". 
+
 ### GitHub
 
-1. [GitHub](./docs/github-intro.html)
-2. [GitHub Labs](./docs/github-intro-lab.html)
+1. GitHub Intro
+2. Create your own GitHub Org. 
+3. GitHub Lab - push your Hello World to your new Github Org. 
 
 ### Python Introduction
 
