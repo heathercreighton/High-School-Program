@@ -23,8 +23,7 @@ Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program
 
 ### Python Introduction
 
- 
-- [Math Operators](./docs/math-operators.html) 
+- [Math Operators](./docs/math-operators.html)
 - [Variables](./docs/variables.html)
    * [Variables Labs](./docs/variables-labs.html)
 - [Math Functions](./docs/math-functions.html)
