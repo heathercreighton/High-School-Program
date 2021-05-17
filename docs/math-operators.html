@@ -18,30 +18,34 @@ layout: default
 | Negation | <code>-</code> |
 | Remainder | <code>%</code> |
 | Exponent | <code>**</code> |</p>
-<p>Open IDLE by typing <code>command</code> + <code>spacebar</code>, type <code>idle</code> and hit <code>return</code>. Python is an interpreted language, and we can use the Python Console to type any numbers or commands just like a calculator.</p>
+<p>Create a new repl.it and connect it to a new repo in your github org.</p>
 <p>Try typing a few numbers, and view the output.</p>
 <p>Now, let's try a few expressions with some of the arithmetic operators:</p>
-<pre><code class="python language-python">35 + 5
-45 - 5
-8 * 5
-400 / 10
-400 // 10
--35 + -5
-40 % 10000
+<pre><code class="python language-python">
+print(35 + 5)
+print(45 - 5)
+print(8 * 5)
+print(400 / 10)
+print(400 // 10)
+print(-35 + -5)
+print(40 % 10000)
 </code></pre>
-<p>Each of these expressions should evaluate to <code>40</code> in your python shell (except for the negation expression, which should evaluate to <code>-40</code>)</p>
+<p>Each of these expressions should evaluate to <code>40</code> in your python repl.it (except for the negation expression, which should evaluate to <code>-40</code>)</p>
 <p>One thing to note is that when using the <code>/</code> operator, the result will return as a float. In the above example, <code>400 / 10</code> evaluates to <code>4</code>. </p>
 <p>If you want a whole number returned, use the <code>//</code> double-slash operator. Just remember that whenever you see a number without a decimal point, python is interpreting it as an <code>int</code>, and when there is a number with a decimal point, it's a <code>float</code>. This is important to note for now, because as we move on to learning about loops we'll realize that Python is opinionated on which operator can be used in specific situations.</p>
 <p>Also, let's talk about the <code>remainder</code> operator, also called <code>modulus</code>. This will return a whole number which will be the remainder of the expression. For example, <code>10 % 3</code> will output <code>1</code>, since <code>1</code> is the remainder when you divide <code>10</code> by <code>3</code></p>
 <h2 id="operatorprecedence">Operator precedence</h2>
 <p>All operators are not equal. Remember the <code>PEMDAS</code> rule from math class? Let's take a look.</p>
 <p>When you take our expressions from the previous example, and put them into a more complex expression, we can see how operator precedence works.</p>
-<p>Type the following into IDLE:</p>
-<pre><code class="python language-python">10 + 5 / 3 - 4 * 12
+<p>Work out the following expression on pen and paper: <code>10 + 5 / 3 - 4 * 12</code>
+Remember PEMDAS! 
+</p>
+<p>Type the following into your repl:</p>
+<pre><code class="python language-python">print(10 + 5 / 3 - 4 * 12)
 </code></pre>
 <p>If you go through this expression in order, as <code>10 + 5</code> is <code>15</code>, dividing by <code>3</code> gives us <code>5</code> and subtracting <code>4</code> leaves us with <code>1</code> before dividing by <code>12</code>. You may be lead to believe the answer is <code>12</code> when it is in fact <code>-36.333333333333</code> (We see the float because we used the single <code>/</code> divisor)</p>
 <p>When you look at an expression like this and use PEMDAS, we have to first use multiplication to get <code>4 \* 12</code> = <code>48</code>, then take the value for <code>3/3</code> which is <code>1.0</code>. Then add <code>12 + 1.0</code>, and finally <code>13.0 - 48</code> which gives us <code>-36.333333333333336</code></p>
 <p><strong>Put your knowledge to work!</strong></p>
-<p>Using the same operators and numbers as the previous example, what does the following expression evaluate to when you put it into IDLE?</p>
+<p>Using the same operators and numbers as the previous example, what does the following expression evaluate to when you put it into your repl?</p>
 <pre><code class="python language-python">(((10 + 5) / 3) - 4) * 12
 </code></pre>

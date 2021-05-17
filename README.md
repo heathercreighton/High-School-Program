@@ -9,6 +9,7 @@ Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program
 2.  Who you are, where you live, why you're here and what you expect to get out of this course?
 3.  What technologies do we use here at HD? 
 4.  We're going to teach you Python b/c of its simple to understand syntax makes it a great first language. 
+    * Python is an interpretted language.  What does that mean? 
 5.  Introduce the game you'll create by the end of the week. TODO: LINK final simplified game here. 
 
 ### repl.it
@@ -47,7 +48,7 @@ Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program
 - [Classes](./docs/classes.html)
     * [Classes Labs](./docs/classes-labs.html)
 
-### PyGame
+### TKINTER
 
-1. [Pygame Intro](./docs/pygame-intro.html)
-2. [Pygame Input](./docs/pygame-input.html)
+1. [Pygame Intro](./docs/tkinter-intro.html)
+2. [Pygame Input](./docs/tkinter-input.html)
