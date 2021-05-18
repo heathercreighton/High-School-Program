@@ -27,6 +27,7 @@ Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program
 - [Math Operators](./docs/math-operators.html)
 - [Variables](./docs/variables.html)
    * [Variables Labs](./docs/variables-labs.html)
+   * [Game Variables](./docs/game-variables.html)
 - [Math Functions](./docs/math-functions.html)
 - [Print Function](./docs/print-function.html)
    * [Print Function Labs](./docs/print-function-labs.html)
