@@ -30,6 +30,7 @@ Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program
    * [Variables Labs](./docs/variables-labs.html)
    * [Game Variables](./docs/game-variables.html)
 - [TKINTER Intro](./docs/tkinter)
+    *[tkinter Lab](./docs/tkinter-lab.html)
 - [Math Functions](./docs/math-functions.html)
    * [Game: Math Functions](./docs/math-functions.html)
 - [Print Function](./docs/print-function.html)
