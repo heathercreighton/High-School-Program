@@ -24,7 +24,7 @@ Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program
 3. GitHub Lab - push your Hello World to your new Github Org. 
 
 ### Python Introduction
-
+- [Comments](./docs/comments.html)
 - [Math Operators](./docs/math-operators.html)
 - [Variables](./docs/variables.html)
    * [Variables Labs](./docs/variables-labs.html)
@@ -32,24 +32,33 @@ Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program
 - [TKINTER Intro](./docs/tkinter)
     * [tkinter Lab](./docs/tkinter-lab.html)
     * [Game TKINTER](./docs/game-tkinter.html)
-- [Math Functions](./docs/math-functions.html)
-   * [Game: Math Functions](./docs/math-functions.html)
-- [Print Function](./docs/print-function.html)
-   * [Print Function Labs](./docs/print-function-labs.html)
-- [Formatting and Input](./docs/formatting-and-input.html)
-   * [Formatting and Input Lab](./docs/formatting-and-input-labs.html)
-- [Comments](./docs/comments.html)
-- [Booleans](./docs/booleans.html)
-   * [Boolean Labs](./docs/boolean-labs.html)
--  [Functions](./docs/functions.html)
-    * [Function Labs](./docs/functions-labs.html)
--  [Strings](./docs/strings.html)
-    * [String Labs](./docs/strings-labs.html)
 - [Data Structures](./docs/data-structures.html)
     * [Data Structure Labs](./docs/data-structures-labs.html)
 - [Loops](./docs/loops.html)
     * [Loop Labs](./docs/loops-labs.html)
+    * [Game Loops](./docs/game-loops.html) (loop the drawings)
+-  [Functions](./docs/functions.html)
+    * [Function Labs](./docs/functions-labs.html)
+    * [Game Functions](./docs/game-functions.html) (Move the drawing of the board into a function, and listen for click event.)
+- [Booleans](./docs/booleans.html)
+   * [Boolean Labs](./docs/boolean-labs.html)
 - [Conditional Statements](./docs/conditional-statements.html)
     * [Conditional Statement Labs](./docs/conditional-statements-labs.html)
+    * [Game Conditionals](./docs/game-conditionals.html) (Determine if the click event is valid and col or row.  Finish the game...)
+
+
+
+
+#### Bonus
+-  [Strings](./docs/strings.html)
+    * [String Labs](./docs/strings-labs.html)
+- [Print Function](./docs/print-function.html)
+   * [Print Function Labs](./docs/print-function-labs.html)
+- [Formatting and Input](./docs/formatting-and-input.html)
+   * [Formatting and Input Lab](./docs/formatting-and-input-labs.html)
+- [Math Functions](./docs/math-functions.html)
+   * [Game: Math Functions](./docs/math-functions.html)
+Build A Magic 8 Ball game. 
+
 - [Classes](./docs/classes.html)
     * [Classes Labs](./docs/classes-labs.html)
