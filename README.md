@@ -32,7 +32,7 @@ Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program
 - [TKINTER Intro](./docs/tkinter)
     * [tkinter Lab](./docs/tkinter-lab.html)
     * [Game TKINTER](./docs/game-tkinter.html)
-- [Data Structures](./docs/data-structures.html)
+- [Data Structures](./docs/data-structures.html) (only cover lists to indexing)
     * [Data Structure Labs](./docs/data-structures-labs.html)
 - [Loops](./docs/loops.html)
     * [Loop Labs](./docs/loops-labs.html)
