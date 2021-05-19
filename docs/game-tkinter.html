@@ -1,0 +1,23 @@
+<h1>Time to drawing on your game!</h1>
+
+<p>We're going to start by drawing the grid. We're going to need six columns and six rows. So in total we'll need to draw 12 lines</p>
+<p>We're going to use <code>canvas.create_line(x1, y1, x2, y2, fill="gray", dash = (2,2))</code></p>
+
+<p>First remember that our <code>distance_between_dots</code> is set equal to the side of our board (a square one) divided by the number of dots. In our case, we have a 600px width and 6 dots, so the width between our dots is 100 px. </p>
+<p>We want to create a bit of a margin around the game board, we're going to start our coordinates at half the distance between dots, at 50px. </p>
+<p> So we have our first coordinates of (x,y) (50, 50). </p>
+<p>Now to solve the last coordinate for our first row, we want it to stretch across the board to the end minus half the distance between dots. So if our board is 600px - 50, that brings us to 550px, and we want to keep the same y value, making our second coordinate [550, 50]</p>
+<p>To create our first row we can use the following code:</p>
+<code>canvas.create_line(50, 50, 550, 50, fill='gray', dash = (2,2))</code>
+<p>To create our first column, we want to start at the same starting coordinate of (50,50).  Since we want it to stretch down the GUI, we'll keep the same x value, and our y value will be 50 pixels from the end. That gives us a second coordinate of (50, 550)</p>
+<code>canvas.create_line(50, 50, 50, 550, fill='gray', dash=(2,2))</code>
+
+<hr>
+<p>Now to create the next row, we want to increase our starting y value by the distance_between_dots, 100px. We can use the following code to create the next row.</p>
+<code>
+    canvas.create_line(50, 150, 550, 150, fill='gray', dash = (2,2))
+</code>
+
+<p> See if you can finish creating all 12 lines on your own.  We'll review after we've given you a chance to solve this on your own. </p>
+
+<i>Seem tedius? One thing about programmers, is that we like to be efficient! You'll see in a later lesson how we can refactor this to do the same thing in less lines of code! </i>
