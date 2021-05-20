@@ -35,7 +35,6 @@ Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program
 - [Data Structures](./docs/data-structures.html) (only cover lists to indexing)
     * [Data Structure Labs](./docs/data-structures-labs.html)
 - [Loops](./docs/loops.html)
-    * [Loop Labs](./docs/loops-labs.html)
     * [Game Loops](./docs/game-loops.html) (loop the drawings)
 -  [Functions](./docs/functions.html)
     * [Function Labs](./docs/functions-labs.html)
