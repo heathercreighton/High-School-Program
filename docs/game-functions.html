@@ -18,7 +18,7 @@ draw_board(canvas)
 <h2>Listening for click event</h2>
 <p>Next we're going to add some code so the board will click for user click events. </p>
 <pre><code class="python language-python">
-    window.bind('<Button-1>', handle_click)
+    window.bind('%ltButton-1&gt', handle_click)
 </code></pre>
 <p>Then define a function named handle_click. In the body of the function add "I've been clicked".  Now when you run the game and click on the board, it should read "I've been clicked" in the console.</p>
 <p>Pass the event to the function, so we'll be able to grab the x,y coordinates of the click.</p>
@@ -29,5 +29,5 @@ def handle_click(e):
 
 # ... 
 draw_board(canvas)
-window.bind("&gtButton-1&lt", handle_click)
+window.bind("&ltButton-1&gt", handle_click)
 </code></pre>
