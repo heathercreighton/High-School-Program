@@ -4,30 +4,48 @@ layout: default
 
 <h1>TKINTER</h1>
 
-<quote>The tkinter package (“Tk interface”) is the standard Python interface to the Tk GUI toolkit. Both Tk and tkinter are available on most Unix platforms, as well as on Windows systems. (Tk itself is not part of Python; it is maintained at ActiveState.)</quote>
-<p>per the python documentation which can be found <a href="https://docs.python.org/3/library/tkinter.html">here</a>.</p>
-
-
-<p>Tkinter allows us to easily inteface with the GUI.  </p>
-<note>GUI stands for Graphical User Interface</note>
-
-<p>Before we can use the tkinter library we're going to have to import it.</p>
-<p>Add the following import statement to the top of your main.py file: <code>from tkinter import *</code>
-The <code>*</code> means import all the classes, functions, and objects from that library.</p>
-<note>A library is a collection of code intented to be used by applications.</note>
-
-<p>Next, we need to create instance of Tk from the tkinter library.  To do that, we'll add the following code below our constants. <code>window = Tk()</code></p>
-<p>Let's give our GUI window a title.  We can do that by calling the title method on our Tk instance.
-    Add the following code at the bottom of your file <code>window.title('Dots and Line Game')</code>
+<p>
+    "The tkinter package (“Tk interface”) is the standard Python interface to the Tk GUI toolkit. Both Tk and tkinter are available on most Unix platforms, as well as on Windows systems. (Tk itself is not part of Python; it is maintained at ActiveState.)"
+    <p>-per the python documentation which can be found <a href="https://docs.python.org/3/library/tkinter.html">here</a>.</p>
 </p>
-<p>Now we're ready to create a canvas.</p>
-<p>We're going to use what's called a canvas to draw on the screen and present graphics to the user.</p>
-<p>We can create the canvas and give it a size with the following: </p>
-<code>
+
+<p>Tkinter allows us to easily inteface with the GUI. 
+<note>GUI stands for Graphical User Interface</note>
+</p>
+<p>Before we can use the tkinter library we're going to have to import it.<br>
+Add the following import statement to the top of your main.py file: 
+    <pre><code class="python language-python">
+        from tkinter import *
+    </code></pre>
+The <code>*</code> means import all the classes, functions, and objects from that library.
+<note>A library is a collection of code intented to be used by applications.</note>
+</p>
+<p>Next, we need to create instance of Tk from the tkinter library.  To do that, we'll add the following code below our constants.
+    <pre><code class="python language-python">
+        window = Tk()
+    </code></pre>
+</p>
+
+<p>Let's give our GUI window a title.  We can do that by calling the title method on our Tk instance.
+    Add the following code at the bottom of your file:
+    <pre><code class="python language-python">
+        window.title('Dots and Line Game')
+    </code></pre>
+</p>
+
+<p>Now we're ready to create a canvas.<br>
+We're going to use what's called a canvas to draw on the screen and present graphics to the user.<br>
+We can create the canvas and give it a size with the following:<br>
+<pre><code class="python language-python">
 canvas = Canvas(window, width=size_of_board, height=size_of_board)
 canvas.pack()
-</code>
+</code></pre>
+</p>
 
-<p>We're also going to want to put the window on a loop or its going to run our python code and quit.  Add the following at the end of main.py <code>window.mainloop(30)</code></p>
+<p>We're also going to want to put the window on a loop or its going to run our python code and quit.  Add the following at the end of main.py 
+    <pre><code class="python language-python">
+        window.mainloop(30)
+    </code></pre>
+</p>
 
 <p>Now the fun part!  We're going to start drawing on our canvas!  After the lab, to give you a change to draw some different shapes, we'll start drawing on our game!</p>
