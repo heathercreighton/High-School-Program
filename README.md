@@ -38,7 +38,7 @@ Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program
     * [Game Loops](./docs/game-loops.html)
 -  [Functions](./docs/functions.html)
     * [Function Labs](./docs/functions-labs.html)
-    * [Game Functions](./docs/game-functions.html) (Move the drawing of the board into a function, and listen for click event.)
+    * [Game Functions](./docs/game-functions.html)
 - [Booleans](./docs/booleans.html)
    * [Boolean Labs](./docs/boolean-labs.html)
 - [Conditional Statements](./docs/conditional-statements.html)

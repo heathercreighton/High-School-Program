@@ -42,8 +42,10 @@
 <code>(5,5)</code><br>
 
 <h3>Now that we have a better handle on loops inside of loops, we're ready to draw the dots with the following code:</h3>
-<code>for i in range(6):</code><br>
-    <code>for j in range(6):</code><br>
-    <code>start_x = i * 100 + 50</code><br>
-    <code>end_x = j * 100 + 50</code><br>
-    <code>c.create_oval(start_x - dot_width/2, end_x - dot_width/2, start_x + dot_width/2, end_x + dot_width/2, fill=dot_color, outline=dot_color)</code>
+<pre><code class="python language-python">
+    for i in range(6):
+    for j in range(6):
+        start_x = i * 100 + 50
+        end_x = j * 100 + 50
+        canvas.create_oval(start_x - dot_width/2, end_x - dot_width/2, start_x + dot_width/2, end_x + dot_width/2, fill=dot_color, outline=dot_color)
+</code></pre>
