@@ -12,6 +12,7 @@ layout: default
 <p>Tkinter allows us to easily inteface with the GUI. 
 <note>GUI stands for Graphical User Interface</note>
 </p>
+<h2>Import The Library</h2>
 <p>Before we can use the tkinter library we're going to have to import it.<br>
 Add the following import statement to the top of your main.py file: 
     <pre><code class="python language-python">
@@ -20,12 +21,13 @@ Add the following import statement to the top of your main.py file:
 The <code>*</code> means import all the classes, functions, and objects from that library.
 <note>A library is a collection of code intented to be used by applications.</note>
 </p>
+<h2>Create an Instance</h2>
 <p>Next, we need to create instance of Tk from the tkinter library.  To do that, we'll add the following code below our constants.
     <pre><code class="python language-python">
         window = Tk()
     </code></pre>
 </p>
-
+<h2>Give it a title</h2>
 <p>Let's give our GUI window a title.  We can do that by calling the title method on our Tk instance.
     Add the following code at the bottom of your file:
     <pre><code class="python language-python">
@@ -33,6 +35,7 @@ The <code>*</code> means import all the classes, functions, and objects from tha
     </code></pre>
 </p>
 
+<h2>Canvas</h2>
 <p>Now we're ready to create a canvas.<br>
 We're going to use what's called a canvas to draw on the screen and present graphics to the user.<br>
 We can create the canvas and give it a size with the following:<br>
