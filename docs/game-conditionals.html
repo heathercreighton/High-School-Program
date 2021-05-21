@@ -19,44 +19,62 @@ Let's create a function that will accept x,y coordinates and return two value:
 </ul></p>
 
 <p>Create a function called get_logical_position and pass the x,y coordinates to it. <br>
-In order to get the logical position, we first need to change our coordinates into an array,<br>
-To do this, we'll need to import <code>numpy</code>at the top.</p>
 <pre><code class="python language-python">
-import numpy as np
+
 # .... 
 def get_logical_position(x, y):
-  grid_position = np.array([x, y])
-  print(grid_position)
+  print(x,y)
 
 def handle_click(e):
   get_logical_position(e.x, e.y)
 </code></pre>
 
 <h3>Get logical position</h3>
-<p>Next, we'll use the following formula to determine the relative position: </p>
+ </p>
 <p>Add the following to the <code>get_logical_position</code> function:</p>
 <pre><code class="python language-python">
-    pos = (grid_position - distance_between_dots/4) // (distance_between_dots/2)
-    type = False
-        logical_position = []
-        if position[1] % 2 == 0 and (position[0] - 1) % 2 == 0:
-            r = int((position[0]-1)//2)
-            c = int(position[1]//2)
-            logical_position = [r, c]
-            type = 'row'
-            # self.row_status[c][r]=1
-        elif position[0] % 2 == 0 and (position[1] - 1) % 2 == 0:
-            c = int((position[1] - 1) // 2)
-            r = int(position[0] // 2)
-            logical_position = [r, c]
-            type = 'col'
-
-        return logical_position, type
+    xlog = (x - 25) // 50
+    ylog = (y - 25) // 50
 </code></pre>
-<p> Add a print after invoking this function, click around the game and see if its accurate. </p>
+<p>
+    For each coordinate we start by subtracting the margin of 25px, then divide the board up by half the distance between dots (50px).  We get a whole number grid that looks like this:
+</p>
+<p><img src="./images/grid_positions.png" /></p>
+<p> Now we can determine which col or row was selected! Notice how all the rows have (odd, even) coordinates and the columns have (even, odd) coordinates.</p>
+<p>
+    Finish writing the <code>get_logical_position</code> function so that:
+    - if a row was selected the function returns the logical coordinates [xlog, ylog], and "row"
+    - if a column was selected the function returns the logical coordinates [xlog, ylog] and "col"
+    - if neither a row or column was selected the function returns an empty list [] and an empty string.
+    <b>Hint:</b> This function is make a little easier by utilizing the following function:
+    <pre><code class="python language-python">
+        def isEven(n): 
+            return n % 2 == 0
+    </code>
+</p>
 
-<h2>Mark the board</h2>
-<p>Before we can mark the board, we need to determine which players turn it is!<br>
-We also need to start keeping track of which lines are marked by whom, we'll start tracking the status of who's turn it is, and the status of the board.</p>
+<h2>Tracking Game Status</h2>
+<p>So now we know where the player is clicking and what line if any they clicked on. Here's what we need to do next in our handle click function:
+    <ol>
+        <li>If click is not a row or col, then return.</li>
+        <li>If the line is unmarked, we need to mark it</li>
+        <li>If it completes a box, shade it and give a point to the current player.</li>
+        <li>If it ends the game, show the final score, if not, change players.</li>
+    </ol>
+</p>
+<p>
+    Go ahead and write the conditional statement to return from the function if the click is NOT a row or col.
+</p>
+
+<h2>Game Status</h2>
+<p>
+    To kick off tracking the game status we're going to add two variables to the top of the file with the other variables.
+</p>
+<pre><code class="python language-python">
+    player_turn = 1;
+    player1_points = 0
+    player2_points = 0
+    marked_lines = []
+</code></pre>
 
 
