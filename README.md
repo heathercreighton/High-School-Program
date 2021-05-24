@@ -54,8 +54,6 @@ Curriculum can be found [here](https://erinwoodrum.github.io/High-School-Program
 - [Formatting and Input](./docs/formatting-and-input.html)
    * [Formatting and Input Lab](./docs/formatting-and-input-labs.html)
 - [Math Functions](./docs/math-functions.html)
-   * [Game: Math Functions](./docs/math-functions.html)
-
 - Build A Magic 8 Ball game. 
 
 - [Classes](./docs/classes.html)
